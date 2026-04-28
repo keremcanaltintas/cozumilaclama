@@ -165,7 +165,7 @@ header .navbar {
     padding: 0;
   }
   header .navbar .navbar-brand img {
-    width: 300px;
+    width: 200px;
     margin-left: 1rem;
   }
   header .navbar .navbar-toggler {
@@ -190,7 +190,7 @@ header .navbar {
     -webkit-overflow-scrolling: touch;
   }
   header .navbar .navbar-nav::-webkit-scrollbar {
-    height: 4px;
+    height: 10px;
   }
   header .navbar .navbar-nav::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.05);
