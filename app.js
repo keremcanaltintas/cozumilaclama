@@ -35,5 +35,44 @@ function displayNextBug() {
       document.body.scrollTop = 0; 
       document.documentElement.scrollTop = 0; 
     }
- 
+
+
+// Carousel Gallery
+const carouselImages = [
+  "/images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.39 (1).jpeg",
+  "/images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.39.jpeg",
+  "/images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.41.jpeg",
+  "/images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.46 (1).jpeg",
+  "./images/ilaclamaResimler/cozumilaclama.jpeg",
+  "/images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.41 (1).jpeg"
+];
+
+let carouselIndex = 0;
+
+const carouselImage = document.getElementById('carouselImage');
+const imageCounter = document.getElementById('imageCounter');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+function updateCarouselImage() {
+  carouselImage.src = carouselImages[carouselIndex];
+  imageCounter.textContent = `${carouselIndex + 1} / ${carouselImages.length}`;
+}
+
+function nextImage() {
+  carouselIndex = (carouselIndex + 1) % carouselImages.length;
+  updateCarouselImage();
+}
+
+function prevImage() {
+  carouselIndex = (carouselIndex - 1 + carouselImages.length) % carouselImages.length;
+  updateCarouselImage();
+}
+
+nextBtn.addEventListener('click', nextImage);
+prevBtn.addEventListener('click', prevImage);
+
+// Auto-rotate every 5 seconds
+setInterval(nextImage, 5000);
+
 
