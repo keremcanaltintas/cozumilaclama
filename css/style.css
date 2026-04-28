@@ -466,7 +466,7 @@ section.services .services-content .services-gallery .carousel-container {
   justify-content: center;
   gap: 2rem;
   width: 100%;
-  max-width: 600px;
+  max-width: 900px;
   position: relative;
 }
 
@@ -482,6 +482,7 @@ section.services .services-content .services-gallery .carousel-image-wrapper {
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   position: relative;
+  min-height: 600px;
 }
 
 section.services .services-content .services-gallery .carousel-image-wrapper .carousel-image {
@@ -508,8 +509,8 @@ section.services .services-content .services-gallery .carousel-btn {
   background-color: #1D976C;
   color: white;
   border: none;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -626,7 +627,8 @@ section.services .services-content .pest-info p {
     font-size: 1rem;
   }
   section.services .services-content .services-gallery .carousel-image-wrapper {
-    max-width: 400px;
+    max-width: 600px;
+    min-height: 450px;
   }
 }
 .glide {
