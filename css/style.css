@@ -1,134 +1,145 @@
 header {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  width: 100%;
+  padding: 0;
+  position: relative;
 }
+
 header .nav-top {
   flex: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%;
 }
+
 header .nav-top .nav-top-left {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+header .nav-top .nav-top-left img {
+  width: 120px;
+  object-fit: cover;
+  margin-bottom: 0;
+}
+
+header .nav-top-right {
   flex: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  gap: 0;
+  background: #1D976C;
+  background: linear-gradient(to right, #93F9B9, #1D976C);
+  padding: 1.5rem 2rem;
 }
-header .nav-top .nav-top-left img {
-  width: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-bottom: 1.3rem;
-}
-header .nav-top .nav-top-right {
-  flex: 2;
+
+header .nav-top-right ul {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
   gap: 1rem;
-  background: #1D976C;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #93F9B9, #1D976C);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  padding: 4rem;
-}
-header .nav-top .nav-top-right > div {
-  width: 50px;
-  height: 50px;
-  border: 1px solid #1D976C;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-header .nav-top .nav-top-right > div i {
-  color: white;
-  font-size: 1.6rem;
-}
-header .nav-top .nav-top-right > a {
-  color: white;
-  text-decoration: none;
-  font-weight: 300;
-}
-header nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  padding: 3rem 2rem;
-  width: 100%;
-  box-sizing: border-box;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-header nav ul {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 4rem;
   list-style: none;
   padding: 0;
   margin: 0;
 }
-header nav ul li:nth-child(2) .dropdown-list, header nav ul li:nth-child(4) .dropdown-list {
-  width: 200px !important;
-  left: 0;
-}
-header nav ul li:nth-child(3), header nav ul li:nth-child(2), header nav ul li:nth-child(4) {
+
+header .nav-top-right ul li {
   position: relative;
 }
-header nav ul li:nth-child(3):hover .dropdown-list, header nav ul li:nth-child(2):hover .dropdown-list, header nav ul li:nth-child(4):hover .dropdown-list {
-  display: flex;
+
+header .nav-top-right ul li a {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.7rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid white;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  transition: all 300ms ease;
+  display: inline-block;
+  white-space: nowrap;
 }
-header nav ul li:nth-child(3) .dropdown-list, header nav ul li:nth-child(2) .dropdown-list, header nav ul li:nth-child(4) .dropdown-list {
+
+header .nav-top-right ul li a:hover {
+  background-color: white;
+  color: #1D976C;
+  border-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+header .nav-top-right ul li:nth-child(2) .dropdown-list,
+header .nav-top-right ul li:nth-child(3) .dropdown-list,
+header .nav-top-right ul li:nth-child(4) .dropdown-list {
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   background-color: white;
-  width: 100%;
+  width: 250px;
   padding: 1rem 0;
-  margin-top: 1.9rem;
-  gap: 1rem;
-  top: 0;
-  right: 0;
+  margin-top: 0.5rem;
+  gap: 0;
+  top: 100%;
+  left: 0;
   display: none;
-}
-header nav ul li:nth-child(3) .dropdown-list li, header nav ul li:nth-child(2) .dropdown-list li, header nav ul li:nth-child(4) .dropdown-list li {
-  margin-left: 1rem;
-}
-header nav ul li:nth-child(3) .dropdown-list li i, header nav ul li:nth-child(2) .dropdown-list li i, header nav ul li:nth-child(4) .dropdown-list li i {
-  margin-right: 0.7rem;
-}
-header nav ul li:nth-child(3) .dropdown-list li a, header nav ul li:nth-child(2) .dropdown-list li a, header nav ul li:nth-child(4) .dropdown-list li a {
-  color: black;
-  font-size: 0.9rem;
-}
-header nav ul li a {
-  color: black;
-  font-size: 1.2rem;
-  font-weight: 200;
-  padding-bottom: 0.2rem;
-  transition: all 500ms ease-in-out;
-  -webkit-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  -ms-transition: all 500ms ease-in-out;
-  -o-transition: all 500ms ease-in-out;
-}
-header nav ul li a:hover {
-  border-bottom: 1px solid #1D976C;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1050;
 }
 
-/* restore default: hide navbar on desktop (original state) */
+header .nav-top-right ul li:nth-child(2):hover .dropdown-list,
+header .nav-top-right ul li:nth-child(3):hover .dropdown-list,
+header .nav-top-right ul li:nth-child(4):hover .dropdown-list {
+  display: flex;
+}
+
+header .nav-top-right ul li .dropdown-list li {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+header .nav-top-right ul li .dropdown-list li a {
+  color: #333;
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding: 0.7rem 1.5rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 200ms ease;
+  display: block;
+}
+
+header .nav-top-right ul li .dropdown-list li a:hover {
+  background-color: rgba(29, 151, 108, 0.1);
+  color: #1D976C;
+  border: none;
+  box-shadow: none;
+}
+
+header .nav-top-right ul li .dropdown-list li i {
+  margin-right: 0.5rem;
+  color: #1D976C;
+}
+
+/* hide navbar on desktop (original state) */
 header .navbar {
   display: none;
 }
@@ -137,44 +148,52 @@ header .navbar {
   header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
     align-items: stretch;
     justify-content: center;
   }
+
   header .nav-top {
     flex-direction: column;
-    margin-top: 1rem;
+    padding: 0;
   }
+
   header .nav-top .nav-top-left {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  header .nav-top .nav-top-left img {
+    width: 150px;
+  }
+
+  header .nav-top-right {
     display: none;
   }
-  header .nav-top .nav-top-right {
-    display: none;
-  }
-  header nav {
-    display: none;
-  }
+
   header .navbar {
     display: block;
-    margin-top: 3rem;
+    margin-top: 0;
     background-color: white !important;
     padding: 0;
   }
+
   header .navbar .navbar-brand img {
     width: 200px;
     margin-left: 1rem;
   }
+
   header .navbar .navbar-toggler {
     border: 0;
-    display: none;
+    display: block;
   }
+
   header .navbar .navbar-collapse {
     display: flex !important;
     overflow: hidden;
     padding: 0;
   }
+
   header .navbar .navbar-nav {
     gap: 0.5rem;
     display: flex;
@@ -187,21 +206,26 @@ header .navbar {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
   }
+
   header .navbar .navbar-nav::-webkit-scrollbar {
     height: 10px;
   }
+
   header .navbar .navbar-nav::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.05);
   }
+
   header .navbar .navbar-nav::-webkit-scrollbar-thumb {
     background: #1D976C;
     border-radius: 4px;
   }
+
   header .navbar .navbar-nav li {
     margin: 0;
     padding: 0;
     flex-shrink: 0;
   }
+
   header .navbar .navbar-nav li a {
     border: 2px solid #1D976C;
     padding: 0.6rem 1.2rem;
@@ -211,11 +235,12 @@ header .navbar {
     font-size: 0.9rem;
     transition: all 0.3s ease;
   }
+
   header .navbar .navbar-nav li a:hover {
     background-color: #1D976C;
     color: white;
-    border-bottom: 0px solid #1D976C;
   }
+
   header .navbar .navbar-nav li a.active {
     background-color: #1D976C;
     color: white;
