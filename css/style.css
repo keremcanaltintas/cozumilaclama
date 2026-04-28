@@ -18,7 +18,7 @@ header .nav-top .nav-top-left {
   justify-content: center;
 }
 header .nav-top .nav-top-left img {
-  width: 200px;
+  width: 400px;
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 1.3rem;
