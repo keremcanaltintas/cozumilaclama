@@ -1,0 +1,63 @@
+@use "mixins" as *;
+
+
+
+//BGSES
+
+section.bugses {
+    position: relative;
+
+    .bg2 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        opacity: 0.1;
+        z-index: -1;
+    }
+
+    @include flex(column);
+    padding: 3rem 0;
+    text-align: center;
+
+    .bugses-content {
+        @include flex();
+        flex-wrap: wrap;
+
+        .card-box {
+            margin: 3rem 1rem 1rem 1rem;
+            transition: all 500ms ease-in-out;
+            -webkit-transition: all 500ms ease-in-out;
+            -moz-transition: all 500ms ease-in-out;
+            -ms-transition: all 500ms ease-in-out;
+            -o-transition: all 500ms ease-in-out;
+
+            &:hover {
+                background-color: $main-color2;
+                scale: 1.1;
+                border-radius: 15px;
+                -webkit-border-radius: 15px;
+                -moz-border-radius: 15px;
+                -ms-border-radius: 15px;
+                -o-border-radius: 15px;
+
+                p {
+                    color: white;
+                }
+
+                .circle {
+                    background-color: white;
+                }
+            }
+
+            .circle {
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,93 @@
+@use "mixins" as *;
+
+//CONTACT-Footer
+
+footer {
+    @include flex();
+    gap: 8rem;
+    padding: 3rem 0;
+    background: #1D976C;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #93F9B9, #1D976C);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #93F9B9, #1D976C);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    a {
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    ul {
+        @include flex(column);
+        gap: 2rem;
+        list-style: none;
+
+        a {
+
+            border-bottom: 1px solid rgba(245, 245, 245, 0.424);
+        }
+    }
+
+    .line {
+        width: 1px;
+        height: 150px;
+        background-color: white;
+    }
+
+    .contact {
+        @include flex(column, stretch);
+        gap: 2rem;
+
+        span {
+            color: white;
+        }
+
+        i {
+            margin-right: 2rem;
+            font-size: 1.2rem;
+            color: $main-color2;
+            background-color: white;
+            padding: .5rem;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+        }
+    }
+}
+
+@media screen and (max-width:1012px) {
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact {
+            >div {
+                @include flex(column);
+
+                i {
+                    padding: 0.5rem;
+                    margin-bottom: .7rem;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+
+
+}

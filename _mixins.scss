@@ -1,0 +1,11 @@
+// Colors
+$main-color1: goldenrod;
+$main-color2: #1D976C;
+
+
+@mixin flex ($direction : row, $align: center, $justify: center) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}

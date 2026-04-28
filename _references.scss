@@ -1,0 +1,44 @@
+@use "mixins" as *;
+
+//REFERENCES
+
+.glide {
+    overflow: hidden;
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 5rem;
+
+    box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.207);
+
+
+    .glide__slides {
+        @include flex();
+        gap: 8rem;
+
+        .glide__slide {
+            width: 150px !important;
+            height: auto;
+            overflow: hidden;
+
+            @include flex();
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:800px) {
+    .glide {
+        .glide__slides {
+            gap: 1rem !important;
+
+            .glide__slide {
+                width: 100px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,121 @@
+@use "mixins" as *;
+
+//BGIMAGE
+section.bgImage {
+    height: 60vh;
+    background-image: url("/images/bgImages/slider_bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: -1;
+
+    display: flex;
+
+    &::after {
+        content: "";
+        background-color: rgba(65, 77, 72, 0.681);
+        inset: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .text {
+        @include flex(column, stretch, center);
+        margin: 0 auto;
+        color: white;
+        line-height: 80px;
+        padding: 0 3rem;
+
+        span {
+            font-size: 4rem;
+            font-weight: 900;
+        }
+
+        span.small-text {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+
+        #bug-name {
+            color: #3ac091;
+            font-weight: 500;
+            font-size: 5rem;
+        }
+    }
+}
+
+@media screen and (max-width:1012px) {
+    section.bgImage {
+        height: 60vh;
+        padding: 0 2rem;
+
+
+
+        .text {
+            padding: 0 1rem;
+
+            h1 {
+                font-size: 1rem;
+
+
+            }
+
+            span {
+                font-size: 3rem;
+                font-weight: 900;
+            }
+
+            span.small-text {
+                font-size: 1rem;
+                margin-right: 1rem;
+            }
+
+            #bug-name {
+                font-size: 3rem;
+            }
+
+            .sub-text {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:576px) {
+    section.bgImage {
+
+
+
+        .text {
+            padding: 0 1rem;
+            line-height: 40px;
+
+            h1 {
+                font-size: .7rem;
+                margin-bottom: 0;
+                padding-bottom: 0;
+
+                span {
+                    font-size: .9rem;
+                }
+            }
+
+            span {
+                font-size: 2rem;
+                font-weight: 900;
+            }
+
+            span.small-text {
+                font-size: 1rem;
+                margin-right: 1rem;
+            }
+
+            #bug-name {
+                font-size: 2rem;
+            }
+
+        }
+    }
+}

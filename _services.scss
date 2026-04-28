@@ -1,0 +1,121 @@
+@use "mixins" as *;
+
+//SERVICESS
+
+section.services {
+    @include flex(column);
+    text-align: center;
+    padding: 3rem 0;
+    background-color: #73d7b428;
+
+    .div-title {
+        margin-bottom: 0;
+        padding: 0 1rem;
+    }
+
+    .services-places {
+        display: flex;
+
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            color: $main-color2;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 3rem;
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -ms-border-radius: 20px;
+            -o-border-radius: 20px;
+
+            li {
+                padding: 1rem;
+                border-bottom: 1px solid goldenrod;
+            }
+        }
+    }
+
+    .services-content {
+        @include flex();
+
+        .services-gallery {
+            flex: 3;
+            overflow: hidden;
+
+
+        }
+
+        .pest-info {
+            flex: 1;
+            @include flex(column);
+            gap: 2rem;
+            padding: 2rem;
+            background-color: rgba(144, 238, 144, 0.12);
+            border-radius: 1rem;
+            -webkit-border-radius: 1rem;
+            -moz-border-radius: 1rem;
+            -ms-border-radius: 1rem;
+            -o-border-radius: 1rem;
+
+            margin-right: 2rem;
+
+            h3 {
+                color: $main-color2;
+            }
+
+            p {
+                color: rgb(106, 105, 105);
+                font-style: italic;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1012px) {
+
+    section.services {
+        background-image: none;
+
+        .services-places {
+            @include flex(column);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+
+            ul {
+                padding: 0;
+                margin: 0;
+                justify-content: space-between;
+
+                li {
+                    font-size: .9rem;
+                    padding-bottom: .7rem;
+                }
+            }
+        }
+
+        .services-content {
+            @include flex(column);
+
+            .pest-info {
+                margin: 0;
+                margin-bottom: 3rem;
+            }
+
+            .services-gallery {
+                .row {
+                    img {
+                        width: 200px !important;
+
+                    }
+                }
+            }
+
+        }
+
+
+    }
+
+
+}
