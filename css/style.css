@@ -18,7 +18,7 @@ header .nav-top .nav-top-left {
   justify-content: center;
 }
 header .nav-top .nav-top-left img {
-  width: 400px;
+  width: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 1.3rem;
@@ -165,7 +165,7 @@ header .navbar {
     padding: 0;
   }
   header .navbar .navbar-brand img {
-    width: 100px;
+    width: 300px;
     margin-left: 1rem;
   }
   header .navbar .navbar-toggler {
