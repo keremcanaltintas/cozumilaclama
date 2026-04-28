@@ -76,3 +76,25 @@ prevBtn.addEventListener('click', prevImage);
 setInterval(nextImage, 5000);
 
 
+// Contact Modal Functions
+function openContactModal() {
+  const modal = document.getElementById('contactModal');
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeContactModal() {
+  const modal = document.getElementById('contactModal');
+  modal.classList.remove('show');
+  document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside
+window.addEventListener('click', function(event) {
+  const modal = document.getElementById('contactModal');
+  if (event.target === modal) {
+    closeContactModal();
+  }
+});
+
+

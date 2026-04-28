@@ -81,7 +81,7 @@
                             <li><a href="#references">Kanyon Hayvancılık</a></li>
                         </ul>
                     </a></li>
-                <li><a href="#contact">Bize Ulaşın</a></li>
+                <li><a href="javascript:void(0);" onclick="openContactModal()">Bize Ulaşın</a></li>
             </ul>
         </nav>
 
@@ -108,7 +108,7 @@
                             <a class="nav-link" href="#references">Referanslar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Bize Ulaşın</a>
+                            <a class="nav-link" href="javascript:void(0);" onclick="openContactModal()">Bize Ulaşın</a>
                         </li>
                     </ul>
 
@@ -372,10 +372,35 @@
             <li><a href="#services">Hizmetlerimiz</a></li>
             <li><a href="#bugses">Haşereler ve Böcekler</a></li>
             <li><a href="#references">Referanslar</a></li>
-            <li><a href="#contact">Bize Ulaşın</a></li>
+            <li><a href="javascript:void(0);" onclick="openContactModal()">Bize Ulaşın</a></li>
         </ul>
 
         <div class="line"></div>
+
+        <!-- Contact Modal -->
+        <div class="contact-modal" id="contactModal">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeContactModal()">
+                    <i class="bi bi-x"></i>
+                </button>
+                <h2>Bize Ulaşın</h2>
+                <p>Lütfen iletişim yönteminizi seçin:</p>
+                
+                <div class="contact-options">
+                    <a href="tel:05337356443" class="contact-option phone-option">
+                        <i class="bi bi-telephone-fill"></i>
+                        <span>Telefonla Ara</span>
+                        <p>05337356443</p>
+                    </a>
+                    
+                    <a href="https://wa.me/905337356443" target="_blank" class="contact-option whatsapp-option">
+                        <i class="bi bi-whatsapp"></i>
+                        <span>WhatsApp</span>
+                        <p>Hemen mesaj gönder</p>
+                    </a>
+                </div>
+            </div>
+        </div>
 
         <div class="contact" id="contact">
             <div><i class="bi bi-house"></i>
