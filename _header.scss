@@ -64,19 +64,19 @@ header {
         @include flex;
         width: 100%;
         background-color: white;
-        padding: 2rem;
-        transform: translateY(-40px);
-        -webkit-transform: translateY(-40px);
-        -moz-transform: translateY(-40px);
-        -ms-transform: translateY(-40px);
-        -o-transform: translateY(-40px);
+        padding: 3rem 2rem;
+        transform: translateY(-50px);
+        -webkit-transform: translateY(-50px);
+        -moz-transform: translateY(-50px);
+        -ms-transform: translateY(-50px);
+        -o-transform: translateY(-50px);
 
-        box-shadow: 20px 5px 20px rgba(0, 0, 0, 0.075);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
 
         ul {
             @include flex;
-            gap: 4rem;
+            gap: 2rem;
             list-style: none;
             padding: 0;
             margin: 0;
@@ -84,16 +84,18 @@ header {
 
             li {
 
-                &:first-child a,
-                &:last-child a {
+                >a {
                     border: 2px solid $main-color2;
-                    border-radius: 10px;
-                    padding: 0.8rem 1.5rem;
-                    font-weight: 400;
+                    border-radius: 8px;
+                    padding: 0.7rem 1.5rem;
+                    font-weight: 500;
+                    color: black;
+                    font-size: 1.1rem;
+                    transition: all 300ms ease;
 
                     &:hover {
                         background-color: $main-color2;
-                        color: white;
+                        color: white !important;
                     }
                 }
 
