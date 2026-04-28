@@ -24,6 +24,8 @@ a {
 //div-title
 .div-title {
     margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid $main-color2;
 
     h3 {
         color: $main-color2;
@@ -45,7 +47,7 @@ a {
 
 //card-box
 .card-box {
-    border: 1px solid lightgrey;
+    border: 1px solid rgba(29, 151, 108, 0.3);
     display: flex;
     flex-direction: column;
     justify-content: space-between;

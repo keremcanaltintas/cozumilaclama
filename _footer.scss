@@ -5,7 +5,7 @@
 footer {
     @include flex();
     gap: 8rem;
-    padding: 3rem 0;
+    padding: 3rem 4rem;
     background: #1D976C;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #93F9B9, #1D976C);

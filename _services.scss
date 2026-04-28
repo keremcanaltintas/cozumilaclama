@@ -39,6 +39,7 @@ section.services {
 
     .services-content {
         @include flex();
+        padding: 0 4rem;
 
         .services-gallery {
             flex: 3;
@@ -149,18 +150,23 @@ section.services {
             flex: 1;
             @include flex(column);
             gap: 2rem;
-            padding: 2rem;
-            background-color: rgba(144, 238, 144, 0.12);
+            padding: 3rem 2rem;
+            background-color: white;
+            border: 2px solid $main-color2;
             border-radius: 1rem;
             -webkit-border-radius: 1rem;
             -moz-border-radius: 1rem;
             -ms-border-radius: 1rem;
             -o-border-radius: 1rem;
+            box-shadow: 0 5px 15px rgba(29, 151, 108, 0.15);
 
             margin-right: 2rem;
 
             h3 {
                 color: $main-color2;
+                border-bottom: 2px solid $main-color2;
+                padding-bottom: 1rem;
+                width: 100%;
             }
 
             p {
