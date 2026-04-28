@@ -230,7 +230,7 @@ section.bgImage {
   background-size: cover;
   background-position: center;
   position: relative;
-  z-index: -1;
+  z-index: 2;
   display: flex;
 }
 section.bgImage::after {
