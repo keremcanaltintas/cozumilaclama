@@ -1184,4 +1184,150 @@ button#scrollButton i {
   .contact-option span {
     font-size: 1rem;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* Comparison Section */
+.comparison-section {
+    background-color: rgba(144, 238, 144, 0.05);
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comparison-container {
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+}
+
+.comparison-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2.5rem;
+}
+
+.comparison-title .highlight {
+    color: #1D976C;
+}
+
+.comparison-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.tab-btn {
+    padding: 0.8rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #1D976C;
+    background-color: white;
+    color: #1D976C;
+}
+
+.tab-btn.active {
+    background: linear-gradient(to right, #93F9B9, #1D976C);
+    color: white;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(29, 151, 108, 0.4);
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.comp-box {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: left;
+    position: relative;
+    border-left: 4px solid transparent;
+}
+
+.other-box {
+    border-left-color: #0b4a34;
+}
+
+.other-box i {
+    color: #0b4a34;
+    font-size: 1.5rem;
+}
+
+.other-box p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.us-box {
+    border-left-color: #3ac091;
+}
+
+.us-box i {
+    color: #3ac091;
+    font-size: 1.5rem;
+}
+
+.us-box p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.comp-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(to right, #93F9B9, #1D976C);
+    color: white;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 3rem;
+    text-decoration: none;
+    box-shadow: 0 5px 20px rgba(29, 151, 108, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comp-contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(29, 151, 108, 0.5);
+    color: white;
+}
+
+@media screen and (max-width: 900px) {
+    .comparison-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+    .comparison-tabs {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .tab-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+/*# sourceMappingURL=style.css.map */

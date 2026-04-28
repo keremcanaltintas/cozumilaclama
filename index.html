@@ -179,6 +179,97 @@
 
         <img class="bg1" src="/images/bgImages/ilaclama2.png" alt="">
     </section>
+    <section class="comparison-section" id="comparison">
+        <div class="comparison-container" data-aos="fade-up">
+            <h2 class="comparison-title">Merak Ediyorsanız - Neden <span class="highlight">Uşak Çözüm İlaçlama?</span>
+            </h2>
+
+            <div class="comparison-tabs">
+                <button class="tab-btn" id="tab-other" onclick="switchTab('other')">Diğer Firmalar</button>
+                <button class="tab-btn active" id="tab-us" onclick="switchTab('us')">Uşak Çözüm İlaçlama</button>
+            </div>
+
+            <!-- Diğer Firmalar İçeriği -->
+            <div class="comparison-grid" id="grid-other" style="display: none;">
+                <div class="comp-box other-box">
+                    <i class="bi bi-x-circle-fill"></i>
+                    <p>Geri bildirim sunulmuyor mu?</p>
+                </div>
+                <div class="comp-box other-box">
+                    <i class="bi bi-x-circle-fill"></i>
+                    <p>Büyük sözler - sıfır sonuç?</p>
+                </div>
+                <div class="comp-box other-box">
+                    <i class="bi bi-x-circle-fill"></i>
+                    <p>Yapılan iş için garanti yok mu?</p>
+                </div>
+                <div class="comp-box other-box">
+                    <i class="bi bi-x-circle-fill"></i>
+                    <p>Zaman ve para tasarrufu sağlamıyor mu?</p>
+                </div>
+                <div class="comp-box other-box">
+                    <i class="bi bi-x-circle-fill"></i>
+                    <p>Kaliteli iş sunmuyor mu?</p>
+                </div>
+                <div class="comp-box other-box">
+                    <i class="bi bi-x-circle-fill"></i>
+                    <p>Olağanüstü müşteri hizmeti yok mu?</p>
+                </div>
+            </div>
+
+            <!-- Uşak Çözüm İlaçlama İçeriği -->
+            <div class="comparison-grid" id="grid-us">
+                <div class="comp-box us-box">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>Etkili iletişim</p>
+                </div>
+                <div class="comp-box us-box">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>Sözler tutuluyor</p>
+                </div>
+                <div class="comp-box us-box">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>Garantili sonuçlar</p>
+                </div>
+                <div class="comp-box us-box">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>Zaman ve para tasarrufu</p>
+                </div>
+                <div class="comp-box us-box">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>Yüksek kaliteli iş</p>
+                </div>
+                <div class="comp-box us-box">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>Olağanüstü hizmet</p>
+                </div>
+            </div>
+
+            <a href="javascript:void(0);" onclick="openContactModal()" class="comp-contact-btn">Bize Ulaşın <i
+                    class="bi bi-chevron-right"></i></a>
+        </div>
+    </section>
+
+    <script>
+        function switchTab(tab) {
+            const btnOther = document.getElementById('tab-other');
+            const btnUs = document.getElementById('tab-us');
+            const gridOther = document.getElementById('grid-other');
+            const gridUs = document.getElementById('grid-us');
+
+            if (tab === 'other') {
+                btnOther.classList.add('active');
+                btnUs.classList.remove('active');
+                gridOther.style.display = 'grid';
+                gridUs.style.display = 'none';
+            } else {
+                btnUs.classList.add('active');
+                btnOther.classList.remove('active');
+                gridUs.style.display = 'grid';
+                gridOther.style.display = 'none';
+            }
+        }
+    </script>
 
     <section class="services" id="services">
         <div class="div-title">
@@ -227,20 +318,18 @@
                     <button class="carousel-btn carousel-btn-left" id="prevBtn">
                         <i class="bi bi-chevron-left"></i>
                     </button>
-                    
+
                     <div class="carousel-image-wrapper">
-                        <img id="carouselImage" 
+                        <img id="carouselImage"
                             src="/images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.39 (1).jpeg"
-                            class="carousel-image" 
-                            title="uşak çözüm ilaçlama"
-                            alt="uşak çözüm ilaçlama" />
+                            class="carousel-image" title="uşak çözüm ilaçlama" alt="uşak çözüm ilaçlama" />
                     </div>
-                    
+
                     <button class="carousel-btn carousel-btn-right" id="nextBtn">
                         <i class="bi bi-chevron-right"></i>
                     </button>
                 </div>
-                
+
                 <div class="carousel-indicators">
                     <span id="imageCounter">1 / 6</span>
                 </div>
@@ -378,14 +467,14 @@
                 </button>
                 <h2>Bize Ulaşın</h2>
                 <p>Lütfen iletişim yönteminizi seçin:</p>
-                
+
                 <div class="contact-options">
                     <a href="tel:05337356443" class="contact-option phone-option">
                         <i class="bi bi-telephone-fill"></i>
                         <span>Telefonla Ara</span>
                         <p>05337356443</p>
                     </a>
-                    
+
                     <a href="https://wa.me/905337356443" target="_blank" class="contact-option whatsapp-option">
                         <i class="bi bi-whatsapp"></i>
                         <span>WhatsApp</span>
@@ -397,7 +486,8 @@
 
         <div class="contact" id="contact">
             <div><i class="bi bi-house"></i>
-                <a href="https://www.google.com/maps/search/Cumhuriyet+Mh,+Atatürk+Blv.+Yanyolu+No:41,+64200+Uşak+Merkez/Uşak" target="_blank">Cumhuriyet Mh, Atatürk Blv. Yanyolu No:41, 64200 Uşak Merkez/Uşak</a>
+                <a href="https://www.google.com/maps/search/Cumhuriyet+Mh,+Atatürk+Blv.+Yanyolu+No:41,+64200+Uşak+Merkez/Uşak"
+                    target="_blank">Cumhuriyet Mh, Atatürk Blv. Yanyolu No:41, 64200 Uşak Merkez/Uşak</a>
             </div>
             <div><i class="bi bi-envelope"></i>
                 <a href="mailto:usakcozumilaclama@yandex.com">usakcozumilaclama@yandex.com</a>
