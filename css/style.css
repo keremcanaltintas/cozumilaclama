@@ -616,19 +616,26 @@ section.services .services-content .pest-info p {
   }
   section.services .services-content .services-gallery .carousel-container {
     max-width: 100%;
-    gap: 1rem;
+    gap: 0.8rem;
+    padding: 0 1rem;
   }
   section.services .services-content .services-gallery .carousel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
   }
   section.services .services-content .services-gallery .carousel-btn i {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   section.services .services-content .services-gallery .carousel-image-wrapper {
-    max-width: 600px;
-    min-height: 450px;
+    max-width: 100%;
+    min-height: 300px;
+  }
+  section.services .services-content .services-gallery .carousel-indicators {
+    margin-top: 1.5rem;
+  }
+  section.services .services-content .services-gallery .carousel-indicators #imageCounter {
+    font-size: 0.9rem;
   }
 }
 .glide {
