@@ -861,6 +861,64 @@ a {
   cursor: pointer;
 }
 
+/* WhatsApp Live Support Button */
+.whatsappIconLink {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  background-color: #25D366;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.whatsappIconLink:hover {
+  background-color: #20BA5A;
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+.whatsappIconLink:active {
+  transform: scale(0.95);
+}
+
+.whatsappIconLink i {
+  font-size: 1.3rem;
+}
+
+.whatsappIconLink span {
+  font-size: 0.95rem;
+}
+
+@media screen and (max-width: 600px) {
+  .whatsappIconLink {
+    padding: 0.6rem 1rem;
+    gap: 0.6rem;
+    bottom: 80px;
+    right: 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .whatsappIconLink i {
+    font-size: 1.1rem;
+  }
+  
+  .whatsappIconLink span {
+    font-size: 0.8rem;
+  }
+}
+
 button#scrollButton {
   border: 0;
   outline: 0;
