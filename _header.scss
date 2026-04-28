@@ -185,11 +185,12 @@ header {
 
 
         .nav-top {
+            display: none !important;
             flex-direction: column;
             margin-top: 1rem;
 
             .nav-top-left {
-                display: none;
+                display: none !important;
             }
 
             .nav-top-right {
