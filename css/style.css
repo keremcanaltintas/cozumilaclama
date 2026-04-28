@@ -129,49 +129,10 @@ header nav ul li a {
 header nav ul li a:hover {
   border-bottom: 1px solid #1D976C;
 }
-/* Desktop: show framed navbar across full width */
+
+/* restore default: hide navbar on desktop (original state) */
 header .navbar {
-  display: block;
-  width: 100%;
-  background-color: white !important;
-  padding: 0;
-  margin-top: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-header .navbar .navbar-brand img {
-  width: 110px;
-  margin-left: 1rem;
-}
-
-header .navbar .navbar-collapse {
-  display: flex !important;
-  overflow: visible;
-}
-
-header .navbar .navbar-nav {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  padding: 1rem 2rem;
-  width: 100%;
-  justify-content: flex-start;
-}
-
-header .navbar .navbar-nav li a {
-  border: 2px solid #1D976C;
-  padding: 0.6rem 1.2rem;
-  border-radius: 0.5rem;
-  color: #1D976C;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: all 0.25s ease;
-}
-
-header .navbar .navbar-nav li a:hover,
-header .navbar .navbar-nav li a.active {
-  background-color: #1D976C;
-  color: white;
+  display: none;
 }
 
 @media screen and (max-width: 1012px) {
