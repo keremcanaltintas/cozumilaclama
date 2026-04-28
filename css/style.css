@@ -167,13 +167,37 @@ header .navbar {
   }
   header .navbar .navbar-toggler {
     border: 0;
+    display: none;
+  }
+  header .navbar .navbar-collapse {
+    display: flex !important;
   }
   header .navbar .navbar-nav {
     gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+  }
+  header .navbar .navbar-nav::-webkit-scrollbar {
+    height: 4px;
+  }
+  header .navbar .navbar-nav::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  header .navbar .navbar-nav::-webkit-scrollbar-thumb {
+    background: #1D976C;
+    border-radius: 4px;
   }
   header .navbar .navbar-nav li {
     margin: 0;
     padding: 0;
+    flex-shrink: 0;
   }
   header .navbar .navbar-nav li a:hover {
     border-bottom: 0;
