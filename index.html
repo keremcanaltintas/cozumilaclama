@@ -146,12 +146,12 @@
             </h2>
 
             <div class="comparison-tabs">
-                <button class="tab-btn" id="tab-other" onclick="switchTab('other')">Diğer Firmalar</button>
-                <button class="tab-btn active" id="tab-us" onclick="switchTab('us')">Uşak Çözüm İlaçlama</button>
+                <button class="tab-btn active" id="tab-other" onclick="switchTab('other')">Diğer Firmalar</button>
+                <button class="tab-btn" id="tab-us" onclick="switchTab('us')">Uşak Çözüm İlaçlama</button>
             </div>
 
             <!-- Diğer Firmalar İçeriği -->
-            <div class="comparison-grid" id="grid-other" style="display: none;">
+            <div class="comparison-grid" id="grid-other">
                 <div class="comp-box other-box">
                     <i class="bi bi-x-circle-fill"></i>
                     <p>Geri bildirim sunulmuyor mu?</p>
@@ -179,7 +179,7 @@
             </div>
 
             <!-- Uşak Çözüm İlaçlama İçeriği -->
-            <div class="comparison-grid" id="grid-us">
+            <div class="comparison-grid" id="grid-us" style="display: none;">
                 <div class="comp-box us-box">
                     <i class="bi bi-check-circle-fill"></i>
                     <p>Etkili iletişim</p>
