@@ -18,9 +18,10 @@ header {
             @include flex;
 
             img {
-                width: 300px;
-                object-fit: cover;
-                margin-bottom: 1.3rem;
+                width: 100%;
+                max-width: 220px;
+                object-fit: contain;
+                margin-bottom: 0;
             }
         }
 
@@ -37,14 +38,15 @@ header {
             background: linear-gradient(to right, #93F9B9, #1D976C);
             /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-            padding: 2.5rem 2rem;
+            padding: 1rem 2rem;
             
             ul {
                 margin: 0 auto;
             }
 
             .right-logo img {
-                width: 150px;
+                width: 100%;
+                max-width: 110px;
                 object-fit: contain;
             }
 
