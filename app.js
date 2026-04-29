@@ -33,11 +33,11 @@ function changePlace() {
         placesNameEl.textContent = places[currentPlaceIndex];
         // Fade in
         placesNameEl.style.opacity = 1;
-    }, 500); // Wait for fade out to complete before changing text and fading back in
+    }, 600); // Wait for fade out to complete (with safety margin) before changing text
 }
 
 if (placesNameEl) {
-    setInterval(changePlace, 2500); // 2.5 seconds per word
+    setInterval(changePlace, 3000); // 3 seconds per word for slower reading and less overlap
 }
 
 
