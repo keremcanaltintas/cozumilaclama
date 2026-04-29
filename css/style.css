@@ -330,11 +330,15 @@ header .navbar {
 }
 
 .hero-content h2 {
-  color: white;
+  color: #3ac091;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.6;
   margin: 0;
+  padding: 0.8rem 2rem;
+  border: 2px solid #3ac091;
+  border-radius: 8px;
+  background-color: rgba(58, 192, 145, 0.1);
 }
 
 .hero-content .scroll-btn {
