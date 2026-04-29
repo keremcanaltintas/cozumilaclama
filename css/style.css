@@ -375,9 +375,11 @@ header .navbar {
   .hero-content {
     padding: 2rem;
   }
+
   .hero-content h2 {
     font-size: 1.2rem;
   }
+
   .hero-content .scroll-btn {
     width: 50px;
     height: 50px;
@@ -1384,11 +1386,11 @@ button#scrollButton i {
 }
 
 .other-box {
-  border-left-color: #0b4a34;
+  border-left-color: #464747;
 }
 
 .other-box i {
-  color: #0b4a34;
+  color: #434443;
   font-size: 1.5rem;
 }
 
