@@ -19,7 +19,7 @@ header {
 
             img {
                 width: 100%;
-                max-width: 220px;
+                max-width: 160px;
                 object-fit: contain;
                 margin-bottom: 0;
             }
@@ -38,7 +38,7 @@ header {
             background: linear-gradient(to right, #93F9B9, #1D976C);
             /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-            padding: 1rem 2rem;
+            padding: 0.5rem 2rem;
             
             ul {
                 margin: 0 auto;
@@ -46,7 +46,7 @@ header {
 
             .right-logo img {
                 width: 100%;
-                max-width: 110px;
+                max-width: 80px;
                 object-fit: contain;
             }
 
