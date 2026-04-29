@@ -17,6 +17,29 @@ function displayNextBug() {
   
   setInterval(displayNextBug, 2000);
 
+// Animated Places in Hero Section
+const placesNameEl = document.querySelector('#animated-places');
+const places = ['EVLER', 'MAĞAZALAR', 'DEPOLAR', 'YAŞAM ALANLARI', 'PARKLAR', 'VE DAHA ÇOKLARI'];
+let currentPlaceIndex = 0;
+
+function changePlace() {
+    if (!placesNameEl) return;
+    
+    // Fade out
+    placesNameEl.style.opacity = 0;
+    
+    setTimeout(() => {
+        currentPlaceIndex = (currentPlaceIndex + 1) % places.length;
+        placesNameEl.textContent = places[currentPlaceIndex];
+        // Fade in
+        placesNameEl.style.opacity = 1;
+    }, 500); // Wait for fade out to complete before changing text and fading back in
+}
+
+if (placesNameEl) {
+    setInterval(changePlace, 2500); // 2.5 seconds per word
+}
+
 
 //button scroll top
 
