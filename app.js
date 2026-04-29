@@ -9,7 +9,9 @@ let bugs = ["Hamamböceği",'Pire','Karasinek','Fare ve Sıçan',"Tahtakurusu",'
 let currentIndex = 0;
 
 function displayNextBug() {
-    bugsNameEl.textContent = bugs[currentIndex];
+    if (bugsNameEl) {
+        bugsNameEl.textContent = bugs[currentIndex];
+    }
     currentIndex = (currentIndex + 1) % bugs.length;
   }
   
