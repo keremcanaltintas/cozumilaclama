@@ -1,7 +1,9 @@
 @use "mixins" as *;
 @use "header";
+@use "hero";
 @use "bgImage";
 @use "aboutUs";
+@use "comparison";
 @use "bugses";
 @use "services";
 @use "references";
@@ -12,10 +14,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-
 }
-
-
 
 a {
     text-decoration: none;
@@ -70,15 +69,11 @@ a {
 
     &:hover .circle {
         background-color: $main-color2;
-
     }
 
     &:hover .circle i {
         color: white;
-
     }
-
-
 
     .circle {
         width: 90px;
@@ -107,15 +102,13 @@ a {
         -webkit-transition: all 500ms ease-in-out;
         -moz-transition: all 500ms ease-in-out;
         -ms-transition: all 500ms ease-in-out;
-        -o-transition: all 500ms ease-in-out;
-
+        -o-transform: translateX(50%);
 
         i {
             font-size: 2rem;
             color: $main-color2;
         }
     }
-
 
     h2 {
         font-size: 1.3rem;
@@ -127,12 +120,9 @@ a {
         font-weight: 300;
         color: grey;
     }
-
-
 }
 
 //WhatsApp
-
 .wp {
     position: fixed;
     bottom: 8rem;
@@ -140,36 +130,4 @@ a {
     font-size: 3rem;
     color: green;
     cursor: pointer;
-}
-
-//scrollButton
-button#scrollButton {
-    border: 0;
-    outline: 0;
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-    border-radius: 50%;
-    background-color: transparent;
-    @include flex();
-
-    position: fixed;
-    bottom: 4rem;
-    right: 2rem;
-
-
-
-    &:hover {
-        cursor: pointer;
-        background-color: black;
-
-        i {
-            color: white;
-        }
-    }
-
-    i {
-        font-size: 2rem;
-        color: black;
-    }
 }
