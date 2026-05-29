@@ -9,11 +9,36 @@ let bugs = ["Hamamböceği",'Pire','Karasinek','Fare ve Sıçan',"Tahtakurusu",'
 let currentIndex = 0;
 
 function displayNextBug() {
-    bugsNameEl.textContent = bugs[currentIndex];
+    if (bugsNameEl) {
+        bugsNameEl.textContent = bugs[currentIndex];
+    }
     currentIndex = (currentIndex + 1) % bugs.length;
   }
   
   setInterval(displayNextBug, 2000);
+
+// Animated Places in Hero Section
+const placesNameEl = document.querySelector('#animated-places');
+const places = ['EVLER', 'MAĞAZALAR', 'DEPOLAR', 'YAŞAM ALANLARI', 'PARKLAR', 'VE DAHA ÇOKLARI'];
+let currentPlaceIndex = 0;
+
+function changePlace() {
+    if (!placesNameEl) return;
+    
+    // Fade out
+    placesNameEl.style.opacity = 0;
+    
+    setTimeout(() => {
+        currentPlaceIndex = (currentPlaceIndex + 1) % places.length;
+        placesNameEl.textContent = places[currentPlaceIndex];
+        // Fade in
+        placesNameEl.style.opacity = 1;
+    }, 600); // Wait for fade out to complete (with safety margin) before changing text
+}
+
+if (placesNameEl) {
+    setInterval(changePlace, 3000); // 3 seconds per word for slower reading and less overlap
+}
 
 
 //button scroll top
@@ -97,180 +122,119 @@ window.addEventListener('click', function(event) {
   }
 });
 
-
-// Partners-Futuristic Slide Controller
+// Interactive Showcase Carousel Controller (Flat Deck Style)
 document.addEventListener('DOMContentLoaded', () => {
-    const partnersData = [
-        {
-            title: "Sağlık Bakanlığı Onaylı",
-            desc: "Kullandığımız tüm ürünler T.C. Sağlık Bakanlığı ve DSÖ (WHO) tarafından onaylı, çevre ve insan sağlığına zararsız biyosidal ürünlerdir.",
-            badge: "SAĞLIK STANDARTLARI",
-            tag: "T.C. Sağlık Bakanlığı & DSÖ",
-            color: "#1D976C" // Main green
-        },
-        {
-            title: "Garantili Hizmet",
-            desc: "%100 müşteri memnuniyeti odağıyla, haşere ve kemirgen problemleriniz çözülene kadar garantili ilaçlama desteği sunuyoruz.",
-            badge: "MEMNUNİYET GARANTİSİ",
-            tag: "%100 Müşteri Memnuniyeti",
-            color: "#18bc9c" // Teal
-        },
-        {
-            title: "Uzman ve Sertifikalı Kadro",
-            desc: "Uygulamalarımız, alanında uzman, sertifikalı ve periyodik eğitimlerden geçen profesyonel teknisyenlerimiz tarafından gerçekleştirilir.",
-            badge: "EĞİTİMLİ EKİP",
-            tag: "Sertifikalı Teknisyenler",
-            color: "#2c3e50" // Slate
-        },
-        {
-            title: "Kokusuz & Güvenli Uygulama",
-            desc: "Yaşam alanlarınızı terk etmenize gerek kalmadan, günlük rutininizi bozmayan kokusuz ve modern jel/sıvı ilaçlama yöntemleri.",
-            badge: "GÜVENLİ İLAÇLAMA",
-            tag: "Modern Jel/Sıvı Yöntemler",
-            color: "#3498db" // Blue
-        },
-        {
-            title: "7/24 Acil Müdahale",
-            desc: "Uşak ve çevresinde haşere istilalarına karşı esnek çalışma saatlerimizle dilediğiniz an hızlı ve kesin çözümler üretiyoruz.",
-            badge: "7/24 ACİL SERVİS",
-            tag: "Uşak ve Çevresi",
-            color: "#2ecc71" // Green
-        }
-    ];
+    const section = document.querySelector('.interactive-showcase-section');
+    if (!section) return; // Exit if component is not present on this page
 
-    let currentPage = 0;
+    const cards = section.querySelectorAll('.img-item');
+    const titles = section.querySelectorAll('.showcase-title');
+    const infos = section.querySelectorAll('.info-item');
+    const prevBtn = document.getElementById('pfShowcasePrev');
+    const nextBtn = document.getElementById('pfShowcaseNext');
+    const glowOrb = document.getElementById('pfShowcaseGlow');
+
+    const colors = ["#1D976C", "#18bc9c", "#2c3e50", "#3498db", "#e74c3c"];
+    let activeIndex = 0;
+    const N = cards.length;
     let autoPlayTimer = null;
-    const duration = 7000; // 7 seconds
-
-    const railItems = document.querySelectorAll('.pf-rail-item');
-    const glowOrb = document.getElementById('pfGlowOrb');
-    const cardLogo = document.getElementById('pfCardLogo');
-    const cardLogoBox = document.getElementById('pfCardLogoBox');
-    const cardTitle = document.getElementById('pfCardTitle');
-    const cardDesc = document.getElementById('pfCardDesc');
-    const cardTag = document.getElementById('pfCardTag');
-    const counterCurrent = document.getElementById('pfCounterCurrent');
-    const headerHighlight = document.getElementById('pf-header-highlight');
-    const pfCard = document.getElementById('pfCard');
-
-    if (!pfCard) return; // Exit if component is not present on current page
+    const autoPlayDelay = 5000;
 
     function updateShowcase(index) {
-        const item = partnersData[index];
-        
-        // Remove active class from all rail items
-        railItems.forEach((btn) => {
-            btn.classList.remove('pf-rail-active');
+        activeIndex = (index + N) % N;
+
+        // Update cards classes dynamically for the parallel Flat Deck transition
+        cards.forEach((card, i) => {
+            card.classList.remove('active', 'prev', 'next', 'hidden-left', 'hidden-right');
             
-            // Clean up custom styling from previous states
-            const logoWrap = btn.querySelector('.pf-rail-logo-wrap');
-            const railName = btn.querySelector('.pf-rail-name');
-            const progress = btn.querySelector('.pf-rail-progress');
-            
-            logoWrap.style.borderColor = '';
-            logoWrap.style.boxShadow = '';
-            railName.style.color = '';
-            if (progress) {
-                progress.style.backgroundColor = '';
-                progress.style.transform = 'scaleX(0)';
-                progress.style.transition = 'none';
+            if (i === activeIndex) {
+                card.classList.add('active');
+            } else if (i === (activeIndex + 1) % N) {
+                card.classList.add('next');
+            } else if (i === (activeIndex - 1 + N) % N) {
+                card.classList.add('prev');
+            } else if (i === (activeIndex + 2) % N) {
+                card.classList.add('hidden-right');
+            } else {
+                card.classList.add('hidden-left');
             }
         });
 
-        // Set active rail item
-        const activeBtn = railItems[index];
-        activeBtn.classList.add('pf-rail-active');
-        
-        const logoWrap = activeBtn.querySelector('.pf-rail-logo-wrap');
-        const railName = activeBtn.querySelector('.pf-rail-name');
-        const progress = activeBtn.querySelector('.pf-rail-progress');
-        
-        logoWrap.style.borderColor = item.color;
-        logoWrap.style.boxShadow = `0 10px 25px -5px ${item.color}25, inset 0 0 15px ${item.color}05`;
-        railName.style.color = '#0f172a';
-        
-        if (progress) {
-            progress.style.backgroundColor = item.color;
-            // Trigger progress animation
-            progress.style.transition = 'none';
-            progress.style.transform = 'scaleX(0)';
-            // Force reflow
-            progress.offsetHeight;
-            progress.style.transition = `transform ${duration}ms linear`;
-            progress.style.transform = 'scaleX(1)';
+        // Update showcase titles
+        titles.forEach((title, i) => {
+            if (i === activeIndex) {
+                title.classList.remove('inactive');
+                title.classList.add('active');
+            } else {
+                title.classList.remove('active');
+                title.classList.add('inactive');
+            }
+        });
+
+        // Update detail info items (triggering the clip-path staggered reveal)
+        infos.forEach((info, i) => {
+            if (i === activeIndex) {
+                info.classList.remove('inactive');
+                info.classList.add('active');
+            } else {
+                info.classList.remove('active');
+                info.classList.add('inactive');
+            }
+        });
+
+        // Update active brand theme color
+        const activeColor = colors[activeIndex] || '#1D976C';
+        section.style.setProperty('--brand-color', activeColor);
+        if (glowOrb) {
+            glowOrb.style.background = `radial-gradient(circle, ${activeColor}0d 0%, transparent 70%)`;
         }
-
-        // Update Glow Orb color
-        glowOrb.style.background = `radial-gradient(circle, ${item.color}0d 0%, transparent 70%)`;
-
-        // Update Title Highlight Color
-        if (headerHighlight) {
-            headerHighlight.style.color = item.color;
-        }
-
-        // Add fade-out transition to card content, then change content and fade-in
-        const cardRight = document.querySelector('.pf-card-right');
-        if (cardRight) {
-            cardRight.classList.remove('pf-fade-in-up');
-            // Force reflow
-            cardRight.offsetHeight;
-            
-            // Update contents
-            cardLogo.src = `images/brands/brand${index + 1}.png`;
-            cardLogo.alt = item.title;
-            cardLogoBox.style.boxShadow = `0 0 30px ${item.color}30`;
-            
-            counterCurrent.textContent = String(index + 1).padStart(2, '0');
-            cardTitle.textContent = item.title;
-            cardDesc.textContent = item.desc;
-            cardTag.textContent = item.tag;
-            cardTag.style.borderColor = `${item.color}40`;
-            cardTag.style.color = item.color;
-            
-            // Update card CSS variables for conic gradient border and glow shadow
-            pfCard.style.setProperty('--border-gradient', `conic-gradient(from 180deg, transparent, ${item.color} 40%, transparent 60%, ${item.color} 90%, transparent 100%)`);
-            pfCard.style.setProperty('--card-glow-shadow', `0 20px 60px -10px ${item.color}15, 0 10px 30px -10px rgba(15, 23, 42, 0.04)`);
-            
-            cardRight.classList.add('pf-fade-in-up');
-        }
-
-        currentPage = index;
     }
 
     function startAutoPlay() {
         stopAutoPlay();
-        autoPlayTimer = setTimeout(() => {
-            let next = (currentPage + 1) % partnersData.length;
-            updateShowcase(next);
-            startAutoPlay();
-        }, duration);
+        autoPlayTimer = setInterval(() => {
+            updateShowcase(activeIndex + 1);
+        }, autoPlayDelay);
     }
 
     function stopAutoPlay() {
         if (autoPlayTimer) {
-            clearTimeout(autoPlayTimer);
+            clearInterval(autoPlayTimer);
         }
     }
 
-    // Attach click listeners to rail items
-    railItems.forEach((btn) => {
-        btn.addEventListener('click', () => {
-            const index = parseInt(btn.getAttribute('data-index'));
-            updateShowcase(index);
-            startAutoPlay(); // Restart timer
-        });
-    });
-
-    // Support card click to go next
-    if (pfCard) {
-        pfCard.addEventListener('click', () => {
-            let next = (currentPage + 1) % partnersData.length;
-            updateShowcase(next);
-            startAutoPlay();
+    // Manual navigation buttons
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            updateShowcase(activeIndex - 1);
+            startAutoPlay(); // Reset auto-play countdown
         });
     }
 
-    // Initialize first page
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            updateShowcase(activeIndex + 1);
+            startAutoPlay(); // Reset auto-play countdown
+        });
+    }
+
+    // Direct card click support to navigate
+    cards.forEach((card, i) => {
+        card.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (i === activeIndex) {
+                // Clicking the active card advances the showcase
+                updateShowcase(activeIndex + 1);
+            } else {
+                updateShowcase(i);
+            }
+            startAutoPlay(); // Reset auto-play countdown
+        });
+    });
+
+    // Initialize the carousel
     updateShowcase(0);
     startAutoPlay();
 });

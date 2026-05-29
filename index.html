@@ -8,8 +8,7 @@
         content="Ev ve iş yerlerinde etkili böcek ilaçlama hizmetleri sunan uzman ekiplerimizle, böcek sorunlarınızı kalıcı olarak çözüyoruz. Güvenilir ve çevre dostu yöntemlerimizle yaşam alanlarınızı sağlıklı hale getiriyoruz. Hemen bize ulaşın ve böceklerle mücadelede profesyonel yardım alın.">
     <title>Çözüm İlaçlama</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -48,13 +47,13 @@
                         </a></li>
                     <li><a href="#bugses">Haşereler ve Böcekler
                             <ul class="dropdown-list">
-                                <li><i class="bi bi-bug"></i><a href="#bugses">Kene</a></li>
-                                <li><i class="bi bi-bug"></i><a href="#bugses">Hamam Böceği</a></li>
-                                <li><i class="bi bi-bug"></i><a href="">Kara Sinek</a></li>
-                                <li><i class="bi bi-bug"></i><a href="#bugses">Pire</a></li>
-                                <li><i class="bi bi-bug"></i><a href="#bugses">Tahtakurusu</a></li>
-                                <li><i class="bi bi-bug"></i><a href="">Fare ve Sıçan</a></li>
-                                <li><i class="bi bi-bug"></i><a href="">Ve Daha Fazlası...</a></li>
+                                <li><a href="#bugses"><i class="bi bi-bug"></i> Kene</a></li>
+                                <li><a href="#bugses"><i class="bi bi-bug"></i> Hamam Böceği</a></li>
+                                <li><a href=""><i class="bi bi-bug"></i> Kara Sinek</a></li>
+                                <li><a href="#bugses"><i class="bi bi-bug"></i> Pire</a></li>
+                                <li><a href="#bugses"><i class="bi bi-bug"></i> Tahtakurusu</a></li>
+                                <li><a href=""><i class="bi bi-bug"></i> Fare ve Sıçan</a></li>
+                                <li><a href=""><i class="bi bi-bug"></i> Ve Daha Fazlası...</a></li>
                             </ul>
                         </a></li>
                     <li><a href="#references">Referanslar
@@ -75,6 +74,9 @@
                         </a></li>
                     <li><a href="javascript:void(0);" onclick="openContactModal()">Bize Ulaşın</a></li>
                 </ul>
+                <div class="right-logo">
+                    <img src="images/ilaclamaResimler/logo-2.png" alt="logo 2">
+                </div>
             </div>
         </div>
 
@@ -110,15 +112,19 @@
         </nav>
     </header>
 
-    <section class="bgImage">
-        <div class="text">
-            <h1>UŞAK <span style="color: #3ac091;">ÇÖZÜM İLAÇLAMA</span> İLE</h1>
-            <span>YAŞAM ALANINIZI</span>
-            <span id="bug-name">Tahtakurusu</span>
-
-            <div class="sub-text">
-                <span class="small-text">GİBİ HAŞERE VE BÖCEKLERDEN</span> <span>KORUYUN !</span>
-            </div>
+    <section class="hero-section">
+        <video autoplay loop muted playsinline>
+            <source src="./images/ilaclama-hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-green">ÇÖZÜM İLAÇLAMA OLARAK</h1>
+            <p class="hero-paragraph">Haşereleri ortadan kaldırıyoruz.</p>
+            <h2 id="animated-places" class="animated-box" style="transition: opacity 0.4s ease-in-out;">EVLER</h2>
+            <a href="#aboutus" class="scroll-btn">
+                <i class="bi bi-arrow-down"></i>
+            </a>
+            <p class="hero-small-text">Haşerelerle nasıl başa çıkacağınızı öğrenin.</p>
         </div>
     </section>
 
@@ -131,6 +137,76 @@
             <p>Son teknoloji ekıpmanlarımız ile doğaya ve evcil hayvanlarınıza zarar vermeden <br> hızlı haşere
                 temizleme
                 tekniklerimiz ile tek seferde sonuca ulaşmaktayız.</p>
+        </div>
+
+        <div class="comparison-container" id="comparison" data-aos="fade-up"
+            style="margin: 0 auto; padding: 2rem 1rem 4rem 1rem;">
+            <h2 class="comparison-title">Merak Ediyorsanız - Neden <span class="highlight">Uşak Çözüm İlaçlama?</span>
+            </h2>
+
+            <div class="comparison-tabs">
+                <button class="tab-btn active" id="tab-other" onclick="switchTab('other')">Diğer Firmalar</button>
+                <button class="tab-btn" id="tab-us" onclick="switchTab('us')">Uşak Çözüm İlaçlama</button>
+            </div>
+
+            <!-- Diğer Firmalar İçeriği -->
+            <div class="comparison-grid" id="grid-other">
+                <div class="comp-box other-box">
+                    <i class="bi bi-x-circle-fill"></i>
+                    <p>Geri bildirim sunulmuyor mu?</p>
+                </div>
+                <div class="comp-box other-box">
+                    <i class="bi bi-x-circle-fill"></i>
+                    <p>Büyük sözler - sıfır sonuç?</p>
+                </div>
+                <div class="comp-box other-box">
+                    <i class="bi bi-x-circle-fill"></i>
+                    <p>Yapılan iş için garanti yok mu?</p>
+                </div>
+                <div class="comp-box other-box">
+                    <i class="bi bi-x-circle-fill"></i>
+                    <p>Zaman ve para tasarrufu sağlamıyor mu?</p>
+                </div>
+                <div class="comp-box other-box">
+                    <i class="bi bi-x-circle-fill"></i>
+                    <p>Kaliteli iş yapılmıyor mu?</p>
+                </div>
+                <div class="comp-box other-box">
+                    <i class="bi bi-x-circle-fill"></i>
+                    <p>Müşteri hizmeti iyi değil mi?</p>
+                </div>
+            </div>
+
+            <!-- Uşak Çözüm İlaçlama İçeriği -->
+            <div class="comparison-grid" id="grid-us" style="display: none;">
+                <div class="comp-box us-box">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>Etkili iletişim</p>
+                </div>
+                <div class="comp-box us-box">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>Kaliteli işçilik</p>
+                </div>
+                <div class="comp-box us-box">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>Garanti sonuçlar</p>
+                </div>
+                <div class="comp-box us-box">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>Zaman ve para tasarrufu</p>
+                </div>
+                <div class="comp-box us-box">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>Yüksek kaliteli ürünler</p>
+                </div>
+                <div class="comp-box us-box">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>Olağanüstü hizmet</p>
+                </div>
+            </div>
+
+            <a href="javascript:void(0);" onclick="openContactModal()" class="comp-contact-btn">Bize Ulaşın <i
+                    class="bi bi-chevron-right"></i></a>
         </div>
 
         <div class="aboutUs-content">
@@ -180,6 +256,27 @@
         <img class="bg1" src="/images/bgImages/ilaclama2.png" alt="">
     </section>
 
+    <script>
+        function switchTab(tab) {
+            const btnOther = document.getElementById('tab-other');
+            const btnUs = document.getElementById('tab-us');
+            const gridOther = document.getElementById('grid-other');
+            const gridUs = document.getElementById('grid-us');
+
+            if (tab === 'other') {
+                btnOther.classList.add('active');
+                btnUs.classList.remove('active');
+                gridOther.style.display = 'grid';
+                gridUs.style.display = 'none';
+            } else {
+                btnUs.classList.add('active');
+                btnOther.classList.remove('active');
+                gridUs.style.display = 'grid';
+                gridOther.style.display = 'none';
+            }
+        }
+    </script>
+
     <section class="services" id="services">
         <div class="div-title">
             <h3><i class="bi bi-chevron-double-left"></i>Hizmetlerimiz<i class="bi bi-chevron-double-right"></i>
@@ -227,20 +324,18 @@
                     <button class="carousel-btn carousel-btn-left" id="prevBtn">
                         <i class="bi bi-chevron-left"></i>
                     </button>
-                    
+
                     <div class="carousel-image-wrapper">
-                        <img id="carouselImage" 
+                        <img id="carouselImage"
                             src="/images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.39 (1).jpeg"
-                            class="carousel-image" 
-                            title="uşak çözüm ilaçlama"
-                            alt="uşak çözüm ilaçlama" />
+                            class="carousel-image" title="uşak çözüm ilaçlama" alt="uşak çözüm ilaçlama" />
                     </div>
-                    
+
                     <button class="carousel-btn carousel-btn-right" id="nextBtn">
                         <i class="bi bi-chevron-right"></i>
                     </button>
                 </div>
-                
+
                 <div class="carousel-indicators">
                     <span id="imageCounter">1 / 6</span>
                 </div>
@@ -321,91 +416,113 @@
         <img src="/images/bgImages/ilaclama3.png" alt="uşak-çözüm-ilaçlama" class="bg2">
     </section>
 
-    <section id="references" class="partners-futuristic">
-        <!-- Animated grid background -->
-        <div class="pf-grid-bg">
-            <div class="pf-grid-line pf-grid-h1"><div class="pf-grid-pulse-h"></div></div>
-            <div class="pf-grid-line pf-grid-h2"><div class="pf-grid-pulse-h"></div></div>
-            <div class="pf-grid-line pf-grid-h3"><div class="pf-grid-pulse-h"></div></div>
-            <div class="pf-grid-line pf-grid-v1"><div class="pf-grid-pulse-v"></div></div>
-            <div class="pf-grid-line pf-grid-v2"><div class="pf-grid-pulse-v"></div></div>
-            <div class="pf-grid-line pf-grid-v3"><div class="pf-grid-pulse-v"></div></div>
-        </div>
+    <section id="references" class="interactive-showcase-section" style="--brand-color: #1D976C;">
+        <div class="bg-base"></div>
+        <div class="bg-brand-glow" id="pfShowcaseGlow"></div>
+        <div class="bg-mask"></div>
 
-        <!-- Glowing orb -->
-        <div class="pf-glow-orb" id="pfGlowOrb"></div>
-
-        <div class="container">
-            <!-- Header -->
-            <div class="pf-header" data-aos="fade-up">
-                <div class="pf-badge">
-                    <span class="pf-badge-dot"></span>
-                    ORTAKLARIMIZ & STANDARTLARIMIZ
+        <div class="carousel">
+            <!-- Left Column: Image Deck -->
+            <div class="showcase-left-col" data-aos="fade-up">
+                <div class="img-box" id="pfShowcaseImgBox">
+                    <!-- Card 1 -->
+                    <div class="img-item active" style="--item-brand-color: #1D976C;" data-index="0">
+                        <div class="brand-logo-wrap">
+                            <img src="images/brands/b1.jpeg" alt="Sağlık Bakanlığı Onaylı" class="brand-logo-img">
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="img-item next" style="--item-brand-color: #18bc9c;" data-index="1">
+                        <div class="brand-logo-wrap">
+                            <img src="images/brands/b2.jpeg" alt="Garantili Hizmet" class="brand-logo-img">
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="img-item hidden-right" style="--item-brand-color: #2c3e50;" data-index="2">
+                        <div class="brand-logo-wrap">
+                            <img src="images/brands/b10.png" alt="Uzman Kadro" class="brand-logo-img">
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="img-item hidden-right" style="--item-brand-color: #3498db;" data-index="3">
+                        <div class="brand-logo-wrap">
+                            <img src="images/brands/b4.jpeg" alt="Kokusuz Uygulama" class="brand-logo-img">
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="img-item prev" style="--item-brand-color: #e74c3c;" data-index="4">
+                        <div class="brand-logo-wrap">
+                            <img src="images/brands/b12.png" alt="7/24 Acil Müdahale" class="brand-logo-img">
+                        </div>
+                    </div>
                 </div>
-                <h2>Çözüm İlaçlama - <span id="pf-header-highlight">Ortaklarımız & Standartlarımız</span></h2>
-                <p>T.C. Sağlık Bakanlığı onaylı ürünlerimiz ve uzman kadromuzla yaşam alanlarınız için en yüksek standartlarda hizmet sunuyoruz.</p>
+
+                <!-- Navigation Arrows below deck -->
+                <div class="navigation static-nav">
+                    <span class="nav-btn prev-btn" id="pfShowcasePrev">
+                        <i class="bi bi-chevron-left"></i>
+                    </span>
+                    <span class="nav-btn next-btn" id="pfShowcaseNext">
+                        <i class="bi bi-chevron-right"></i>
+                    </span>
+                </div>
             </div>
 
-            <!-- Partner Logo Orbit Rail -->
-            <div class="pf-logo-rail" id="pfLogoRail" data-aos="fade-up">
-                <button class="pf-rail-item pf-rail-active" data-index="0">
-                    <div class="pf-rail-logo-wrap">
-                        <img src="images/brands/brand1.png" alt="Sağlık Bakanlığı Onaylı">
-                    </div>
-                    <span class="pf-rail-name">Bakanlık Onaylı</span>
-                    <div class="pf-rail-progress"></div>
-                </button>
-                <button class="pf-rail-item" data-index="1">
-                    <div class="pf-rail-logo-wrap">
-                        <img src="images/brands/brand2.png" alt="Garantili Hizmet">
-                    </div>
-                    <span class="pf-rail-name">Garantili Hizmet</span>
-                    <div class="pf-rail-progress"></div>
-                </button>
-                <button class="pf-rail-item" data-index="2">
-                    <div class="pf-rail-logo-wrap">
-                        <img src="images/brands/brand3.png" alt="Uzman Kadro">
-                    </div>
-                    <span class="pf-rail-name">Uzman Kadro</span>
-                    <div class="pf-rail-progress"></div>
-                </button>
-                <button class="pf-rail-item" data-index="3">
-                    <div class="pf-rail-logo-wrap">
-                        <img src="images/brands/brand4.png" alt="Kokusuz & Güvenli Uygulama">
-                    </div>
-                    <span class="pf-rail-name">Kokusuz & Güvenli</span>
-                    <div class="pf-rail-progress"></div>
-                </button>
-                <button class="pf-rail-item" data-index="4">
-                    <div class="pf-rail-logo-wrap">
-                        <img src="images/brands/brand5.png" alt="7/24 Acil Müdahale">
-                    </div>
-                    <span class="pf-rail-name">7/24 Müdahale</span>
-                    <div class="pf-rail-progress"></div>
-                </button>
+            <!-- Titles Column -->
+            <div class="showcase-header" data-aos="fade-up">
+                <h2 class="showcase-title active" data-index="0">Sağlık Bakanlığı Onaylı Ürünler</h2>
+                <h2 class="showcase-title inactive" data-index="1">Garantili Haşere İlaçlama</h2>
+                <h2 class="showcase-title inactive" data-index="2">Uzman ve Sertifikalı Kadro</h2>
+                <h2 class="showcase-title inactive" data-index="3">Kokusuz & Güvenli Uygulama</h2>
+                <h2 class="showcase-title inactive" data-index="4">7/24 Kesintisiz Hizmet</h2>
             </div>
 
-            <!-- Showcase Card -->
-            <div class="pf-showcase" data-aos="fade-up">
-                <div class="pf-card" id="pfCard">
-                    <div class="pf-card-inner">
-                        <div class="pf-card-left">
-                            <div class="pf-card-logo-box" id="pfCardLogoBox">
-                                <img src="images/brands/brand1.png" alt="Sağlık Bakanlığı Onaylı" id="pfCardLogo">
-                            </div>
-                            <div class="pf-card-counter">
-                                <span class="pf-counter-current" id="pfCounterCurrent">01</span>
-                                <span class="pf-counter-sep">/</span>
-                                <span class="pf-counter-total" id="pfCounterTotal">05</span>
-                            </div>
-                        </div>
-                        <div class="pf-card-right pf-fade-in-up">
-                            <h3 id="pfCardTitle">Sağlık Bakanlığı Onaylı</h3>
-                            <p id="pfCardDesc">Kullandığımız tüm ürünler T.C. Sağlık Bakanlığı ve DSÖ (WHO) tarafından onaylı, çevre ve insan sağlığına zararsız biyosidal ürünlerdir.</p>
-                            <div class="pf-card-tag" id="pfCardTag">T.C. Sağlık Bakanlığı & DSÖ</div>
-                        </div>
+            <!-- Details Info Box -->
+            <div class="info-box" id="pfShowcaseInfoBox" data-aos="fade-up">
+                <!-- Info 1 -->
+                <div class="info-item active" data-index="0">
+                    <div class="brand-badge-wrapper">
+                        <span class="brand-badge">SAĞLIK STANDARTLARI</span>
                     </div>
-                    <div class="pf-scanline"></div>
+                    <h2 class="brand-name">Sağlık Bakanlığı</h2>
+                    <p class="brand-desc">Kullandığımız tüm ürünler T.C. Sağlık Bakanlığı ve DSÖ (WHO) tarafından onaylı, çevre ve insan sağlığına zararsız biyosidal ürünlerdir.</p>
+                    <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+                </div>
+                <!-- Info 2 -->
+                <div class="info-item inactive" data-index="1">
+                    <div class="brand-badge-wrapper">
+                        <span class="brand-badge">MEMNUNİYET GARANTİSİ</span>
+                    </div>
+                    <h2 class="brand-name">Garantili Hizmet</h2>
+                    <p class="brand-desc">%100 müşteri memnuniyeti odağıyla, haşere ve kemirgen problemleriniz çözülene kadar garantili ilaçlama desteği sunuyoruz.</p>
+                    <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+                </div>
+                <!-- Info 3 -->
+                <div class="info-item inactive" data-index="2">
+                    <div class="brand-badge-wrapper">
+                        <span class="brand-badge">EĞİTİMLİ EKİP</span>
+                    </div>
+                    <h2 class="brand-name">Uzman Kadro</h2>
+                    <p class="brand-desc">Uygulamalarımız, alanında uzman, sertifikalı ve periyodik eğitimlerden geçen profesyonel teknisyenlerimiz tarafından gerçekleştirilir.</p>
+                    <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+                </div>
+                <!-- Info 4 -->
+                <div class="info-item inactive" data-index="3">
+                    <div class="brand-badge-wrapper">
+                        <span class="brand-badge">GÜVENLİ İLAÇLAMA</span>
+                    </div>
+                    <h2 class="brand-name">Kokusuz İlaçlama</h2>
+                    <p class="brand-desc">Yaşam alanlarınızı terk etmenize gerek kalmadan, günlük rutininizi bozmayan kokusuz ve modern jel/sıvı ilaçlama yöntemleri.</p>
+                    <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+                </div>
+                <!-- Info 5 -->
+                <div class="info-item inactive" data-index="4">
+                    <div class="brand-badge-wrapper">
+                        <span class="brand-badge">7/24 ACİL SERVİS</span>
+                    </div>
+                    <h2 class="brand-name">7/24 Müdahale</h2>
+                    <p class="brand-desc">Uşak ve çevresinde haşere istilalarına karşı esnek çalışma saatlerimizle dilediğiniz an hızlı ve kesin çözümler üretiyoruz.</p>
+                    <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
                 </div>
             </div>
         </div>
@@ -430,14 +547,14 @@
                 </button>
                 <h2>Bize Ulaşın</h2>
                 <p>Lütfen iletişim yönteminizi seçin:</p>
-                
+
                 <div class="contact-options">
                     <a href="tel:05337356443" class="contact-option phone-option">
                         <i class="bi bi-telephone-fill"></i>
                         <span>Telefonla Ara</span>
                         <p>05337356443</p>
                     </a>
-                    
+
                     <a href="https://wa.me/905337356443" target="_blank" class="contact-option whatsapp-option">
                         <i class="bi bi-whatsapp"></i>
                         <span>WhatsApp</span>
@@ -449,7 +566,8 @@
 
         <div class="contact" id="contact">
             <div><i class="bi bi-house"></i>
-                <a href="https://www.google.com/maps/search/Cumhuriyet+Mh,+Atatürk+Blv.+Yanyolu+No:41,+64200+Uşak+Merkez/Uşak" target="_blank">Cumhuriyet Mh, Atatürk Blv. Yanyolu No:41, 64200 Uşak Merkez/Uşak</a>
+                <a href="https://www.google.com/maps/search/Cumhuriyet+Mh,+Atatürk+Blv.+Yanyolu+No:41,+64200+Uşak+Merkez/Uşak"
+                    target="_blank">Cumhuriyet Mh, Atatürk Blv. Yanyolu No:41, 64200 Uşak Merkez/Uşak</a>
             </div>
             <div><i class="bi bi-envelope"></i>
                 <a href="mailto:usakcozumilaclama@yandex.com">usakcozumilaclama@yandex.com</a>

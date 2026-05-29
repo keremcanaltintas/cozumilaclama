@@ -18,16 +18,19 @@ header {
             @include flex;
 
             img {
-                width: 200px;
-                object-fit: cover;
-                margin-bottom: 1.3rem;
+                width: 100%;
+                max-width: 160px;
+                object-fit: contain;
+                margin-bottom: 0;
             }
         }
 
         .nav-top-right {
-            flex: 2;
-            @include flex(row, center, flex-end);
-            gap: 1rem;
+            flex: 4;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0;
             background: #1D976C;
             /* fallback for old browsers */
             background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);
@@ -35,8 +38,17 @@ header {
             background: linear-gradient(to right, #93F9B9, #1D976C);
             /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+            padding: 0.5rem 2rem;
+            
+            ul {
+                margin: 0 auto;
+            }
 
-            padding: 4rem;
+            .right-logo img {
+                width: 100%;
+                max-width: 80px;
+                object-fit: contain;
+            }
 
             >div {
                 width: 50px;
@@ -185,11 +197,12 @@ header {
 
 
         .nav-top {
+            display: none !important;
             flex-direction: column;
             margin-top: 1rem;
 
             .nav-top-left {
-                display: none;
+                display: none !important;
             }
 
             .nav-top-right {
@@ -212,6 +225,7 @@ header {
             }
 
             .navbar-toggler {
+                display: none !important;
                 border: 0;
             }
 
