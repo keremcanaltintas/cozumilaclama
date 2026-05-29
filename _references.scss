@@ -1,43 +1,486 @@
 @use "mixins" as *;
 
-//REFERENCES
-
-.glide {
+.partners-futuristic {
+    position: relative;
+    padding: 6rem 0;
+    background-color: #ffffff;
+    background-image: radial-gradient(circle, rgba(15, 23, 42, 0.04) 1.2px, transparent 1.2px);
+    background-size: 20px 20px;
     overflow: hidden;
-    text-align: center;
-    padding: 3rem 4rem;
-    margin-bottom: 5rem;
 
-    box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.207);
+    .container {
+        position: relative;
+        z-index: 2;
+    }
 
+    // Animated Grid Background
+    .pf-grid-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
 
-    .glide__slides {
-        @include flex();
-        gap: 8rem;
+        .pf-grid-line {
+            position: absolute;
+            background: rgba(15, 23, 42, 0.015);
+        }
 
-        .glide__slide {
-            width: 150px !important;
-            height: auto;
-            overflow: hidden;
+        .pf-grid-h1, .pf-grid-h2, .pf-grid-h3 {
+            width: 100%;
+            height: 1px;
+        }
 
-            @include flex();
+        .pf-grid-h1 { top: 25%; }
+        .pf-grid-h2 { top: 50%; }
+        .pf-grid-h3 { top: 75%; }
 
-            img {
-                width: 100%;
-                object-fit: cover;
+        .pf-grid-v1, .pf-grid-v2, .pf-grid-v3 {
+            height: 100%;
+            width: 1px;
+        }
+
+        .pf-grid-v1 { left: 20%; }
+        .pf-grid-v2 { left: 50%; }
+        .pf-grid-v3 { left: 80%; }
+
+        .pf-grid-pulse-h {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 30%;
+            height: 1px;
+            animation: gridPulseH 6s linear infinite;
+        }
+
+        .pf-grid-h2 .pf-grid-pulse-h { animation-delay: 2s; }
+        .pf-grid-h3 .pf-grid-pulse-h { animation-delay: 4s; }
+
+        .pf-grid-pulse-v {
+            position: absolute;
+            left: 0;
+            top: -100%;
+            height: 30%;
+            width: 1px;
+            animation: gridPulseV 8s linear infinite;
+        }
+
+        .pf-grid-v2 .pf-grid-pulse-v { animation-delay: 2.5s; }
+        .pf-grid-v3 .pf-grid-pulse-v { animation-delay: 5s; }
+    }
+
+    // Glowing Orb
+    .pf-glow-orb {
+        position: absolute;
+        width: 700px;
+        height: 700px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.5;
+        transition: background 0.8s ease;
+    }
+
+    // Header
+    .pf-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+
+        .pf-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: $main-color2;
+            background: rgba(29, 151, 108, 0.08);
+            border: 1px solid rgba(29, 151, 108, 0.2);
+            padding: 0.5rem 1.25rem;
+            border-radius: 99px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .pf-badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: $main-color2;
+            animation: dotPulse 2s ease-in-out infinite;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+
+            span {
+                transition: color 0.4s ease;
             }
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #475569;
+            line-height: 1.6;
         }
     }
 
+    // Logo Rail
+    .pf-logo-rail {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+
+        .pf-rail-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.75rem 1.25rem;
+            position: relative;
+            transition: all 0.3s ease;
+            min-width: 100px;
+            scale: 0.88;
+
+            &.pf-rail-active {
+                scale: 1.3;
+            }
+
+            &:hover:not(.pf-rail-active) {
+                scale: 1.02;
+            }
+        }
+
+        .pf-rail-logo-wrap {
+            width: 110px;
+            height: 70px;
+            border-radius: 14px;
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 0.8rem;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .pf-rail-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: rgba(15, 23, 42, 0.45);
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .pf-rail-progress {
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            border-radius: 2px;
+            transform-origin: left;
+            transform: scaleX(0);
+        }
+    }
+
+    // Showcase Card
+    .pf-showcase {
+        max-width: 850px;
+        margin: 0 auto;
+        min-height: 250px;
+    }
+
+    .pf-card {
+        position: relative;
+        background: transparent;
+        padding: 2px;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        cursor: pointer;
+        will-change: transform, opacity;
+        box-shadow: var(--card-glow-shadow, 0 10px 30px -10px rgba(15, 23, 42, 0.04));
+        transition: box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 250%;
+            height: 250%;
+            transform: translate(-50%, -50%);
+            background: var(--border-gradient);
+            animation: borderRotate 6s linear infinite;
+            z-index: 0;
+        }
+    }
+
+    .pf-card-inner {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 2.5rem;
+        padding: 2.5rem 3rem;
+        position: relative;
+        z-index: 1;
+        background: #f8fafc;
+        border-radius: calc(1.5rem - 2px);
+        width: 100%;
+        height: 100%;
+    }
+
+    .pf-card-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .pf-card-logo-box {
+        width: 140px;
+        height: 100px;
+        background: #ffffff;
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        transition: box-shadow 0.5s ease;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .pf-card-counter {
+        display: flex;
+        align-items: baseline;
+        gap: 0.25rem;
+    }
+
+    .pf-counter-current {
+        font-size: 2.2rem;
+        font-weight: 800;
+        transition: color 0.4s ease;
+    }
+
+    .pf-counter-sep {
+        font-size: 1.3rem;
+        color: rgba(15, 23, 42, 0.15);
+        font-weight: 300;
+    }
+
+    .pf-counter-total {
+        font-size: 1.1rem;
+        color: rgba(15, 23, 42, 0.35);
+        font-weight: 500;
+    }
+
+    .pf-card-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            color: #0f172a;
+        }
+
+        p {
+            font-size: 1.02rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .pf-card-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.4rem 1rem;
+        border: 1px solid;
+        border-radius: 99px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        width: fit-content;
+        transition: all 0.3s ease;
+    }
+
+    .pf-scanline {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background: repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(15, 23, 42, 0.005) 2px,
+            rgba(15, 23, 42, 0.005) 4px
+        );
+        pointer-events: none;
+        z-index: 3;
+    }
 }
 
-@media screen and (max-width:800px) {
-    .glide {
-        .glide__slides {
-            gap: 1rem !important;
+// Keyframes
+@keyframes gridPulseH {
+    0% { left: -30%; }
+    100% { left: 130%; }
+}
 
-            .glide__slide {
-                width: 100px !important;
+@keyframes gridPulseV {
+    0% { top: -30%; }
+    100% { top: 130%; }
+}
+
+@keyframes dotPulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(29, 151, 108, 0.5); }
+    50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(29, 151, 108, 0); }
+}
+
+@keyframes borderRotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.pf-fade-in-up {
+    animation: pfFadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pfFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Media Queries
+@media (max-width: 1024px) {
+    .partners-futuristic {
+        .pf-logo-rail {
+            gap: 0.5rem;
+
+            .pf-rail-item {
+                min-width: 85px;
+                padding: 0.6rem 0.75rem;
+            }
+
+            .pf-rail-logo-wrap {
+                width: 90px;
+                height: 60px;
+                border-radius: 12px;
+                padding: 0.4rem 0.6rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .partners-futuristic {
+        padding: 4rem 0;
+
+        .pf-header {
+            margin-bottom: 2rem;
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .pf-logo-rail {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            justify-content: flex-start;
+            gap: 0.25rem;
+            padding-bottom: 0.75rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .pf-rail-item {
+                padding: 0.5rem 0.6rem;
+                min-width: auto;
+                flex-shrink: 0;
+            }
+
+            .pf-rail-logo-wrap {
+                width: 76px;
+                height: 50px;
+                border-radius: 10px;
+                padding: 0.35rem 0.5rem;
+            }
+
+            .pf-rail-name {
+                font-size: 0.65rem;
+            }
+        }
+
+        .pf-card-inner {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .pf-card-left {
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 1rem;
+        }
+
+        .pf-card-logo-box {
+            width: 80px;
+            height: 60px;
+        }
+
+        .pf-counter-current {
+            font-size: 1.75rem;
+        }
+
+        .pf-card-right {
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 0.95rem;
             }
         }
     }
