@@ -64,12 +64,12 @@ if (placesNameEl) {
 
 // Carousel Gallery
 const carouselImages = [
-  "/images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.39 (1).jpeg",
-  "/images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.39.jpeg",
-  "/images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.41.jpeg",
-  "/images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.46 (1).jpeg",
-  "./images/ilaclamaResimler/cozumilaclama.jpeg",
-  "/images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.41 (1).jpeg"
+  "images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.39 (1).jpeg",
+  "images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.39.jpeg",
+  "images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.41.jpeg",
+  "images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.46 (1).jpeg",
+  "images/ilaclamaResimler/cozumilaclama.jpeg",
+  "images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.41 (1).jpeg"
 ];
 
 let carouselIndex = 0;
