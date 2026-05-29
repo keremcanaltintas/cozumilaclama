@@ -60,6 +60,7 @@ section.services {
             align-items: center;
             gap: 3rem;
             padding-right: 3rem;
+            flex-shrink: 0;
 
             span {
                 font-size: 1.05rem;
