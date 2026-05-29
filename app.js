@@ -134,7 +134,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('pfShowcaseNext');
     const glowOrb = document.getElementById('pfShowcaseGlow');
 
-    const colors = ["#1D976C", "#18bc9c", "#2c3e50", "#3498db", "#e74c3c"];
+    const colors = [
+        "#1D976C", // Uşak Belediyesi
+        "#18bc9c", // Dabbagh Group
+        "#2c3e50", // Anemon Hotels
+        "#3498db", // ChocoLabs
+        "#e74c3c", // Mutfak Kafe
+        "#9b59b6", // Lumberjack Cafe
+        "#f1c40f", // Sheraton Hotel
+        "#e67e22", // Soulmate Cafe
+        "#1abc9c", // EspressoLab Cafe
+        "#d35400", // Koala Cafe
+        "#27ae60", // TreeHouse Cafe
+        "#2980b9"  // Kanyon Hayvancılık
+    ];
     let activeIndex = 0;
     const N = cards.length;
     let autoPlayTimer = null;
@@ -153,10 +166,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.classList.add('next');
             } else if (i === (activeIndex - 1 + N) % N) {
                 card.classList.add('prev');
-            } else if (i === (activeIndex + 2) % N) {
-                card.classList.add('hidden-right');
             } else {
-                card.classList.add('hidden-left');
+                // Calculate if the card index is closer to the right or left of activeIndex
+                let diff = (i - activeIndex + N) % N;
+                if (diff < N / 2) {
+                    card.classList.add('hidden-right');
+                } else {
+                    card.classList.add('hidden-left');
+                }
             }
         });
 
@@ -171,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Update detail info items (triggering the clip-path staggered reveal)
+        // Update detail info items (triggering the smooth fade reveal)
         infos.forEach((info, i) => {
             if (i === activeIndex) {
                 info.classList.remove('inactive');

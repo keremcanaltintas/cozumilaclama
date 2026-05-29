@@ -40,9 +40,12 @@ section.services {
     .services-content {
         @include flex();
         padding: 0 4rem;
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
 
         .services-gallery {
-            flex: 3;
+            flex: 1.2;
             overflow: hidden;
             @include flex(column);
             justify-content: center;
@@ -162,7 +165,7 @@ section.services {
             -o-border-radius: 1rem;
             box-shadow: 0 5px 15px rgba(29, 151, 108, 0.15);
 
-            margin-right: 2rem;
+            margin-right: 0;
 
             h3 {
                 color: $main-color2;

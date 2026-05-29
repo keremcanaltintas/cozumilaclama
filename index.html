@@ -30,49 +30,52 @@
     <header>
         <div class="nav-top">
             <div class="nav-top-left">
-                <img src="images/ilaclamaResimler/logo-1.png" alt="">
+                <img src="images/ilaclamaResimler/logo-1.png" alt="Logo">
             </div>
             <div class="nav-top-right">
                 <ul>
                     <li><a href="#aboutus">Hakkımızda</a></li>
-                    <li><a href="#services">Hizmetlerimiz
-                            <ul class="dropdown-list">
-                                <li><a href="#services">Ev ve İş Yerleri</a></li>
-                                <li><a href="#services">Okul ve Eğitim Kurumları</a></li>
-                                <li><a href="">Site ve Apartmanlar</a></li>
-                                <li><a href="#services">Marketler</a></li>
-                                <li><a href="#services">AVM ve Cafeler</a></li>
-                                <li><a href="#services">Fırınlar</a></li>
-                            </ul>
-                        </a></li>
-                    <li><a href="#bugses">Haşereler ve Böcekler
-                            <ul class="dropdown-list">
-                                <li><a href="#bugses"><i class="bi bi-bug"></i> Kene</a></li>
-                                <li><a href="#bugses"><i class="bi bi-bug"></i> Hamam Böceği</a></li>
-                                <li><a href=""><i class="bi bi-bug"></i> Kara Sinek</a></li>
-                                <li><a href="#bugses"><i class="bi bi-bug"></i> Pire</a></li>
-                                <li><a href="#bugses"><i class="bi bi-bug"></i> Tahtakurusu</a></li>
-                                <li><a href=""><i class="bi bi-bug"></i> Fare ve Sıçan</a></li>
-                                <li><a href=""><i class="bi bi-bug"></i> Ve Daha Fazlası...</a></li>
-                            </ul>
-                        </a></li>
-                    <li><a href="#references">Referanslar
-                            <ul class="dropdown-list">
-                                <li><a href="#references">Uşak Belediyesi</a></li>
-                                <li><a href="#references">Dabbagh Group</a></li>
-                                <li><a href="#references">Shareton Hotel</a></li>
-                                <li><a href="#references">Anemon Hotels</a></li>
-                                <li><a href="#references">ChocoLabs </a></li>
-                                <li><a href="#references">Mutfak Kafe</a></li>
-                                <li><a href="#references">Lumberjack Cafe</a></li>
-                                <li><a href="#references">Soulmate Cafe</a></li>
-                                <li><a href="#references">TreeHouse Cafe</a></li>
-                                <li><a href="#references">EspressoLab Cafe</a></li>
-                                <li><a href="#references">Koala Cafe</a></li>
-                                <li><a href="#references">Kanyon Hayvancılık</a></li>
-                            </ul>
-                        </a></li>
-                    <li><a href="javascript:void(0);" onclick="openContactModal()">Bize Ulaşın</a></li>
+                    <li class="has-dropdown">
+                        <a href="#services">Hizmetlerimiz <i class="bi bi-chevron-down"></i></a>
+                        <ul class="dropdown-list">
+                            <li><a href="#services">Ev ve İş Yerleri</a></li>
+                            <li><a href="#services">Okul ve Eğitim Kurumları</a></li>
+                            <li><a href="#services">Site ve Apartmanlar</a></li>
+                            <li><a href="#services">Marketler</a></li>
+                            <li><a href="#services">AVM ve Cafeler</a></li>
+                            <li><a href="#services">Fırınlar</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#bugses">Haşereler ve Böcekler <i class="bi bi-chevron-down"></i></a>
+                        <ul class="dropdown-list">
+                            <li><a href="#bugses"><i class="bi bi-bug"></i> Kene</a></li>
+                            <li><a href="#bugses"><i class="bi bi-bug"></i> Hamam Böceği</a></li>
+                            <li><a href="#bugses"><i class="bi bi-bug"></i> Kara Sinek</a></li>
+                            <li><a href="#bugses"><i class="bi bi-bug"></i> Pire</a></li>
+                            <li><a href="#bugses"><i class="bi bi-bug"></i> Tahtakurusu</a></li>
+                            <li><a href="#bugses"><i class="bi bi-bug"></i> Fare ve Sıçan</a></li>
+                            <li><a href="#bugses"><i class="bi bi-bug"></i> Ve Daha Fazlası...</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#references">Referanslarımız <i class="bi bi-chevron-down"></i></a>
+                        <ul class="dropdown-list">
+                            <li><a href="#references">Uşak Belediyesi</a></li>
+                            <li><a href="#references">Dabbagh Group</a></li>
+                            <li><a href="#references">Sheraton Hotel</a></li>
+                            <li><a href="#references">Anemon Hotels</a></li>
+                            <li><a href="#references">ChocoLabs</a></li>
+                            <li><a href="#references">Mutfak Kafe</a></li>
+                            <li><a href="#references">Lumberjack Cafe</a></li>
+                            <li><a href="#references">Soulmate Cafe</a></li>
+                            <li><a href="#references">EspressoLab Cafe</a></li>
+                            <li><a href="#references">Koala Cafe</a></li>
+                            <li><a href="#references">TreeHouse Cafe</a></li>
+                            <li><a href="#references">Kanyon Hayvancılık</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" onclick="openContactModal()" class="nav-contact-btn">Bize Ulaşın</a></li>
                 </ul>
                 <div class="right-logo">
                     <img src="images/ilaclamaResimler/logo-2.png" alt="logo 2">
@@ -421,6 +424,10 @@
         <div class="bg-brand-glow" id="pfShowcaseGlow"></div>
         <div class="bg-mask"></div>
 
+        <div class="showcase-header" data-aos="fade-up">
+            <h2 class="showcase-static-title">REFERANSLARIMIZ</h2>
+        </div>
+
         <div class="carousel">
             <!-- Left Column: Image Deck -->
             <div class="showcase-left-col" data-aos="fade-up">
@@ -428,31 +435,73 @@
                     <!-- Card 1 -->
                     <div class="img-item active" style="--item-brand-color: #1D976C;" data-index="0">
                         <div class="brand-logo-wrap">
-                            <img src="images/brands/b1.jpeg" alt="Sağlık Bakanlığı Onaylı" class="brand-logo-img">
+                            <img src="images/brands/b1.jpeg" alt="Uşak Belediyesi" class="brand-logo-img">
                         </div>
                     </div>
                     <!-- Card 2 -->
                     <div class="img-item next" style="--item-brand-color: #18bc9c;" data-index="1">
                         <div class="brand-logo-wrap">
-                            <img src="images/brands/b2.jpeg" alt="Garantili Hizmet" class="brand-logo-img">
+                            <img src="images/brands/b2.jpeg" alt="Dabbagh Group" class="brand-logo-img">
                         </div>
                     </div>
                     <!-- Card 3 -->
                     <div class="img-item hidden-right" style="--item-brand-color: #2c3e50;" data-index="2">
                         <div class="brand-logo-wrap">
-                            <img src="images/brands/b10.png" alt="Uzman Kadro" class="brand-logo-img">
+                            <img src="images/brands/b4.jpeg" alt="Anemon Hotels" class="brand-logo-img">
                         </div>
                     </div>
                     <!-- Card 4 -->
                     <div class="img-item hidden-right" style="--item-brand-color: #3498db;" data-index="3">
                         <div class="brand-logo-wrap">
-                            <img src="images/brands/b4.jpeg" alt="Kokusuz Uygulama" class="brand-logo-img">
+                            <img src="images/brands/b6.jpeg" alt="ChocoLabs" class="brand-logo-img">
                         </div>
                     </div>
                     <!-- Card 5 -->
-                    <div class="img-item prev" style="--item-brand-color: #e74c3c;" data-index="4">
+                    <div class="img-item hidden-right" style="--item-brand-color: #e74c3c;" data-index="4">
                         <div class="brand-logo-wrap">
-                            <img src="images/brands/b12.png" alt="7/24 Acil Müdahale" class="brand-logo-img">
+                            <img src="images/brands/b7.jpeg" alt="Mutfak Kafe" class="brand-logo-img">
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="img-item hidden-right" style="--item-brand-color: #9b59b6;" data-index="5">
+                        <div class="brand-logo-wrap">
+                            <img src="images/brands/b9.jpeg" alt="Lumberjack Cafe" class="brand-logo-img">
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="img-item hidden-right" style="--item-brand-color: #f1c40f;" data-index="6">
+                        <div class="brand-logo-wrap">
+                            <img src="images/brands/b10.png" alt="Sheraton Hotel" class="brand-logo-img">
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="img-item hidden-right" style="--item-brand-color: #e67e22;" data-index="7">
+                        <div class="brand-logo-wrap">
+                            <img src="images/brands/b11.jpg" alt="Soulmate Cafe" class="brand-logo-img">
+                        </div>
+                    </div>
+                    <!-- Card 9 -->
+                    <div class="img-item hidden-right" style="--item-brand-color: #1abc9c;" data-index="8">
+                        <div class="brand-logo-wrap">
+                            <img src="images/brands/b12.png" alt="EspressoLab Cafe" class="brand-logo-img">
+                        </div>
+                    </div>
+                    <!-- Card 10 -->
+                    <div class="img-item hidden-right" style="--item-brand-color: #d35400;" data-index="9">
+                        <div class="brand-logo-wrap">
+                            <img src="images/brands/b13.jpg" alt="Koala Cafe" class="brand-logo-img">
+                        </div>
+                    </div>
+                    <!-- Card 11 -->
+                    <div class="img-item hidden-right" style="--item-brand-color: #27ae60;" data-index="10">
+                        <div class="brand-logo-wrap">
+                            <img src="images/brands/b14.jpg" alt="TreeHouse Cafe" class="brand-logo-img">
+                        </div>
+                    </div>
+                    <!-- Card 12 -->
+                    <div class="img-item prev" style="--item-brand-color: #2980b9;" data-index="11">
+                        <div class="brand-logo-wrap">
+                            <img src="images/brands/b15.png" alt="Kanyon Hayvancılık" class="brand-logo-img">
                         </div>
                     </div>
                 </div>
@@ -468,60 +517,114 @@
                 </div>
             </div>
 
-            <!-- Titles Column -->
-            <div class="showcase-header" data-aos="fade-up">
-                <h2 class="showcase-title active" data-index="0">Sağlık Bakanlığı Onaylı Ürünler</h2>
-                <h2 class="showcase-title inactive" data-index="1">Garantili Haşere İlaçlama</h2>
-                <h2 class="showcase-title inactive" data-index="2">Uzman ve Sertifikalı Kadro</h2>
-                <h2 class="showcase-title inactive" data-index="3">Kokusuz & Güvenli Uygulama</h2>
-                <h2 class="showcase-title inactive" data-index="4">7/24 Kesintisiz Hizmet</h2>
-            </div>
-
             <!-- Details Info Box -->
             <div class="info-box" id="pfShowcaseInfoBox" data-aos="fade-up">
                 <!-- Info 1 -->
                 <div class="info-item active" data-index="0">
                     <div class="brand-badge-wrapper">
-                        <span class="brand-badge">SAĞLIK STANDARTLARI</span>
+                        <span class="brand-badge">KAMU SAĞLIĞI VE DESTEK</span>
                     </div>
-                    <h2 class="brand-name">Sağlık Bakanlığı</h2>
-                    <p class="brand-desc">Kullandığımız tüm ürünler T.C. Sağlık Bakanlığı ve DSÖ (WHO) tarafından onaylı, çevre ve insan sağlığına zararsız biyosidal ürünlerdir.</p>
+                    <h2 class="brand-name">Uşak Belediyesi</h2>
+                    <p class="brand-desc">Uşak halkının sağlığını korumak adına belediye bünyesindeki tüm kamu alanlarında, çocuk parklarında ve sosyal tesislerde kesintisiz, güvenilir ve %100 çevre dostu haşere kontrolü sağlıyoruz.</p>
                     <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
                 </div>
                 <!-- Info 2 -->
                 <div class="info-item inactive" data-index="1">
                     <div class="brand-badge-wrapper">
-                        <span class="brand-badge">MEMNUNİYET GARANTİSİ</span>
+                        <span class="brand-badge">ENDÜSTRİYEL GÜVENLİK STANDARDI</span>
                     </div>
-                    <h2 class="brand-name">Garantili Hizmet</h2>
-                    <p class="brand-desc">%100 müşteri memnuniyeti odağıyla, haşere ve kemirgen problemleriniz çözülene kadar garantili ilaçlama desteği sunuyoruz.</p>
+                    <h2 class="brand-name">Dabbagh Group</h2>
+                    <p class="brand-desc">Uluslararası gıda ve tekstil ihracatı yapan sanayi tesislerinde sıfır hata ve sıfır haşere ilkesiyle, üretim hatlarında tam koruma ve üst düzey sanitasyon güvencesi sağlıyoruz.</p>
                     <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
                 </div>
                 <!-- Info 3 -->
                 <div class="info-item inactive" data-index="2">
                     <div class="brand-badge-wrapper">
-                        <span class="brand-badge">EĞİTİMLİ EKİP</span>
+                        <span class="brand-badge">PREMIUM KONAKLAMA HİJYENİ</span>
                     </div>
-                    <h2 class="brand-name">Uzman Kadro</h2>
-                    <p class="brand-desc">Uygulamalarımız, alanında uzman, sertifikalı ve periyodik eğitimlerden geçen profesyonel teknisyenlerimiz tarafından gerçekleştirilir.</p>
+                    <h2 class="brand-name">Anemon Oteller Grubu</h2>
+                    <p class="brand-desc">Otelcilik sektörünün katı hijyen standartlarına uygun olarak, oda ve genel kullanım alanlarında misafirlere yüksek konfor sunan, kokusuz, hızlı ve etkili koruma kalkanı sağlıyoruz.</p>
                     <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
                 </div>
                 <!-- Info 4 -->
                 <div class="info-item inactive" data-index="3">
                     <div class="brand-badge-wrapper">
-                        <span class="brand-badge">GÜVENLİ İLAÇLAMA</span>
+                        <span class="brand-badge">HACCP & GIDA GÜVENLİĞİ</span>
                     </div>
-                    <h2 class="brand-name">Kokusuz İlaçlama</h2>
-                    <p class="brand-desc">Yaşam alanlarınızı terk etmenize gerek kalmadan, günlük rutininizi bozmayan kokusuz ve modern jel/sıvı ilaçlama yöntemleri.</p>
+                    <h2 class="brand-name">ChocoLabs Kafe</h2>
+                    <p class="brand-desc">Popüler franchise zincirinin mutfak ve servis alanlarında, gıda güvenliği kurallarına (HACCP) tam uyumlu, periyodik ilaçlama ve koruyucu haşere engelleme programı yürütüyoruz.</p>
                     <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
                 </div>
                 <!-- Info 5 -->
                 <div class="info-item inactive" data-index="4">
                     <div class="brand-badge-wrapper">
-                        <span class="brand-badge">7/24 ACİL SERVİS</span>
+                        <span class="brand-badge">SOSYAL ALAN HİJYENİ</span>
                     </div>
-                    <h2 class="brand-name">7/24 Müdahale</h2>
-                    <p class="brand-desc">Uşak ve çevresinde haşere istilalarına karşı esnek çalışma saatlerimizle dilediğiniz an hızlı ve kesin çözümler üretiyoruz.</p>
+                    <h2 class="brand-name">Mutfak Kafe</h2>
+                    <p class="brand-desc">Lezzetli anların paylaşıldığı sosyal alanlarda, misafirlerin konforunu ve sağlığını en ön planda tutan, günlük rutini aksatmayan kokusuz jel ve sıvı pest kontrol desteği veriyoruz.</p>
+                    <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+                </div>
+                <!-- Info 6 -->
+                <div class="info-item inactive" data-index="5">
+                    <div class="brand-badge-wrapper">
+                        <span class="brand-badge">DOĞAL YAŞAM DOSTU KORUMA</span>
+                    </div>
+                    <h2 class="brand-name">Lumberjack Cafe</h2>
+                    <p class="brand-desc">Ahşap ve rustik dekorasyona sahip mekanlarda, ahşabın doğal yapısına ve mobilyalara asla zarar vermeden, tahtakurusu ve diğer zararlılara karşı özel koruma uyguluyoruz.</p>
+                    <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+                </div>
+                <!-- Info 7 -->
+                <div class="info-item inactive" data-index="6">
+                    <div class="brand-badge-wrapper">
+                        <span class="brand-badge">5 YILDIZLI ULUSLARARASI KORUMA</span>
+                    </div>
+                    <h2 class="brand-name">Sheraton Hotels</h2>
+                    <p class="brand-desc">Uluslararası turizm ve konaklama devlerinin gerektirdiği en yüksek düzey biyogüvenlik önlemlerini ve periyodik dezenfeksiyon standartlarını titizlikle Sheraton otellerinde yönetiyoruz.</p>
+                    <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+                </div>
+                <!-- Info 8 -->
+                <div class="info-item inactive" data-index="7">
+                    <div class="brand-badge-wrapper">
+                        <span class="brand-badge">KAHVE KÜLTÜRÜ VE SANİTASYON</span>
+                    </div>
+                    <h2 class="brand-name">Soulmate Coffee</h2>
+                    <p class="brand-desc">Yoğun insan sirkülasyonunun olduğu lezzet duraklarında, kahve aromalarını etkilemeyen, tamamen kokusuz ve hedef dışı canlılara zararsız modern ilaçlama teknikleri kullanıyoruz.</p>
+                    <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+                </div>
+                <!-- Info 9 -->
+                <div class="info-item inactive" data-index="8">
+                    <div class="brand-badge-wrapper">
+                        <span class="brand-badge">PREMIUM SANİTASYON DÜZEYİ</span>
+                    </div>
+                    <h2 class="brand-name">Espressolab Türkiye</h2>
+                    <p class="brand-desc">Dünya çapında hizmet sunan kahve devinin yüksek hijyen prosedürlerini başarıyla uygulayarak, depolama ve sunum alanlarında tam kapsamlı haşere engelleme kalkanı sağlıyoruz.</p>
+                    <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+                </div>
+                <!-- Info 10 -->
+                <div class="info-item inactive" data-index="9">
+                    <div class="brand-badge-wrapper">
+                        <span class="brand-badge">GÜVENLİ SOSYALLEŞME ALANLARI</span>
+                    </div>
+                    <h2 class="brand-name">Koala Coffee</h2>
+                    <p class="brand-desc">Sıcak buluşma noktalarında misafirlerin sağlığını koruma odağıyla, mikrop taşıyıcı sinek ve haşerelere karşı anında etki gösteren ve uzun süre koruyan bariyer ilaçlama yapıyoruz.</p>
+                    <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+                </div>
+                <!-- Info 11 -->
+                <div class="info-item inactive" data-index="10">
+                    <div class="brand-badge-wrapper">
+                        <span class="brand-badge">DIŞ ORTAM BİYOLOJİK MÜCADELE</span>
+                    </div>
+                    <h2 class="brand-name">TreeHouse Coffee</h2>
+                    <p class="brand-desc">Açık hava, bahçe ve veranda gibi doğayla içiçe alanlarda; kene, sivrisinek, pire ve arı gibi dış ortam zararlılarına karşı hedef odaklı biyolojik kontrol yürütüyoruz.</p>
+                    <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+                </div>
+                <!-- Info 12 -->
+                <div class="info-item inactive" data-index="11">
+                    <div class="brand-badge-wrapper">
+                        <span class="brand-badge">ÇİFTLİK VE BİYOGÜVENLİK YÖNETİMİ</span>
+                    </div>
+                    <h2 class="brand-name">Kanyon Hayvancılık</h2>
+                    <p class="brand-desc">Hayvansal gıda üretimi ve çiftlik tesislerinde verimliliği doğrudan etkileyen sinek, kemirgen ve parazit istilalarını önleyen entegre tesis pest kontrol yönetimini sağlıyoruz.</p>
                     <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
                 </div>
             </div>
