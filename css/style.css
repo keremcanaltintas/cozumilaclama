@@ -321,6 +321,14 @@ header .navbar {
   line-height: 1.6;
   margin: 0;
 }
+.hero-section .hero-content .animated-box {
+  border: 1.5px solid #1D976C;
+  padding: 0.4rem 1.4rem;
+  border-radius: 8px;
+  display: inline-block;
+  background-color: rgba(29, 151, 108, 0.1);
+  box-shadow: 0 4px 15px rgba(29, 151, 108, 0.15);
+}
 .hero-section .hero-content .scroll-btn {
   background-color: #1D976C;
   color: white;
