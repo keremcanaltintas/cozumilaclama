@@ -27,9 +27,9 @@ section.aboutUs {
         padding: 0 4rem;
 
         .aboutUs-left {
-            @include flex(column, center, center);
-            gap: 3rem;
-            padding: 3rem 2rem;
+            @include flex(column, center, flex-start);
+            gap: 1.8rem;
+            padding: 3.5rem 2.5rem;
             border: 2px solid $main-color2;
             border-radius: 1rem;
             background-color: white;
@@ -40,12 +40,40 @@ section.aboutUs {
                 border-bottom: 2px solid $main-color2;
                 padding-bottom: 1rem;
                 width: 100%;
+                text-align: left;
+                margin-top: 0;
             }
 
             p {
-                font-style: italic;
-                color: grey;
-                font-size: 1.2rem;
+                font-family: 'Poppins', sans-serif;
+                color: #555555;
+                font-size: 1.05rem;
+                line-height: 1.6;
+                text-align: left;
+                margin: 0;
+
+                &.about-lead {
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    color: #111111;
+                    line-height: 1.4;
+                    border-left: 4px solid $main-color2;
+                    padding-left: 1rem;
+                    font-style: normal;
+                }
+
+                &.about-highlight {
+                    font-weight: 600;
+                    color: $main-color2;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.6rem;
+                    font-style: normal;
+                    
+                    i {
+                        font-size: 1.25rem;
+                    }
+                }
             }
         }
 

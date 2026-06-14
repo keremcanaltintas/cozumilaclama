@@ -485,10 +485,10 @@ section.aboutUs .aboutUs-content {
 section.aboutUs .aboutUs-content .aboutUs-left {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  gap: 3rem;
-  padding: 3rem 2rem;
+  gap: 1.8rem;
+  padding: 3.5rem 2.5rem;
   border: 2px solid #1D976C;
   border-radius: 1rem;
   background-color: white;
@@ -499,11 +499,36 @@ section.aboutUs .aboutUs-content .aboutUs-left h1 {
   border-bottom: 2px solid #1D976C;
   padding-bottom: 1rem;
   width: 100%;
+  text-align: left;
+  margin-top: 0;
 }
 section.aboutUs .aboutUs-content .aboutUs-left p {
-  font-style: italic;
-  color: grey;
-  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  color: #555555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  text-align: left;
+  margin: 0;
+}
+section.aboutUs .aboutUs-content .aboutUs-left p.about-lead {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.4;
+  border-left: 4px solid #1D976C;
+  padding-left: 1rem;
+  font-style: normal;
+}
+section.aboutUs .aboutUs-content .aboutUs-left p.about-highlight {
+  font-weight: 600;
+  color: #1D976C;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-style: normal;
+}
+section.aboutUs .aboutUs-content .aboutUs-left p.about-highlight i {
+  font-size: 1.25rem;
 }
 section.aboutUs .aboutUs-content .aboutUs-right {
   display: flex;
