@@ -21,8 +21,8 @@ section.services {
         margin-bottom: 3.5rem;
         background: rgba(255, 255, 255, 0.45);
         backdrop-filter: blur(5px);
-        border-top: 1px solid rgba(29, 151, 108, 0.15);
-        border-bottom: 1px solid rgba(29, 151, 108, 0.15);
+        border-top: 2px solid rgba(29, 151, 108, 0.15);
+        border-bottom: 2px solid rgba(29, 151, 108, 0.15);
         display: flex;
         align-items: center;
 
@@ -64,35 +64,52 @@ section.services {
 
             span {
                 font-family: 'Montserrat', sans-serif;
-                font-size: 1.05rem;
-                font-weight: 800; /* High impact bold */
-                letter-spacing: 0.05em; /* Striking look */
+                font-size: 1.7rem;
+                font-weight: 900; /* Extra bold for striking look */
+                letter-spacing: 0.08em;
                 text-transform: uppercase;
-                color: #1D976C;
-                background: white;
-                padding: 0.8rem 1.8rem;
-                border-radius: 50px;
-                border: 2px solid rgba(29, 151, 108, 0.25); /* More striking border */
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
                 white-space: nowrap;
                 transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
                 display: inline-flex;
                 align-items: center;
-                gap: 0.6rem;
+                gap: 1rem;
+                padding: 0.5rem 1rem;
+
+                /* Striking Gradient text */
+                background: linear-gradient(135deg, #1D976C 0%, #10be81 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
 
                 &::before {
-                    content: "•";
-                    color: #d4af37; /* Elegant gold bullet point */
+                    content: "✦";
+                    color: #d4af37; /* Elegant glowing gold star separator */
                     font-size: 1.4rem;
                     line-height: 1;
+                    display: inline-block;
+                    margin-right: 0.8rem;
+                    -webkit-text-fill-color: #d4af37; /* Prevent text-fill transparency inheritance */
+                    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.6));
+                    transition: transform 0.3s ease;
+                }
+
+                /* Outlined font effect alternating for visual contrast */
+                &:nth-child(even) {
+                    background: none;
+                    -webkit-background-clip: unset;
+                    -webkit-text-fill-color: transparent;
+                    color: transparent;
+                    -webkit-text-stroke: 1.5px #1D976C;
                 }
 
                 &:hover {
-                    color: white;
-                    background: #1D976C;
-                    border-color: #1D976C;
-                    transform: translateY(-2.5px);
-                    box-shadow: 0 8px 20px rgba(29, 151, 108, 0.3);
+                    transform: scale(1.08) translateY(-2px);
+                    -webkit-text-stroke: 1.5px #10be81;
+                    -webkit-text-fill-color: #10be81;
+                    text-shadow: 0 0 15px rgba(16, 190, 129, 0.4);
+                    
+                    &::before {
+                        transform: rotate(45deg) scale(1.2);
+                    }
                 }
             }
         }
@@ -267,8 +284,13 @@ section.services {
                 padding-right: 1.8rem;
 
                 span {
-                    font-size: 0.95rem;
-                    padding: 0.6rem 1.3rem;
+                    font-size: 1.2rem;
+                    padding: 0.4rem 0.8rem;
+
+                    &::before {
+                        font-size: 1.1rem;
+                        margin-right: 0.5rem;
+                    }
                 }
             }
         }

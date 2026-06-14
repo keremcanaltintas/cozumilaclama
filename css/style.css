@@ -769,25 +769,101 @@ section.services .div-title {
   padding: 0 1rem;
 }
 section.services .services-places {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1.5rem 0;
+  margin-bottom: 3.5rem;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(5px);
+  border-top: 2px solid rgba(29, 151, 108, 0.15);
+  border-bottom: 2px solid rgba(29, 151, 108, 0.15);
   display: flex;
+  align-items: center;
 }
-section.services .services-places ul {
+section.services .services-places::before, section.services .services-places::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+section.services .services-places::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(115, 215, 180, 0.15), transparent);
+}
+section.services .services-places::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(115, 215, 180, 0.15), transparent);
+}
+section.services .services-places .places-track {
   display: flex;
-  list-style: none;
-  gap: 2rem;
-  color: #1D976C;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 3rem;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  width: max-content;
+  animation: scrollMarquee 25s linear infinite;
 }
-section.services .services-places ul li {
-  padding: 1rem;
-  border-bottom: 1px solid goldenrod;
+section.services .services-places .places-track:hover {
+  animation-play-state: paused;
+}
+section.services .services-places .places-list {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 3rem;
+  flex-shrink: 0;
+}
+section.services .services-places .places-list span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #1D976C 0%, #10be81 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+section.services .services-places .places-list span::before {
+  content: "✦";
+  color: #d4af37;
+  font-size: 1.4rem;
+  line-height: 1;
+  display: inline-block;
+  margin-right: 0.8rem;
+  -webkit-text-fill-color: #d4af37;
+  filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.6));
+  transition: transform 0.3s ease;
+}
+section.services .services-places .places-list span:nth-child(even) {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #1D976C;
+}
+section.services .services-places .places-list span:hover {
+  transform: scale(1.08) translateY(-2px);
+  -webkit-text-stroke: 1.5px #10be81;
+  -webkit-text-fill-color: #10be81;
+  text-shadow: 0 0 15px rgba(16, 190, 129, 0.4);
+}
+section.services .services-places .places-list span:hover::before {
+  transform: rotate(45deg) scale(1.2);
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 section.services .services-content {
   display: flex;
@@ -938,21 +1014,21 @@ section.services .services-content .pest-info p {
     background-image: none;
   }
   section.services .services-places {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
+    padding: 1rem 0;
   }
-  section.services .services-places ul {
-    padding: 0;
-    margin: 0;
-    justify-content: space-between;
+  section.services .services-places .places-list {
+    gap: 1.8rem;
+    padding-right: 1.8rem;
   }
-  section.services .services-places ul li {
-    font-size: 0.9rem;
-    padding-bottom: 0.7rem;
+  section.services .services-places .places-list span {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
+  }
+  section.services .services-places .places-list span::before {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
   }
   section.services .services-content {
     display: flex;
