@@ -1,0 +1,20 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Redirect HTTP to HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteRule (.*) https://usakcozumilaclama.com/$1 [R=301,L]
+
+# Prevent directory listings
+Options -Indexes
+
+# Block access to sensitive source/config files (SCSS sources, packages, lockfiles, maps, logs)
+<FilesMatch "^\.|\.(json|lock|scss|md|log|sh|txt|map|bak|conf)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Return 404 for attempts to access hidden system folders (.git, .vscode, etc.)
+RedirectMatch 404 /\.(git|github|vscode|idea|env)/
