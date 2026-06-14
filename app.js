@@ -69,7 +69,12 @@ const carouselImages = [
   "images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.41.jpeg",
   "images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.46 (1).jpeg",
   "images/ilaclamaResimler/cozumilaclama.jpeg",
-  "images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.41 (1).jpeg"
+  "images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.41 (1).jpeg",
+  "images/ilaclamaResimler/yeni_ilaclama_1.jpg",
+  "images/ilaclamaResimler/yeni_ilaclama_2.jpg",
+  "images/ilaclamaResimler/yeni_ilaclama_3.jpg",
+  "images/ilaclamaResimler/yeni_ilaclama_4.jpg",
+  "images/ilaclamaResimler/yeni_ilaclama_5.jpg"
 ];
 
 let carouselIndex = 0;
