@@ -3,62 +3,195 @@
 //CONTACT-Footer
 
 footer {
-    @include flex();
-    gap: 8rem;
-    padding: 3rem 4rem;
-    background: #1D976C;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #93F9B9, #1D976C);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #93F9B9, #1D976C);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    display: block;
+    background: #0e3023; /* Deep corporate dark green background */
+    padding: 5rem 4rem 2rem 4rem;
+    color: #ffffff;
+    border-top: 4px solid #1D976C;
 
     a {
         text-decoration: none;
-        color: white;
+        transition: all 0.3s ease;
+    }
 
-        &:hover {
-            color: black;
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 3rem;
+
+        .footer-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            &.brand-col {
+                flex: 1.4;
+            }
+
+            .footer-brand {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 800;
+                font-size: 1.6rem;
+                color: #ffffff;
+                letter-spacing: 0.05em;
+                margin: 0;
+            }
+
+            .footer-slogan {
+                font-family: 'Poppins', sans-serif;
+                color: #a4c5b8;
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin: 0;
+            }
+
+            .footer-socials {
+                display: flex;
+                gap: 0.8rem;
+                margin-top: 0.5rem;
+
+                a {
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    background: rgba(29, 151, 108, 0.1);
+                    border: 1px solid rgba(29, 151, 108, 0.3);
+                    color: #93F9B9;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.1rem;
+
+                    &:hover {
+                        background: #1D976C;
+                        color: #ffffff;
+                        border-color: #1D976C;
+                        transform: translateY(-3px);
+                        box-shadow: 0 5px 15px rgba(29, 151, 108, 0.3);
+                    }
+                }
+            }
+
+            h4 {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+                font-size: 1.2rem;
+                color: #ffffff;
+                margin: 0 0 0.5rem 0;
+                position: relative;
+                padding-bottom: 0.6rem;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 35px;
+                    height: 2.5px;
+                    background-color: #1D976C;
+                    border-radius: 2px;
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    a {
+                        font-family: 'Poppins', sans-serif;
+                        color: #a4c5b8;
+                        font-size: 0.95rem;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        border-bottom: none;
+
+                        i {
+                            font-size: 0.8rem;
+                            transition: transform 0.3s ease;
+                            background: none;
+                            padding: 0;
+                            border-radius: 0;
+                            box-shadow: none;
+                            color: #1D976C;
+                            margin: 0;
+                            width: auto;
+                            height: auto;
+                        }
+
+                        &:hover {
+                            color: #ffffff;
+                            
+                            i {
+                                transform: translateX(4px);
+                                color: #93F9B9;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .contact-items {
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem;
+
+                .contact-item {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: flex-start;
+
+                    i {
+                        font-size: 1.05rem;
+                        color: #ffffff;
+                        background-color: #1D976C;
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 8px; /* Sleek rounded square icon badge */
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-shrink: 0;
+                        box-shadow: 0 4px 10px rgba(29, 151, 108, 0.15);
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    a {
+                        font-family: 'Poppins', sans-serif;
+                        color: #a4c5b8;
+                        font-size: 0.95rem;
+                        line-height: 1.5;
+
+                        &:hover {
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
         }
     }
 
-    ul {
-        @include flex(column);
-        gap: 2rem;
-        list-style: none;
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 1.8rem;
+        margin-top: 1rem;
+        text-align: center;
 
-        a {
-
-            border-bottom: 1px solid rgba(245, 245, 245, 0.424);
-        }
-    }
-
-    .line {
-        width: 1px;
-        height: 150px;
-        background-color: white;
-    }
-
-    .contact {
-        @include flex(column, stretch);
-        gap: 2rem;
-
-        span {
-            color: white;
-        }
-
-        i {
-            margin-right: 2rem;
-            font-size: 1.2rem;
-            color: $main-color2;
-            background-color: white;
-            padding: .5rem;
-            border-radius: 50%;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            -ms-border-radius: 50%;
-            -o-border-radius: 50%;
+        p {
+            font-family: 'Poppins', sans-serif;
+            color: #76978a;
+            font-size: 0.85rem;
+            margin: 0;
         }
     }
 }
@@ -262,26 +395,39 @@ button#scrollButton {
     }
 }
 
-@media screen and (max-width:1012px) {
-
+@media screen and (max-width:992px) {
     footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 3rem;
+        padding: 4rem 2rem 2rem 2rem;
 
-        ul {
-            padding: 0;
-            margin: 0;
-        }
+        .footer-container {
+            flex-direction: column;
+            gap: 3rem;
+            align-items: center;
+            text-align: center;
 
-        .contact {
-            >div {
-                @include flex(column);
+            .footer-col {
+                align-items: center;
+                text-align: center;
+                width: 100%;
 
-                i {
-                    padding: 0.5rem;
-                    margin-bottom: .7rem;
-                    margin-right: 0;
+                h4::after {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                ul li a {
+                    justify-content: center;
+                }
+
+                .contact-items {
+                    align-items: center;
+
+                    .contact-item {
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        gap: 0.5rem;
+                    }
                 }
             }
         }
