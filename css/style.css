@@ -1985,27 +1985,40 @@ section.services .services-content .pest-info .pest-features .feature-item div p
   margin: 0;
 }
 .google-reviews-section .gr-carousel-container {
-  /* Dots Navigation */
+  /* Dots Navigation with Progress Fill */
 }
 .google-reviews-section .gr-carousel-container .gr-dots-nav {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-top: 22px;
+  margin-top: 24px;
 }
 .google-reviews-section .gr-carousel-container .gr-dots-nav .dot {
+  position: relative;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: #cbd5e1;
   cursor: pointer;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.3s ease, background-color 0.3s ease;
+}
+.google-reviews-section .gr-carousel-container .gr-dots-nav .dot .dot-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: #1D976C;
+  border-radius: 10px;
+  pointer-events: none;
 }
 .google-reviews-section .gr-carousel-container .gr-dots-nav .dot.active {
-  width: 26px;
+  width: 32px;
+  height: 10px;
   border-radius: 10px;
-  background: #1D976C;
+  background: #e2e8f0;
 }
 .google-reviews-section {
   /* Bottom CTA Button */

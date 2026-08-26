@@ -386,15 +386,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('grPrevBtn');
     const nextBtn = document.getElementById('grNextBtn');
 
-    // Create pagination dots
+    const autoPlayDelay = 5000;
+
+    // Create pagination dots with animated fill bar inside
     if (dotsNavEl) {
         dotsNavEl.innerHTML = '';
         reviews.forEach((_, idx) => {
             const dot = document.createElement('span');
             dot.className = `dot ${idx === 0 ? 'active' : ''}`;
+            
+            const fill = document.createElement('span');
+            fill.className = 'dot-fill';
+            dot.appendChild(fill);
+
             dot.addEventListener('click', () => {
                 goToSlide(idx);
-                resetAutoPlay();
             });
             dotsNavEl.appendChild(dot);
         });
@@ -430,14 +436,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 starsEl.innerHTML = starsHTML;
             }
 
-            // Update Dots
-            if (dotsNavEl) {
-                const dots = dotsNavEl.querySelectorAll('.dot');
-                dots.forEach((dot, idx) => {
-                    dot.classList.toggle('active', idx === index);
-                });
-            }
-
             // Fade back in
             if (bubbleCardEl) {
                 bubbleCardEl.style.opacity = '1';
@@ -446,9 +444,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 200);
     }
 
+    function startProgress() {
+        stopProgress();
+
+        if (!dotsNavEl) return;
+        const dots = dotsNavEl.querySelectorAll('.dot');
+        dots.forEach((dot, idx) => {
+            const fill = dot.querySelector('.dot-fill');
+            if (fill) {
+                fill.style.transition = 'none';
+                fill.style.width = '0%';
+            }
+            dot.classList.toggle('active', idx === currentIndex);
+        });
+
+        const activeDot = dots[currentIndex];
+        if (activeDot) {
+            const activeFill = activeDot.querySelector('.dot-fill');
+            if (activeFill) {
+                // Force reflow to restart transition cleanly
+                void activeFill.offsetWidth;
+                activeFill.style.transition = `width ${autoPlayDelay}ms linear`;
+                activeFill.style.width = '100%';
+            }
+        }
+
+        autoPlayTimer = setTimeout(() => {
+            nextSlide();
+        }, autoPlayDelay);
+    }
+
+    function stopProgress() {
+        if (autoPlayTimer) {
+            clearTimeout(autoPlayTimer);
+            autoPlayTimer = null;
+        }
+        if (dotsNavEl) {
+            const activeFill = dotsNavEl.querySelector('.dot.active .dot-fill');
+            if (activeFill) {
+                const computedWidth = getComputedStyle(activeFill).width;
+                activeFill.style.transition = 'none';
+                activeFill.style.width = computedWidth;
+            }
+        }
+    }
+
     function goToSlide(index) {
         currentIndex = (index + reviews.length) % reviews.length;
         renderSlide(currentIndex);
+        startProgress();
     }
 
     function nextSlide() {
@@ -459,25 +503,11 @@ document.addEventListener('DOMContentLoaded', () => {
         goToSlide(currentIndex - 1);
     }
 
-    function startAutoPlay() {
-        stopAutoPlay();
-        autoPlayTimer = setInterval(nextSlide, 5000);
-    }
-
-    function stopAutoPlay() {
-        if (autoPlayTimer) clearInterval(autoPlayTimer);
-    }
-
-    function resetAutoPlay() {
-        startAutoPlay();
-    }
-
     // Event Listeners
     if (nextBtn) {
         nextBtn.addEventListener('click', (e) => {
             e.preventDefault();
             nextSlide();
-            resetAutoPlay();
         });
     }
 
@@ -485,13 +515,12 @@ document.addEventListener('DOMContentLoaded', () => {
         prevBtn.addEventListener('click', (e) => {
             e.preventDefault();
             prevSlide();
-            resetAutoPlay();
         });
     }
 
-    // Pause auto-play on hover
-    section.addEventListener('mouseenter', stopAutoPlay);
-    section.addEventListener('mouseleave', startAutoPlay);
+    // Pause auto-play progress on hover
+    section.addEventListener('mouseenter', stopProgress);
+    section.addEventListener('mouseleave', startProgress);
 
     // Touch Swipe Support for Mobile
     let touchStartX = 0;
@@ -510,16 +539,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const threshold = 40;
         if (touchEndX < touchStartX - threshold) {
             nextSlide();
-            resetAutoPlay();
         } else if (touchEndX > touchStartX + threshold) {
             prevSlide();
-            resetAutoPlay();
         }
     }
 
-    // Initial render
+    // Initial render & progress start
     renderSlide(0);
-    startAutoPlay();
+    startProgress();
 });
 
 // Developer Tools & Source Protection (F12, Ctrl+Shift+I, Right-Click Blockers)
