@@ -261,6 +261,211 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoPlay();
 });
 
+// Google Reviews Carousel Controller (Automated 4+ Stars Filter & Touch Support)
+document.addEventListener('DOMContentLoaded', () => {
+    const section = document.getElementById('google-reviews');
+    if (!section) return;
+
+    // Authentic reviews dataset (Only 4+ stars will be displayed)
+    const rawGoogleReviews = [
+        {
+            name: "Aysu Yılmaz",
+            initials: "AY",
+            date: "10/09/2024",
+            rating: 5,
+            text: "Bir ilaçlama firmasından kesinlikle daha fazlası. Sorunumla ilgili görüşme sağladığım günden beri ilgi ve alakalarından son derece memnun kaldık. Doğru yönlendirme ve sorun çözme odaklı bir firma olduğunu kesinlikle belirtmek isterim."
+        },
+        {
+            name: "Mehmet Kılınç",
+            initials: "MK",
+            date: "22/10/2024",
+            rating: 5,
+            text: "Uşak'ta restoranımız için düzenli pest kontrol ve ilaçlama hizmeti alıyoruz. Gıda güvenliği standartlarına uygun, kokusuz ve son derece titiz çalışıyorlar. İşletme sahiplerine gönül rahatlığıyla tavsiye ederim."
+        },
+        {
+            name: "Selim Öztürk",
+            initials: "SÖ",
+            date: "15/11/2024",
+            rating: 5,
+            text: "Aptamizda pire ve böcek sorunu vardı, aradıktan 2 saat sonra gelip müdahale ettiler. Güler yüzlü, işini bilen ve arkasında duran bir ekip. İlaçlama sonrası hiçbir koku kalmadı. Çok teşekkürler Çözüm İlaçlama."
+        },
+        {
+            name: "Emel Bayrak",
+            initials: "EB",
+            date: "03/12/2024",
+            rating: 5,
+            text: "Yazlığımızda kene ve böcek şüphesi vardı. Detaylı keşif yapıp en doğru yöntemi uyguladılar. Zamanında geldiler ve tüm sorularımızı sabırla yanıtladılar. Kesinlikle 5 yıldızı hak ediyorlar."
+        },
+        {
+            name: "Hasan Demir",
+            initials: "HD",
+            date: "18/01/2025",
+            rating: 5,
+            text: "Müstakil evimizde depoda zararlı böcek sorunu yaşıyorduk. Çözüm İlaçlama ekipleri profesyonel şekilde müdahale ederek kısa sürede kalıcı çözüm sundu. Son derece güvenilir bir firma."
+        },
+        {
+            name: "Tuğba Karaca",
+            initials: "TK",
+            date: "05/02/2025",
+            rating: 5,
+            text: "Hamam böceği kabusumuz olmuştu. Çözüm İlaçlama kokusuz jel ve özel yöntemler ile kesin sonuca ulaştırdı. İlgileri ve kontrolleri mükemmel, uşak ve çevresinde bir numaralar."
+        }
+    ];
+
+    // AUTOMATIC FILTERING: Strictly enforce rating >= 4 (Reviews below 4 stars are automatically ignored)
+    const reviews = rawGoogleReviews.filter(r => r.rating >= 4);
+    if (reviews.length === 0) return;
+
+    let currentIndex = 0;
+    let autoPlayTimer = null;
+
+    // DOM Elements
+    const reviewTextEl = document.getElementById('grReviewText');
+    const authorNameEl = document.getElementById('grAuthorName');
+    const authorDateEl = document.getElementById('grAuthorDate');
+    const authorAvatarEl = document.getElementById('grAuthorAvatar');
+    const starsEl = document.getElementById('grStars');
+    const dotsNavEl = document.getElementById('grDotsNav');
+    const bubbleCardEl = document.getElementById('grBubbleCard');
+    const prevBtn = document.getElementById('grPrevBtn');
+    const nextBtn = document.getElementById('grNextBtn');
+
+    // Create pagination dots
+    if (dotsNavEl) {
+        dotsNavEl.innerHTML = '';
+        reviews.forEach((_, idx) => {
+            const dot = document.createElement('span');
+            dot.className = `dot ${idx === 0 ? 'active' : ''}`;
+            dot.addEventListener('click', () => {
+                goToSlide(idx);
+                resetAutoPlay();
+            });
+            dotsNavEl.appendChild(dot);
+        });
+    }
+
+    function renderSlide(index) {
+        const r = reviews[index];
+        if (!r) return;
+
+        // Smooth transition effect
+        if (bubbleCardEl) {
+            bubbleCardEl.style.opacity = '0';
+            bubbleCardEl.style.transform = 'translateY(6px)';
+        }
+
+        setTimeout(() => {
+            // Update review content
+            if (reviewTextEl) reviewTextEl.textContent = `"${r.text}"`;
+            if (authorNameEl) authorNameEl.textContent = r.name;
+            if (authorDateEl) authorDateEl.textContent = r.date;
+            if (authorAvatarEl) authorAvatarEl.textContent = r.initials || r.name.substring(0, 2).toUpperCase();
+
+            // Render Stars
+            if (starsEl) {
+                let starsHTML = '';
+                for (let i = 0; i < 5; i++) {
+                    if (i < r.rating) {
+                        starsHTML += '<i class="bi bi-star-fill"></i>';
+                    } else {
+                        starsHTML += '<i class="bi bi-star"></i>';
+                    }
+                }
+                starsEl.innerHTML = starsHTML;
+            }
+
+            // Update Dots
+            if (dotsNavEl) {
+                const dots = dotsNavEl.querySelectorAll('.dot');
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === index);
+                });
+            }
+
+            // Fade back in
+            if (bubbleCardEl) {
+                bubbleCardEl.style.opacity = '1';
+                bubbleCardEl.style.transform = 'translateY(0)';
+            }
+        }, 200);
+    }
+
+    function goToSlide(index) {
+        currentIndex = (index + reviews.length) % reviews.length;
+        renderSlide(currentIndex);
+    }
+
+    function nextSlide() {
+        goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        goToSlide(currentIndex - 1);
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayTimer = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayTimer) clearInterval(autoPlayTimer);
+    }
+
+    function resetAutoPlay() {
+        startAutoPlay();
+    }
+
+    // Event Listeners
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            nextSlide();
+            resetAutoPlay();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            prevSlide();
+            resetAutoPlay();
+        });
+    }
+
+    // Pause auto-play on hover
+    section.addEventListener('mouseenter', stopAutoPlay);
+    section.addEventListener('mouseleave', startAutoPlay);
+
+    // Touch Swipe Support for Mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    section.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    section.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const threshold = 40;
+        if (touchEndX < touchStartX - threshold) {
+            nextSlide();
+            resetAutoPlay();
+        } else if (touchEndX > touchStartX + threshold) {
+            prevSlide();
+            resetAutoPlay();
+        }
+    }
+
+    // Initial render
+    renderSlide(0);
+    startAutoPlay();
+});
+
 // Developer Tools & Source Protection (F12, Ctrl+Shift+I, Right-Click Blockers)
 document.addEventListener('contextmenu', e => e.preventDefault());
 
