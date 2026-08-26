@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
             initials: "SÖ",
             date: "15/11/2024",
             rating: 5,
-            text: "Aptamizda pire ve böcek sorunu vardı, aradıktan 2 saat sonra gelip müdahale ettiler. Güler yüzlü, işini bilen ve arkasında duran bir ekip. İlaçlama sonrası hiçbir koku kalmadı. Çok teşekkürler Çözüm İlaçlama."
+            text: "Apartmanımızda pire ve böcek sorunu vardı, aradıktan 2 saat sonra gelip müdahale ettiler. Güler yüzlü, işini bilen ve arkasında duran bir ekip. İlaçlama sonrası hiçbir koku kalmadı. Çok teşekkürler Çözüm İlaçlama."
         },
         {
             name: "Emel Bayrak",
@@ -308,7 +308,63 @@ document.addEventListener('DOMContentLoaded', () => {
             initials: "TK",
             date: "05/02/2025",
             rating: 5,
-            text: "Hamam böceği kabusumuz olmuştu. Çözüm İlaçlama kokusuz jel ve özel yöntemler ile kesin sonuca ulaştırdı. İlgileri ve kontrolleri mükemmel, uşak ve çevresinde bir numaralar."
+            text: "Hamam böceği kabusumuz olmuştu. Çözüm İlaçlama kokusuz jel ve özel yöntemler ile kesin sonuca ulaştırdı. İlgileri ve kontrolleri mükemmel, Uşak ve çevresinde bir numaralar."
+        },
+        {
+            name: "Murat Arslan",
+            initials: "MA",
+            date: "14/02/2025",
+            rating: 5,
+            text: "Ofisimizde haşere sorunu vardı. Randevu saatine tam uyarak çalışmaya başladılar. Çalışanların üslubu ve ilgisi harikaydı, sonrasında da arayıp durum takibi yaptılar. Kesinlikle öneririm."
+        },
+        {
+            name: "Burcu Aksoy",
+            initials: "BA",
+            date: "28/02/2025",
+            rating: 5,
+            text: "Referans üzerine ulaştık. Evimizdeki kalorifer böceği derdinden tek uygulamada kurtardılar. Fiyatlandırma gayet makul, işçilik 10 numara. Elinize sağlık."
+        },
+        {
+            name: "Erhan Şahin",
+            initials: "EŞ",
+            date: "12/03/2025",
+            rating: 5,
+            text: "Fırın ve gıda üretim alanımızda rutin dezenfeksiyon ve pest kontrol için anlaştık. Mevzuata tam uygun raporlama ve periyodik takip veriyorlar. İşimizi çok kolaylaştırdılar."
+        },
+        {
+            name: "Sibel Doğan",
+            initials: "SD",
+            date: "25/03/2025",
+            rating: 5,
+            text: "Küçük çocuklu bir aile olarak kokusuz ilaçlama arıyorduk. Ekipler sağlığa zararsız, bakanlık onaylı ürünler kullanarak işlem yaptı. Evden ayrılmamıza bile gerek kalmadı."
+        },
+        {
+            name: "Serkan Yüksel",
+            initials: "SY",
+            date: "08/04/2025",
+            rating: 5,
+            text: "Depomuzda tahtakurdu ve zararlılar için yardım istedik. Kısa sürede tespit yapıp kalıcı çözüm sağladılar. Telefonla aradığımda her soruma sabırla yanıt verdiler."
+        },
+        {
+            name: "Nesrin Kaya",
+            initials: "NK",
+            date: "20/04/2025",
+            rating: 5,
+            text: "Site yönetimi olarak tüm blokların bodrum, sığınak ve ortak alanlarını ilaçlattık. Sorunsuz, tertemiz teslim ettiler. Önümüzdeki sezon için de tekrar kendileriyle çalışacağız."
+        },
+        {
+            name: "Caner Yıldız",
+            initials: "CY",
+            date: "02/05/2025",
+            rating: 5,
+            text: "Yaz sezonu öncesi bahçeli evimizin çevresine koruyucu bariyer ilaçlama yapıldı. Akrep ve çiyan gibi zararlılar tamamen engellendi. İşinin uzmanı güler yüzlü bir kadro."
+        },
+        {
+            name: "Sevgi Altın",
+            initials: "SA",
+            date: "19/05/2025",
+            rating: 5,
+            text: "Kafe işletmemiz için 2 yıldır kesintisiz ilaçlama ve dezenfeksiyon desteği alıyoruz. Disiplinli, dürüst ve sözünün eri insanlar. Uşak'ta ilaçlama konusunda tek adres."
         }
     ];
 
