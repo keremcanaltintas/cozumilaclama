@@ -298,7 +298,7 @@
       }
     }
 
-    /* Modern Progress Bar, Counter & Dots Navigation */
+    /* Counter & Dots Navigation with Active Dot Fill Animation */
     .gr-progress-wrapper {
       display: flex;
       flex-direction: column;
@@ -306,24 +306,6 @@
       justify-content: center;
       gap: 12px;
       margin-top: 26px;
-
-      .gr-progress-bar-bg {
-        width: 100%;
-        max-width: 320px;
-        height: 8px;
-        background: #e2e8f0;
-        border-radius: 10px;
-        overflow: hidden;
-        position: relative;
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
-
-        .gr-progress-bar-fill {
-          height: 100%;
-          width: 0%;
-          background: linear-gradient(90deg, #1D976C, #18bc9c);
-          border-radius: 10px;
-        }
-      }
 
       .gr-nav-info-row {
         display: flex;
@@ -346,22 +328,36 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 6px;
+        gap: 8px;
         flex-wrap: wrap;
         max-width: 90%;
 
         .dot {
-          width: 8px;
-          height: 8px;
+          position: relative;
+          width: 10px;
+          height: 10px;
           border-radius: 50%;
           background: #cbd5e1;
           cursor: pointer;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          overflow: hidden;
+          transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+
+          .dot-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #1D976C, #18bc9c);
+            border-radius: 10px;
+            pointer-events: none;
+          }
 
           &.active {
-            width: 22px;
+            width: 32px;
+            height: 10px;
             border-radius: 10px;
-            background: #1D976C;
+            background: #e2e8f0;
           }
         }
       }

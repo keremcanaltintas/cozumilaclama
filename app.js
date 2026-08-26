@@ -391,15 +391,18 @@ document.addEventListener('DOMContentLoaded', () => {
     let elapsedBeforePause = 0;
     const autoPlayDelay = 3000;
 
-    const progressFillEl = document.getElementById('grProgressFill');
     const counterEl = document.getElementById('grCounter');
 
-    // Create pagination dots
+    // Create pagination dots with inner fill bar
     if (dotsNavEl) {
         dotsNavEl.innerHTML = '';
         reviews.forEach((_, idx) => {
             const dot = document.createElement('span');
             dot.className = `dot ${idx === 0 ? 'active' : ''}`;
+            const fill = document.createElement('span');
+            fill.className = 'dot-fill';
+            dot.appendChild(fill);
+
             dot.addEventListener('click', () => {
                 goToSlide(idx);
             });
@@ -449,8 +452,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const elapsed = timestamp - startTime;
         const percent = Math.min((elapsed / autoPlayDelay) * 100, 100);
 
-        if (progressFillEl) {
-            progressFillEl.style.width = percent + '%';
+        if (dotsNavEl) {
+            const activeDotFill = dotsNavEl.querySelector('.dot.active .dot-fill');
+            if (activeDotFill) {
+                activeDotFill.style.width = percent + '%';
+            }
         }
 
         if (elapsed < autoPlayDelay) {
@@ -468,8 +474,17 @@ document.addEventListener('DOMContentLoaded', () => {
         elapsedBeforePause = 0;
         startTime = null;
 
-        if (progressFillEl) {
-            progressFillEl.style.width = '0%';
+        // Reset dots and set active dot
+        if (dotsNavEl) {
+            const dots = dotsNavEl.querySelectorAll('.dot');
+            dots.forEach((dot, idx) => {
+                const isActive = (idx === currentIndex);
+                dot.classList.toggle('active', isActive);
+                const fill = dot.querySelector('.dot-fill');
+                if (fill) {
+                    fill.style.width = '0%';
+                }
+            });
         }
 
         // Update counter
@@ -477,14 +492,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentStr = String(currentIndex + 1).padStart(2, '0');
             const totalStr = String(reviews.length).padStart(2, '0');
             counterEl.textContent = `${currentStr} / ${totalStr}`;
-        }
-
-        // Update dots
-        if (dotsNavEl) {
-            const dots = dotsNavEl.querySelectorAll('.dot');
-            dots.forEach((dot, idx) => {
-                dot.classList.toggle('active', idx === currentIndex);
-            });
         }
 
         animReqId = requestAnimationFrame(animateProgress);
