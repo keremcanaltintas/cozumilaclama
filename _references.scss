@@ -577,3 +577,435 @@
         }
     }
 }
+
+/* Google Reviews Section Styling */
+.google-reviews-section {
+  position: relative;
+  width: 100%;
+  padding: 70px 0 60px 0;
+  background: linear-gradient(180deg, rgba(115, 215, 180, 0.12) 0%, #f4f9f6 100%);
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+
+  .gr-header {
+    text-align: center;
+    margin-bottom: 30px;
+
+    .gr-logo-title {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 8px;
+
+      img {
+        height: 38px;
+        width: auto;
+        object-fit: contain;
+      }
+
+      .google-brand {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 800;
+
+        .g1 { color: #4285F4; }
+        .o1 { color: #EA4335; }
+        .o2 { color: #FBBC05; }
+        .g2 { color: #4285F4; }
+        .l { color: #34A853; }
+        .e { color: #EA4335; }
+      }
+
+      .title-text {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #0b3c22;
+        margin-left: 4px;
+      }
+    }
+
+    .gr-subtitle {
+      font-size: 0.95rem;
+      color: #64748b;
+      margin: 0;
+    }
+  }
+
+  /* Summary Rating Badge (Matching example card) */
+  .gr-summary-card {
+    max-width: 440px;
+    width: 90%;
+    margin: 0 auto 40px auto;
+    background: #ffffff;
+    border: 1px solid rgba(29, 151, 108, 0.15);
+    border-radius: 18px;
+    padding: 16px 24px;
+    box-shadow: 0 10px 25px rgba(11, 60, 34, 0.06);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    .summary-logo {
+      width: 54px !important;
+      height: 54px !important;
+      max-width: 54px !important;
+      max-height: 54px !important;
+      border-radius: 12px;
+      object-fit: contain;
+      background: #f8fafc;
+      padding: 4px;
+      border: 1px solid #e2e8f0;
+      flex-shrink: 0;
+    }
+
+    .summary-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      .company-name {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #0b3c22;
+        line-height: 1.2;
+      }
+
+      .rating-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .rating-score {
+          font-size: 1.2rem;
+          font-weight: 800;
+          color: #1e293b;
+        }
+
+        .rating-stars {
+          color: #ffc107;
+          font-size: 1.1rem;
+          display: flex;
+          gap: 2px;
+        }
+      }
+
+      .rating-count {
+        font-size: 0.85rem;
+        color: #64748b;
+        margin: 0;
+
+        strong {
+          color: #0b3c22;
+        }
+      }
+    }
+  }
+
+  /* Main Carousel Area */
+  .gr-carousel-container {
+    position: relative;
+    max-width: 680px;
+    width: 90%;
+    margin: 0 auto;
+
+    .gr-nav-btn {
+      position: absolute;
+      top: 105px;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      color: #1D976C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 15;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        background: #1D976C;
+        color: #ffffff;
+        border-color: #1D976C;
+        transform: translateY(-50%) scale(1.08);
+      }
+
+      &.prev-btn {
+        left: -22px;
+      }
+
+      &.next-btn {
+        right: -22px;
+      }
+    }
+
+    /* Fixed Height Bubble Card to prevent any layout shifting */
+    .gr-bubble-wrapper {
+      width: 100%;
+      position: relative;
+    }
+
+    .gr-bubble-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 24px 28px;
+      box-shadow: 0 12px 30px rgba(11, 60, 34, 0.07);
+      position: relative;
+      /* STRICT FIXED HEIGHT GUARANTEE */
+      height: 230px;
+      min-height: 230px;
+      max-height: 230px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+
+      /* Bubble tail indicator pointing down */
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        border-top: 14px solid #ffffff;
+        filter: drop-shadow(0 3px 2px rgba(11, 60, 34, 0.05));
+      }
+
+      .card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        .quote-icon {
+          font-size: 2.2rem;
+          color: #1D976C;
+          opacity: 0.35;
+          line-height: 1;
+        }
+
+        .card-rating {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          .stars {
+            color: #ffc107;
+            font-size: 1rem;
+            display: flex;
+            gap: 2px;
+          }
+
+          .verified-icon {
+            color: #1D976C;
+            font-size: 0.95rem;
+          }
+        }
+      }
+
+      .gr-review-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #334155;
+        font-style: italic;
+        margin: 0;
+        flex: 1;
+        overflow-y: auto;
+        padding-right: 6px;
+
+        /* Custom subtle scrollbar if text is longer */
+        &::-webkit-scrollbar {
+          width: 4px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: #cbd5e1;
+          border-radius: 4px;
+        }
+      }
+
+      .card-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-top: 8px;
+
+        .google-icon {
+          width: 22px;
+          height: 22px;
+          object-fit: contain;
+        }
+      }
+    }
+
+    /* Author Info under bubble */
+    .gr-author-box {
+      margin-top: 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .author-avatar {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #1D976C, #18bc9c);
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 6px;
+        box-shadow: 0 4px 10px rgba(29, 151, 108, 0.25);
+        border: 2px solid #ffffff;
+      }
+
+      .author-name {
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #1e293b;
+        margin: 0;
+      }
+
+      .author-date {
+        font-size: 0.8rem;
+        color: #94a3b8;
+        margin: 0;
+      }
+    }
+
+    /* Dots Navigation */
+    .gr-dots-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 22px;
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #cbd5e1;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          width: 26px;
+          border-radius: 10px;
+          background: #1D976C;
+        }
+      }
+    }
+  }
+
+  /* Bottom CTA Button */
+  .gr-cta-wrapper {
+    margin-top: 35px;
+    text-align: center;
+
+    .gr-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #1D976C;
+      color: #ffffff;
+      padding: 14px 34px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      box-shadow: 0 8px 22px rgba(29, 151, 108, 0.28);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      i {
+        font-size: 1.1rem;
+      }
+
+      &:hover {
+        background: #157954;
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(29, 151, 108, 0.38);
+      }
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .google-reviews-section {
+    padding: 50px 0 45px 0;
+
+    .gr-header {
+      .gr-logo-title {
+        .google-brand, .title-text {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .gr-summary-card {
+      padding: 14px 18px;
+      gap: 14px;
+      margin-bottom: 30px;
+
+      .summary-logo {
+        width: 46px !important;
+        height: 46px !important;
+      }
+
+      .summary-info {
+        .company-name {
+          font-size: 0.95rem;
+        }
+        .rating-row .rating-score {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .gr-carousel-container {
+      width: 95%;
+
+      .gr-nav-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+        top: 110px;
+
+        &.prev-btn { left: -10px; }
+        &.next-btn { right: -10px; }
+      }
+
+      .gr-bubble-card {
+        height: 230px;
+        min-height: 230px;
+        max-height: 230px;
+        padding: 20px 22px;
+      }
+    }
+
+    .gr-cta-wrapper {
+      .gr-cta-btn {
+        padding: 12px 26px;
+        font-size: 0.88rem;
+        width: 90%;
+        max-width: 320px;
+      }
+    }
+  }
+}
