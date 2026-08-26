@@ -378,7 +378,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements
     const reviewTextEl = document.getElementById('grReviewText');
     const authorNameEl = document.getElementById('grAuthorName');
-    const authorDateEl = document.getElementById('grAuthorDate');
     const authorAvatarEl = document.getElementById('grAuthorAvatar');
     const starsEl = document.getElementById('grStars');
     const dotsNavEl = document.getElementById('grDotsNav');
@@ -386,19 +385,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('grPrevBtn');
     const nextBtn = document.getElementById('grNextBtn');
 
-    const autoPlayDelay = 5000;
+    let startTime = null;
+    let animReqId = null;
+    let isPaused = false;
+    let elapsedBeforePause = 0;
+    const autoPlayDelay = 3000;
 
-    // Create pagination dots with animated fill bar inside
+    const progressFillEl = document.getElementById('grProgressFill');
+    const counterEl = document.getElementById('grCounter');
+
+    // Create pagination dots
     if (dotsNavEl) {
         dotsNavEl.innerHTML = '';
         reviews.forEach((_, idx) => {
             const dot = document.createElement('span');
             dot.className = `dot ${idx === 0 ? 'active' : ''}`;
-            
-            const fill = document.createElement('span');
-            fill.className = 'dot-fill';
-            dot.appendChild(fill);
-
             dot.addEventListener('click', () => {
                 goToSlide(idx);
             });
@@ -420,7 +421,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Update review content
             if (reviewTextEl) reviewTextEl.textContent = `"${r.text}"`;
             if (authorNameEl) authorNameEl.textContent = r.name;
-            if (authorDateEl) authorDateEl.textContent = r.date;
             if (authorAvatarEl) authorAvatarEl.textContent = r.initials || r.name.substring(0, 2).toUpperCase();
 
             // Render Stars
@@ -444,48 +444,78 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 200);
     }
 
-    function startProgress() {
-        stopProgress();
+    function animateProgress(timestamp) {
+        if (!startTime) startTime = timestamp - elapsedBeforePause;
+        const elapsed = timestamp - startTime;
+        const percent = Math.min((elapsed / autoPlayDelay) * 100, 100);
 
-        if (!dotsNavEl) return;
-        const dots = dotsNavEl.querySelectorAll('.dot');
-        dots.forEach((dot, idx) => {
-            const fill = dot.querySelector('.dot-fill');
-            if (fill) {
-                fill.style.transition = 'none';
-                fill.style.width = '0%';
-            }
-            dot.classList.toggle('active', idx === currentIndex);
-        });
-
-        const activeDot = dots[currentIndex];
-        if (activeDot) {
-            const activeFill = activeDot.querySelector('.dot-fill');
-            if (activeFill) {
-                // Force reflow to restart transition cleanly
-                void activeFill.offsetWidth;
-                activeFill.style.transition = `width ${autoPlayDelay}ms linear`;
-                activeFill.style.width = '100%';
-            }
+        if (progressFillEl) {
+            progressFillEl.style.width = percent + '%';
         }
 
-        autoPlayTimer = setTimeout(() => {
+        if (elapsed < autoPlayDelay) {
+            if (!isPaused) {
+                animReqId = requestAnimationFrame(animateProgress);
+            }
+        } else {
             nextSlide();
-        }, autoPlayDelay);
+        }
+    }
+
+    function startProgress() {
+        stopProgress();
+        isPaused = false;
+        elapsedBeforePause = 0;
+        startTime = null;
+
+        if (progressFillEl) {
+            progressFillEl.style.width = '0%';
+        }
+
+        // Update counter
+        if (counterEl) {
+            const currentStr = String(currentIndex + 1).padStart(2, '0');
+            const totalStr = String(reviews.length).padStart(2, '0');
+            counterEl.textContent = `${currentStr} / ${totalStr}`;
+        }
+
+        // Update dots
+        if (dotsNavEl) {
+            const dots = dotsNavEl.querySelectorAll('.dot');
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentIndex);
+            });
+        }
+
+        animReqId = requestAnimationFrame(animateProgress);
+    }
+
+    function pauseProgress() {
+        if (isPaused) return;
+        isPaused = true;
+        if (animReqId) {
+            cancelAnimationFrame(animReqId);
+            animReqId = null;
+        }
+        if (startTime) {
+            elapsedBeforePause = performance.now() - startTime;
+        }
+    }
+
+    function resumeProgress() {
+        if (!isPaused) return;
+        isPaused = false;
+        startTime = null;
+        animReqId = requestAnimationFrame(animateProgress);
     }
 
     function stopProgress() {
-        if (autoPlayTimer) {
-            clearTimeout(autoPlayTimer);
-            autoPlayTimer = null;
-        }
-        if (dotsNavEl) {
-            const activeFill = dotsNavEl.querySelector('.dot.active .dot-fill');
-            if (activeFill) {
-                const computedWidth = getComputedStyle(activeFill).width;
-                activeFill.style.transition = 'none';
-                activeFill.style.width = computedWidth;
-            }
+        isPaused = false;
+        elapsedBeforePause = 0;
+        startTime = null;
+        if (animReqId) {
+            cancelAnimationFrame(animReqId);
+            animReqId = null;
         }
     }
 
@@ -519,8 +549,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Pause auto-play progress on hover
-    section.addEventListener('mouseenter', stopProgress);
-    section.addEventListener('mouseleave', startProgress);
+    section.addEventListener('mouseenter', pauseProgress);
+    section.addEventListener('mouseleave', resumeProgress);
 
     // Touch Swipe Support for Mobile
     let touchStartX = 0;

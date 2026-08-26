@@ -68,8 +68,10 @@
     gap: 18px;
 
     .summary-logo {
-      width: 54px;
-      height: 54px;
+      width: 54px !important;
+      height: 54px !important;
+      max-width: 54px !important;
+      max-height: 54px !important;
       border-radius: 12px;
       object-fit: contain;
       background: #f8fafc;
@@ -163,7 +165,7 @@
       }
     }
 
-    /* Fixed Height Bubble Card to prevent any layout shifting */
+    /* Fixed Height Bubble Card */
     .gr-bubble-wrapper {
       width: 100%;
       position: relative;
@@ -176,7 +178,6 @@
       padding: 24px 28px;
       box-shadow: 0 12px 30px rgba(11, 60, 34, 0.07);
       position: relative;
-      /* STRICT FIXED HEIGHT GUARANTEE */
       height: 230px;
       min-height: 230px;
       max-height: 230px;
@@ -242,7 +243,6 @@
         overflow-y: auto;
         padding-right: 6px;
 
-        /* Custom subtle scrollbar if text is longer */
         &::-webkit-scrollbar {
           width: 4px;
         }
@@ -296,34 +296,73 @@
         color: #1e293b;
         margin: 0;
       }
-
-      .author-date {
-        font-size: 0.8rem;
-        color: #94a3b8;
-        margin: 0;
-      }
     }
 
-    /* Dots Navigation */
-    .gr-dots-nav {
+    /* Modern Progress Bar, Counter & Dots Navigation */
+    .gr-progress-wrapper {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      margin-top: 22px;
+      gap: 12px;
+      margin-top: 26px;
 
-      .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: #cbd5e1;
-        cursor: pointer;
-        transition: all 0.3s ease;
+      .gr-progress-bar-bg {
+        width: 100%;
+        max-width: 320px;
+        height: 8px;
+        background: #e2e8f0;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
 
-        &.active {
-          width: 26px;
+        .gr-progress-bar-fill {
+          height: 100%;
+          width: 0%;
+          background: linear-gradient(90deg, #1D976C, #18bc9c);
           border-radius: 10px;
-          background: #1D976C;
+        }
+      }
+
+      .gr-nav-info-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+
+        .gr-counter {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #1b4332;
+          background: #eaf6f1;
+          padding: 4px 14px;
+          border-radius: 12px;
+          letter-spacing: 1px;
+        }
+      }
+
+      .gr-dots-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        flex-wrap: wrap;
+        max-width: 90%;
+
+        .dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: #cbd5e1;
+          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+          &.active {
+            width: 22px;
+            border-radius: 10px;
+            background: #1D976C;
+          }
         }
       }
     }
@@ -383,8 +422,8 @@
       margin-bottom: 30px;
 
       .summary-logo {
-        width: 46px;
-        height: 46px;
+        width: 46px !important;
+        height: 46px !important;
       }
 
       .summary-info {

@@ -7,7 +7,7 @@
 @use "bugses";
 @use "services";
 @use "references";
-@use "googleReviews";
+@use "googleReviews" as *;
 @use "footer";
 
 * {
