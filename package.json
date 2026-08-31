@@ -1,6 +1,9 @@
 {
   "name": "cozumilaclama-master",
   "version": "1.0.0",
+  "scripts": {
+    "build:css": "sass style.scss css/style.css"
+  },
   "dependencies": {
     "sass": "^1.100.0"
   }
