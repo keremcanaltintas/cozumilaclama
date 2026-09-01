@@ -1,197 +1,95 @@
 @use "mixins" as *;
 
-//CONTACT-Footer
+// CONTACT - Classic Footer Restored & Polished
 
 footer {
-    display: block;
-    background: #0e3023; /* Deep corporate dark green background */
-    padding: 5rem 4rem 2rem 4rem;
+    background: $main-color2;
+    background: linear-gradient(135deg, #156849 0%, #1D976C 100%);
+    padding: 3.5rem 2rem 2.5rem 2rem;
     color: #ffffff;
-    border-top: 4px solid #1D976C;
+    @include flex(column, center, center);
+    text-align: center;
 
     a {
         text-decoration: none;
         transition: all 0.3s ease;
     }
 
-    .footer-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 4rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding-bottom: 3rem;
+    ul {
+        @include flex(row, center, center);
+        flex-wrap: wrap;
+        gap: 2rem;
+        list-style: none;
+        margin: 0 0 2rem 0;
+        padding: 0;
 
-        .footer-col {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-
-            &.brand-col {
-                flex: 1.4;
-            }
-
-            .footer-brand {
-                font-family: 'Montserrat', sans-serif;
-                font-weight: 800;
-                font-size: 1.6rem;
+        li {
+            a {
                 color: #ffffff;
-                letter-spacing: 0.05em;
-                margin: 0;
-            }
-
-            .footer-slogan {
                 font-family: 'Poppins', sans-serif;
-                color: #a4c5b8;
-                font-size: 0.95rem;
-                line-height: 1.6;
-                margin: 0;
-            }
-
-            .footer-socials {
-                display: flex;
-                gap: 0.8rem;
-                margin-top: 0.5rem;
-
-                a {
-                    width: 38px;
-                    height: 38px;
-                    border-radius: 50%;
-                    background: rgba(29, 151, 108, 0.1);
-                    border: 1px solid rgba(29, 151, 108, 0.3);
-                    color: #93F9B9;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 1.1rem;
-
-                    &:hover {
-                        background: #1D976C;
-                        color: #ffffff;
-                        border-color: #1D976C;
-                        transform: translateY(-3px);
-                        box-shadow: 0 5px 15px rgba(29, 151, 108, 0.3);
-                    }
-                }
-            }
-
-            h4 {
-                font-family: 'Montserrat', sans-serif;
-                font-weight: 700;
-                font-size: 1.2rem;
-                color: #ffffff;
-                margin: 0 0 0.5rem 0;
+                font-size: 1rem;
+                font-weight: 400;
                 position: relative;
-                padding-bottom: 0.6rem;
+                padding-bottom: 4px;
 
                 &::after {
-                    content: "";
+                    content: '';
                     position: absolute;
-                    left: 0;
                     bottom: 0;
-                    width: 35px;
-                    height: 2.5px;
-                    background-color: #1D976C;
-                    border-radius: 2px;
+                    left: 0;
+                    width: 0%;
+                    height: 2px;
+                    background-color: #93F9B9;
+                    transition: width 0.3s ease;
                 }
-            }
 
-            ul {
-                display: flex;
-                flex-direction: column;
-                gap: 0.8rem;
-                list-style: none;
-                padding: 0;
-                margin: 0;
+                &:hover {
+                    color: #93F9B9;
 
-                li {
-                    a {
-                        font-family: 'Poppins', sans-serif;
-                        color: #a4c5b8;
-                        font-size: 0.95rem;
-                        display: inline-flex;
-                        align-items: center;
-                        gap: 0.5rem;
-                        border-bottom: none;
-
-                        i {
-                            font-size: 0.8rem;
-                            transition: transform 0.3s ease;
-                            background: none;
-                            padding: 0;
-                            border-radius: 0;
-                            box-shadow: none;
-                            color: #1D976C;
-                            margin: 0;
-                            width: auto;
-                            height: auto;
-                        }
-
-                        &:hover {
-                            color: #ffffff;
-                            
-                            i {
-                                transform: translateX(4px);
-                                color: #93F9B9;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .contact-items {
-                display: flex;
-                flex-direction: column;
-                gap: 1.2rem;
-
-                .contact-item {
-                    display: flex;
-                    gap: 1rem;
-                    align-items: flex-start;
-
-                    i {
-                        font-size: 1.05rem;
-                        color: #ffffff;
-                        background-color: #1D976C;
-                        width: 36px;
-                        height: 36px;
-                        border-radius: 8px; /* Sleek rounded square icon badge */
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        flex-shrink: 0;
-                        box-shadow: 0 4px 10px rgba(29, 151, 108, 0.15);
-                        margin: 0;
-                        padding: 0;
-                    }
-
-                    a {
-                        font-family: 'Poppins', sans-serif;
-                        color: #a4c5b8;
-                        font-size: 0.95rem;
-                        line-height: 1.5;
-
-                        &:hover {
-                            color: #ffffff;
-                        }
+                    &::after {
+                        width: 100%;
                     }
                 }
             }
         }
     }
 
-    .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        padding-top: 1.8rem;
-        margin-top: 1rem;
-        text-align: center;
+    .line {
+        width: 85%;
+        max-width: 1100px;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.25);
+        margin: 0 auto 2rem auto;
+    }
 
-        p {
-            font-family: 'Poppins', sans-serif;
-            color: #76978a;
-            font-size: 0.85rem;
-            margin: 0;
+    .contact {
+        @include flex(row, center, center);
+        flex-wrap: wrap;
+        gap: 2.5rem;
+        max-width: 1100px;
+        width: 100%;
+
+        div {
+            @include flex(row, center, center);
+            gap: 0.75rem;
+
+            i {
+                font-size: 1.25rem;
+                color: #93F9B9;
+                flex-shrink: 0;
+            }
+
+            a {
+                color: #ffffff;
+                font-family: 'Poppins', sans-serif;
+                font-size: 0.95rem;
+                font-weight: 300;
+                line-height: 1.4;
+
+                &:hover {
+                    color: #93F9B9;
+                }
+            }
         }
     }
 }
@@ -204,7 +102,7 @@ footer {
     z-index: 999;
     background-color: #25D366;
     color: white;
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 1.3rem;
     border-radius: 50px;
     text-decoration: none;
     display: flex;
@@ -219,7 +117,7 @@ footer {
 
     &:hover {
         background-color: #20BA5A;
-        transform: scale(1.1);
+        transform: scale(1.08);
         box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
         color: white;
     }
@@ -237,7 +135,7 @@ footer {
     }
 }
 
-/* Scroll to Top Button styled cleanly and stacked to avoid overlaps */
+/* Scroll to Top Button */
 button#scrollButton {
     border: 0;
     outline: 0;
@@ -252,7 +150,7 @@ button#scrollButton {
     align-items: center;
     justify-content: center;
     position: fixed;
-    bottom: 6rem; /* Stacked neatly above WhatsApp button */
+    bottom: 6rem;
     right: 2rem;
     z-index: 999;
     transition: all 0.3s ease;
@@ -266,7 +164,7 @@ button#scrollButton {
     }
 
     i {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         color: inherit;
     }
 }
@@ -395,50 +293,36 @@ button#scrollButton {
     }
 }
 
-@media screen and (max-width:992px) {
+@media screen and (max-width: 768px) {
     footer {
-        padding: 4rem 2rem 2rem 2rem;
+        padding: 2.5rem 1.5rem 2rem 1.5rem;
 
-        .footer-container {
+        ul {
             flex-direction: column;
-            gap: 3rem;
+            gap: 1rem;
+        }
+
+        .line {
+            width: 100%;
+        }
+
+        .contact {
+            flex-direction: column;
+            gap: 1.2rem;
             align-items: center;
-            text-align: center;
 
-            .footer-col {
-                align-items: center;
+            div {
+                flex-direction: column;
                 text-align: center;
-                width: 100%;
-
-                h4::after {
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-
-                ul li a {
-                    justify-content: center;
-                }
-
-                .contact-items {
-                    align-items: center;
-
-                    .contact-item {
-                        flex-direction: column;
-                        align-items: center;
-                        text-align: center;
-                        gap: 0.5rem;
-                    }
-                }
+                gap: 0.4rem;
             }
         }
     }
-}
 
-@media screen and (max-width: 600px) {
     .whatsappIconLink {
         padding: 0.6rem 1rem;
         gap: 0.6rem;
-        bottom: 80px;
+        bottom: 1.5rem;
         right: 1rem;
         font-size: 0.85rem;
 
@@ -447,10 +331,10 @@ button#scrollButton {
     }
 
     button#scrollButton {
-        bottom: 140px;
+        bottom: 5rem;
         right: 1rem;
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
         i { font-size: 1.2rem; }
     }
 
@@ -460,13 +344,5 @@ button#scrollButton {
         width: 95%;
 
         h2 { font-size: 1.5rem; }
-    }
-
-    .contact-option {
-        padding: 1rem;
-        gap: 1rem;
-
-        i { font-size: 1.5rem; }
-        span { font-size: 1rem; }
     }
 }
