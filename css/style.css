@@ -2445,6 +2445,12 @@ section.bugses .bugses-content .card-box .circle img {
   object-fit: cover;
   border-radius: 50%;
 }
+section.bugses .bugses-content .card-box .circle img.pire-img {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+  border-radius: 0;
+}
 section.bugses .bugses-content .card-box .circle i {
   font-size: 2rem;
   color: #1D976C;
