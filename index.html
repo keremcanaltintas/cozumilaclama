@@ -1,1361 +1,1599 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Ev ve iş yerlerinde etkili böcek ilaçlama hizmetleri sunan uzman ekiplerimizle, böcek sorunlarınızı kalıcı olarak çözüyoruz. Güvenilir ve çevre dostu yöntemlerimizle yaşam alanlarınızı sağlıklı hale getiriyoruz. Hemen bize ulaşın ve böceklerle mücadelede profesyonel yardım alın."
-    />
-    <title>Çözüm İlaçlama</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@100;200;300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/style.css?v=6.0" />
-    <style>
-      /* ===== HAŞERE VE BÖCEKLER ===== */
-      section.bugses{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5rem 0;text-align:center;background:linear-gradient(180deg,#f8fdf9 0%,#ffffff 100%)}
-      section.bugses .bg2{position:absolute;bottom:0;right:0;opacity:.1;z-index:-1}
-      section.bugses .bugses-content{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;padding:0 4rem;max-width:1300px;margin:0 auto;gap:0}
-      section.bugses .bugses-content .col-sm-6{width:50%;padding:0 1rem;box-sizing:border-box}
-      section.bugses .bugses-content .col-md-4{width:33.333%;padding:0 1rem;box-sizing:border-box}
-      section.bugses .bugses-content .card-box{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:1rem;padding:4.5rem 1.8rem 2rem 1.8rem;margin:3rem 0 1.5rem 0;position:relative;background:#fff;border:1px solid rgba(29,151,108,.15);border-radius:20px;box-shadow:0 8px 30px rgba(29,151,108,.08);cursor:pointer;text-decoration:none;color:inherit;transition:all .4s cubic-bezier(.25,.46,.45,.94);overflow:visible}
-      section.bugses .bugses-content .card-box:hover{background:linear-gradient(135deg,#1D976C,#0e7a55);border-color:#1D976C;transform:translateY(-10px);box-shadow:0 20px 50px rgba(29,151,108,.25)}
-      section.bugses .bugses-content .card-box:hover h2{color:#fff}
-      section.bugses .bugses-content .card-box:hover p{color:rgba(255,255,255,.85)}
-      section.bugses .bugses-content .card-box:hover .circle{background-color:#fff;border-color:#fff;box-shadow:0 8px 25px rgba(0,0,0,.15);transform:translateX(50%) scale(1.1)}
-      section.bugses .bugses-content .card-box .circle{width:100px;height:100px;border:3px solid rgba(29,151,108,.2);background-color:#f0faf5;border-radius:50%;position:absolute;right:50%;top:-50px;transform:translateX(50%);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:all .4s cubic-bezier(.25,.46,.45,.94);box-shadow:0 5px 15px rgba(29,151,108,.1)}
-      section.bugses .bugses-content .card-box .circle img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-      section.bugses .bugses-content .card-box .circle img.pire-img{width:75%;height:75%;object-fit:contain;border-radius:0}
-      section.bugses .bugses-content .card-box h2{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:700;color:#1a3a2a;margin:0;transition:color .3s ease}
-      section.bugses .bugses-content .card-box p{font-family:'Poppins',sans-serif;font-size:.9rem;font-weight:300;color:#6b7c74;line-height:1.6;margin:0;transition:color .3s ease}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Ev ve iş yerlerinde etkili böcek ilaçlama hizmetleri sunan uzman ekiplerimizle, böcek sorunlarınızı kalıcı olarak çözüyoruz. Güvenilir ve çevre dostu yöntemlerimizle yaşam alanlarınızı sağlıklı hale getiriyoruz. Hemen bize ulaşın ve böceklerle mücadelede profesyonel yardım alın." />
+  <title>Çözüm İlaçlama</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-      /* ===== FOOTER ===== */
-      footer{display:block!important;background:#0e3023!important;padding:5rem 4rem 2rem 4rem!important;color:#fff!important;border-top:4px solid #1D976C!important}
-      footer a{text-decoration:none;transition:all .3s ease}
-      footer .footer-container{display:flex!important;justify-content:space-between!important;gap:4rem;max-width:1200px;margin:0 auto;padding-bottom:3rem}
-      footer .footer-container .footer-col{flex:1;display:flex;flex-direction:column;gap:1.5rem}
-      footer .footer-container .footer-col.brand-col{flex:1.4}
-      footer .footer-container .footer-col .footer-brand{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.6rem;color:#fff;letter-spacing:.05em;margin:0}
-      footer .footer-container .footer-col .footer-slogan{font-family:'Poppins',sans-serif;color:#a4c5b8;font-size:.95rem;line-height:1.6;margin:0}
-      footer .footer-container .footer-col .footer-socials{display:flex;gap:.8rem;margin-top:.5rem}
-      footer .footer-container .footer-col .footer-socials a{width:38px;height:38px;border-radius:50%;background:rgba(29,151,108,.1);border:1px solid rgba(29,151,108,.3);color:#93F9B9;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
-      footer .footer-container .footer-col .footer-socials a:hover{background:#1D976C;color:#fff;border-color:#1D976C;transform:translateY(-3px);box-shadow:0 5px 15px rgba(29,151,108,.3)}
-      footer .footer-container .footer-col h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.2rem;color:#fff!important;margin:0 0 .5rem 0;position:relative;padding-bottom:.6rem}
-      footer .footer-container .footer-col h4::after{content:"";position:absolute;left:0;bottom:0;width:35px;height:2.5px;background-color:#1D976C;border-radius:2px}
-      footer .footer-container .footer-col ul{display:flex;flex-direction:column;gap:.8rem;list-style:none!important;padding:0!important;margin:0!important}
-      footer .footer-container .footer-col ul li{list-style:none!important}
-      footer .footer-container .footer-col ul li a{font-family:'Poppins',sans-serif;color:#a4c5b8!important;font-size:.95rem;display:inline-flex;align-items:center;gap:.5rem;border-bottom:none}
-      footer .footer-container .footer-col ul li a i{font-size:.8rem;transition:transform .3s ease;background:none!important;padding:0!important;border-radius:0!important;box-shadow:none!important;color:#1D976C!important;margin:0!important;width:auto!important;height:auto!important}
-      footer .footer-container .footer-col ul li a:hover{color:#fff!important}
-      footer .footer-container .footer-col ul li a:hover i{transform:translateX(4px);color:#93F9B9!important}
-      footer .footer-container .footer-col .contact-items{display:flex;flex-direction:column;gap:1.2rem}
-      footer .footer-container .footer-col .contact-items .contact-item{display:flex;gap:1rem;align-items:flex-start}
-      footer .footer-container .footer-col .contact-items .contact-item i{font-size:1.05rem;color:#fff!important;background-color:#1D976C!important;width:36px!important;height:36px!important;border-radius:8px!important;display:flex!important;align-items:center!important;justify-content:center!important;flex-shrink:0;box-shadow:0 4px 10px rgba(29,151,108,.15);margin:0;padding:0}
-      footer .footer-container .footer-col .contact-items .contact-item a{font-family:'Poppins',sans-serif;color:#a4c5b8!important;font-size:.95rem;line-height:1.5}
-      footer .footer-container .footer-col .contact-items .contact-item a:hover{color:#fff!important}
-      footer .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.8rem;margin-top:1rem;text-align:center}
-      footer .footer-bottom p{font-family:'Poppins',sans-serif;color:#76978a;font-size:.85rem;margin:0}
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@100;200;300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css?v=6.0" />
+  <style>
+    /* ===== HAŞERE VE BÖCEKLER ===== */
+    section.bugses {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 0;
+      text-align: center;
+      background: linear-gradient(180deg, #f8fdf9 0%, #ffffff 100%)
+    }
 
-      /* ===== WHATSAPP ===== */
-      .whatsappIconLink{position:fixed;bottom:2rem;right:2rem;z-index:999;background-color:#25D366;color:#fff;padding:.8rem 1.2rem;border-radius:50px;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:.8rem;box-shadow:0 5px 20px rgba(37,211,102,.4);transition:all .3s ease;font-weight:600;font-size:1rem}
-      .whatsappIconLink:hover{background-color:#20BA5A;transform:scale(1.1);box-shadow:0 8px 25px rgba(37,211,102,.6);color:#fff}
-      .whatsappIconLink i{font-size:1.3rem}
-      .whatsappIconLink span{font-size:.95rem}
+    section.bugses .bg2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      opacity: .1;
+      z-index: -1
+    }
 
-      /* ===== SCROLL BUTTON ===== */
-      button#scrollButton{border:2px solid #1D976C;outline:0;width:50px;height:50px;border-radius:50%;background-color:#fff;box-shadow:0 4px 15px rgba(0,0,0,.1);color:#1D976C;display:flex;align-items:center;justify-content:center;position:fixed;bottom:6rem;right:2rem;z-index:999;transition:all .3s ease}
-      button#scrollButton:hover{cursor:pointer;background-color:#1D976C;color:#fff;transform:translateY(-3px);box-shadow:0 6px 20px rgba(29,151,108,.3)}
-      button#scrollButton i{font-size:1.5rem;color:inherit}
+    section.bugses .bugses-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+      padding: 0 4rem;
+      max-width: 1300px;
+      margin: 0 auto;
+      gap: 0
+    }
 
-      /* ===== CONTACT MODAL ===== */
-      .contact-modal{display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.5)}
-      .contact-modal.show{display:flex;align-items:center;justify-content:center}
-      .modal-content{background-color:#fff;padding:3rem;border-radius:1rem;box-shadow:0 10px 30px rgba(0,0,0,.3);max-width:500px;width:90%;position:relative}
-      .modal-content h2{color:#1D976C;margin-bottom:1rem;font-size:2rem}
-      .close-btn{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#1D976C;transition:all .3s ease}
-      .close-btn:hover{transform:scale(1.2);color:#156849}
-      .contact-options{display:flex;flex-direction:column;gap:1rem}
-      .contact-option{display:flex;align-items:center;gap:1.5rem;padding:1.5rem;border:2px solid #1D976C;border-radius:.8rem;text-decoration:none;transition:all .3s ease;background:rgba(29,151,108,.05)}
-      .contact-option:hover{background:#1D976C;color:#fff;transform:translateY(-2px);box-shadow:0 5px 15px rgba(29,151,108,.3)}
-      .contact-option:hover i,.contact-option:hover span{color:#fff}
-      .contact-option i{font-size:2rem;color:#1D976C;flex-shrink:0}
-      .contact-option span{font-weight:600;color:#1D976C;font-size:1.1rem}
-      .contact-option p{margin:0;color:grey;font-size:.9rem}
+    section.bugses .bugses-content .col-sm-6 {
+      width: 50%;
+      padding: 0 1rem;
+      box-sizing: border-box
+    }
 
-      /* ===== RESPONSIVE ===== */
-      @media screen and (max-width:992px){
-        footer{padding:4rem 2rem 2rem 2rem!important}
-        footer .footer-container{flex-direction:column!important;gap:3rem;align-items:center;text-align:center}
-        footer .footer-container .footer-col{align-items:center;text-align:center;width:100%}
-        footer .footer-container .footer-col h4::after{left:50%;transform:translateX(-50%)}
-        footer .footer-container .footer-col ul li a{justify-content:center}
-        footer .footer-container .footer-col .contact-items{align-items:center}
-        footer .footer-container .footer-col .contact-items .contact-item{flex-direction:column;align-items:center;text-align:center;gap:.5rem}
-        section.bugses .bugses-content{padding:0 2rem}
-        section.bugses .bugses-content .col-md-4{width:50%}
+    section.bugses .bugses-content .col-md-4 {
+      width: 33.333%;
+      padding: 0 1rem;
+      box-sizing: border-box
+    }
+
+    section.bugses .bugses-content .card-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1rem;
+      padding: 4.5rem 1.8rem 2rem 1.8rem;
+      margin: 3rem 0 1.5rem 0;
+      position: relative;
+      background: #fff;
+      border: 1px solid rgba(29, 151, 108, .15);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(29, 151, 108, .08);
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: all .4s cubic-bezier(.25, .46, .45, .94);
+      overflow: visible
+    }
+
+    section.bugses .bugses-content .card-box:hover {
+      background: linear-gradient(135deg, #1D976C, #0e7a55);
+      border-color: #1D976C;
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(29, 151, 108, .25)
+    }
+
+    section.bugses .bugses-content .card-box:hover h2 {
+      color: #fff
+    }
+
+    section.bugses .bugses-content .card-box:hover p {
+      color: rgba(255, 255, 255, .85)
+    }
+
+    section.bugses .bugses-content .card-box:hover .circle {
+      background-color: #fff;
+      border-color: #fff;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, .15);
+      transform: translateX(50%) scale(1.1)
+    }
+
+    section.bugses .bugses-content .card-box .circle {
+      width: 100px;
+      height: 100px;
+      border: 3px solid rgba(29, 151, 108, .2);
+      background-color: #f0faf5;
+      border-radius: 50%;
+      position: absolute;
+      right: 50%;
+      top: -50px;
+      transform: translateX(50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: all .4s cubic-bezier(.25, .46, .45, .94);
+      box-shadow: 0 5px 15px rgba(29, 151, 108, .1)
+    }
+
+    section.bugses .bugses-content .card-box .circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%
+    }
+
+    section.bugses .bugses-content .card-box .circle img.pire-img {
+      width: 75%;
+      height: 75%;
+      object-fit: contain;
+      border-radius: 0
+    }
+
+    section.bugses .bugses-content .card-box h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1a3a2a;
+      margin: 0;
+      transition: color .3s ease
+    }
+
+    section.bugses .bugses-content .card-box p {
+      font-family: 'Poppins', sans-serif;
+      font-size: .9rem;
+      font-weight: 300;
+      color: #6b7c74;
+      line-height: 1.6;
+      margin: 0;
+      transition: color .3s ease
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      display: block !important;
+      background: #0e3023 !important;
+      padding: 5rem 4rem 2rem 4rem !important;
+      color: #fff !important;
+      border-top: 4px solid #1D976C !important
+    }
+
+    footer a {
+      text-decoration: none;
+      transition: all .3s ease
+    }
+
+    footer .footer-container {
+      display: flex !important;
+      justify-content: space-between !important;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 3rem
+    }
+
+    footer .footer-container .footer-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem
+    }
+
+    footer .footer-container .footer-col.brand-col {
+      flex: 1.4
+    }
+
+    footer .footer-container .footer-col .footer-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: #fff;
+      letter-spacing: .05em;
+      margin: 0
+    }
+
+    footer .footer-container .footer-col .footer-slogan {
+      font-family: 'Poppins', sans-serif;
+      color: #a4c5b8;
+      font-size: .95rem;
+      line-height: 1.6;
+      margin: 0
+    }
+
+    footer .footer-container .footer-col .footer-socials {
+      display: flex;
+      gap: .8rem;
+      margin-top: .5rem
+    }
+
+    footer .footer-container .footer-col .footer-socials a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(29, 151, 108, .1);
+      border: 1px solid rgba(29, 151, 108, .3);
+      color: #93F9B9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem
+    }
+
+    footer .footer-container .footer-col .footer-socials a:hover {
+      background: #1D976C;
+      color: #fff;
+      border-color: #1D976C;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(29, 151, 108, .3)
+    }
+
+    footer .footer-container .footer-col h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #fff !important;
+      margin: 0 0 .5rem 0;
+      position: relative;
+      padding-bottom: .6rem
+    }
+
+    footer .footer-container .footer-col h4::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 35px;
+      height: 2.5px;
+      background-color: #1D976C;
+      border-radius: 2px
+    }
+
+    footer .footer-container .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important
+    }
+
+    footer .footer-container .footer-col ul li {
+      list-style: none !important
+    }
+
+    footer .footer-container .footer-col ul li a {
+      font-family: 'Poppins', sans-serif;
+      color: #a4c5b8 !important;
+      font-size: .95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      border-bottom: none
+    }
+
+    footer .footer-container .footer-col ul li a i {
+      font-size: .8rem;
+      transition: transform .3s ease;
+      background: none !important;
+      padding: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      color: #1D976C !important;
+      margin: 0 !important;
+      width: auto !important;
+      height: auto !important
+    }
+
+    footer .footer-container .footer-col ul li a:hover {
+      color: #fff !important
+    }
+
+    footer .footer-container .footer-col ul li a:hover i {
+      transform: translateX(4px);
+      color: #93F9B9 !important
+    }
+
+    footer .footer-container .footer-col .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem
+    }
+
+    footer .footer-container .footer-col .contact-items .contact-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start
+    }
+
+    footer .footer-container .footer-col .contact-items .contact-item i {
+      font-size: 1.05rem;
+      color: #fff !important;
+      background-color: #1D976C !important;
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 8px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(29, 151, 108, .15);
+      margin: 0;
+      padding: 0
+    }
+
+    footer .footer-container .footer-col .contact-items .contact-item a {
+      font-family: 'Poppins', sans-serif;
+      color: #a4c5b8 !important;
+      font-size: .95rem;
+      line-height: 1.5
+    }
+
+    footer .footer-container .footer-col .contact-items .contact-item a:hover {
+      color: #fff !important
+    }
+
+    footer .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      padding-top: 1.8rem;
+      margin-top: 1rem;
+      text-align: center
+    }
+
+    footer .footer-bottom p {
+      font-family: 'Poppins', sans-serif;
+      color: #76978a;
+      font-size: .85rem;
+      margin: 0
+    }
+
+    /* ===== WHATSAPP ===== */
+    .whatsappIconLink {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      background-color: #25D366;
+      color: #fff;
+      padding: .8rem 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .8rem;
+      box-shadow: 0 5px 20px rgba(37, 211, 102, .4);
+      transition: all .3s ease;
+      font-weight: 600;
+      font-size: 1rem
+    }
+
+    .whatsappIconLink:hover {
+      background-color: #20BA5A;
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, .6);
+      color: #fff
+    }
+
+    .whatsappIconLink i {
+      font-size: 1.3rem
+    }
+
+    .whatsappIconLink span {
+      font-size: .95rem
+    }
+
+    /* ===== SCROLL BUTTON ===== */
+    button#scrollButton {
+      border: 2px solid #1D976C;
+      outline: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, .1);
+      color: #1D976C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      bottom: 6rem;
+      right: 2rem;
+      z-index: 999;
+      transition: all .3s ease
+    }
+
+    button#scrollButton:hover {
+      cursor: pointer;
+      background-color: #1D976C;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(29, 151, 108, .3)
+    }
+
+    button#scrollButton i {
+      font-size: 1.5rem;
+      color: inherit
+    }
+
+    /* ===== CONTACT MODAL ===== */
+    .contact-modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, .5)
+    }
+
+    .contact-modal.show {
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 3rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+      max-width: 500px;
+      width: 90%;
+      position: relative
+    }
+
+    .modal-content h2 {
+      color: #1D976C;
+      margin-bottom: 1rem;
+      font-size: 2rem
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #1D976C;
+      transition: all .3s ease
+    }
+
+    .close-btn:hover {
+      transform: scale(1.2);
+      color: #156849
+    }
+
+    .contact-options {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem
+    }
+
+    .contact-option {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      border: 2px solid #1D976C;
+      border-radius: .8rem;
+      text-decoration: none;
+      transition: all .3s ease;
+      background: rgba(29, 151, 108, .05)
+    }
+
+    .contact-option:hover {
+      background: #1D976C;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(29, 151, 108, .3)
+    }
+
+    .contact-option:hover i,
+    .contact-option:hover span {
+      color: #fff
+    }
+
+    .contact-option i {
+      font-size: 2rem;
+      color: #1D976C;
+      flex-shrink: 0
+    }
+
+    .contact-option span {
+      font-weight: 600;
+      color: #1D976C;
+      font-size: 1.1rem
+    }
+
+    .contact-option p {
+      margin: 0;
+      color: grey;
+      font-size: .9rem
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media screen and (max-width:992px) {
+      footer {
+        padding: 4rem 2rem 2rem 2rem !important
       }
-      @media screen and (max-width:600px){
-        .whatsappIconLink{padding:.6rem 1rem;gap:.6rem;bottom:80px;right:1rem;font-size:.85rem}
-        button#scrollButton{bottom:140px;right:1rem;width:40px;height:40px}
-        section.bugses{padding:3rem 0}
-        section.bugses .bugses-content{padding:0 1rem}
-        section.bugses .bugses-content .col-sm-6,section.bugses .bugses-content .col-md-4{width:100%}
-      }
-    </style>
-  </head>
 
-  <body>
-    <header>
-      <div class="nav-top">
-        <div class="nav-top-left">
-          <img src="images/ilaclamaResimler/logo-1.png" alt="Logo" />
-        </div>
-        <div class="nav-top-right">
-          <ul>
-            <li><a href="#aboutus">Hakkımızda</a></li>
-            <li class="has-dropdown">
-              <a href="#services"
-                >Hizmetlerimiz <i class="bi bi-chevron-down"></i
-              ></a>
-              <ul class="dropdown-list">
-                <li><a href="#services">Ev ve İş Yerleri</a></li>
-                <li><a href="#services">Okul ve Eğitim Kurumları</a></li>
-                <li><a href="#services">Site ve Apartmanlar</a></li>
-                <li><a href="#services">Marketler</a></li>
-                <li><a href="#services">AVM ve Cafeler</a></li>
-                <li><a href="#services">Fırınlar</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="#bugses"
-                >Haşereler ve Böcekler <i class="bi bi-chevron-down"></i
-              ></a>
-              <ul class="dropdown-list">
-                <li>
-                  <a href="#bugses"><i class="bi bi-bug"></i> Kene</a>
-                </li>
-                <li>
-                  <a href="#bugses"><i class="bi bi-bug"></i> Hamam Böceği</a>
-                </li>
-                <li>
-                  <a href="#bugses"><i class="bi bi-bug"></i> Kara Sinek</a>
-                </li>
-                <li>
-                  <a href="#bugses"><i class="bi bi-bug"></i> Pire</a>
-                </li>
-                <li>
-                  <a href="#bugses"><i class="bi bi-bug"></i> Tahtakurusu</a>
-                </li>
-                <li>
-                  <a href="#bugses"><i class="bi bi-bug"></i> Fare ve Sıçan</a>
-                </li>
-                <li>
-                  <a href="#bugses"
-                    ><i class="bi bi-bug"></i> Ve Daha Fazlası...</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="#references"
-                >Referanslarımız <i class="bi bi-chevron-down"></i
-              ></a>
-              <ul class="dropdown-list">
-                <li><a href="#references">Uşak Belediyesi</a></li>
-                <li><a href="#references">Dabbagh Group</a></li>
-                <li><a href="#references">Sheraton Hotel</a></li>
-                <li><a href="#references">Anemon Hotels</a></li>
-                <li><a href="#references">ChocoLabs</a></li>
-                <li><a href="#references">Mutfak Kafe</a></li>
-                <li><a href="#references">Lumberjack Cafe</a></li>
-                <li><a href="#references">Soulmate Cafe</a></li>
-                <li><a href="#references">EspressoLab Cafe</a></li>
-                <li><a href="#references">Koala Cafe</a></li>
-                <li><a href="#references">TreeHouse Cafe</a></li>
-                <li><a href="#references">Kanyon Hayvancılık</a></li>
-              </ul>
-            </li>
-            <li><a href="#google-reviews">Google Yorumları</a></li>
-            <li>
-              <a
-                href="javascript:void(0);"
-                onclick="openContactModal()"
-                class="nav-contact-btn"
-                >Bize Ulaşın</a
-              >
-            </li>
-          </ul>
-          <div class="right-logo">
-            <img src="images/ilaclamaResimler/logo-2.png" alt="logo 2" />
-          </div>
-        </div>
+      footer .footer-container {
+        flex-direction: column !important;
+        gap: 3rem;
+        align-items: center;
+        text-align: center
+      }
+
+      footer .footer-container .footer-col {
+        align-items: center;
+        text-align: center;
+        width: 100%
+      }
+
+      footer .footer-container .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%)
+      }
+
+      footer .footer-container .footer-col ul li a {
+        justify-content: center
+      }
+
+      footer .footer-container .footer-col .contact-items {
+        align-items: center
+      }
+
+      footer .footer-container .footer-col .contact-items .contact-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: .5rem
+      }
+
+      section.bugses .bugses-content {
+        padding: 0 2rem
+      }
+
+      section.bugses .bugses-content .col-md-4 {
+        width: 50%
+      }
+    }
+
+    @media screen and (max-width:600px) {
+      .whatsappIconLink {
+        padding: .6rem 1rem;
+        gap: .6rem;
+        bottom: 80px;
+        right: 1rem;
+        font-size: .85rem
+      }
+
+      button#scrollButton {
+        bottom: 140px;
+        right: 1rem;
+        width: 40px;
+        height: 40px
+      }
+
+      section.bugses {
+        padding: 3rem 0
+      }
+
+      section.bugses .bugses-content {
+        padding: 0 1rem
+      }
+
+      section.bugses .bugses-content .col-sm-6,
+      section.bugses .bugses-content .col-md-4 {
+        width: 100%
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav-top">
+      <div class="nav-top-left">
+        <img src="images/ilaclamaResimler/logo-1.png" alt="Logo" />
       </div>
-
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="images/ilaclamaResimler/logo-1.png" alt="logo"
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#aboutus"
-                  >Hakkımızda</a
-                >
+      <div class="nav-top-right">
+        <ul>
+          <li><a href="#aboutus">Hakkımızda</a></li>
+          <li class="has-dropdown">
+            <a href="#services">Hizmetlerimiz <i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown-list">
+              <li><a href="#services">Ev ve İş Yerleri</a></li>
+              <li><a href="#services">Okul ve Eğitim Kurumları</a></li>
+              <li><a href="#services">Site ve Apartmanlar</a></li>
+              <li><a href="#services">Marketler</a></li>
+              <li><a href="#services">AVM ve Cafeler</a></li>
+              <li><a href="#services">Fırınlar</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#bugses">Haşereler ve Böcekler <i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown-list">
+              <li>
+                <a href="#bugses"><i class="bi bi-bug"></i> Kene</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#services">Hizmetlerimiz</a>
+              <li>
+                <a href="#bugses"><i class="bi bi-bug"></i> Hamam Böceği</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#bugses">Haşereler ve Böcekler</a>
+              <li>
+                <a href="#bugses"><i class="bi bi-bug"></i> Kara Sinek</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#references">Referanslar</a>
+              <li>
+                <a href="#bugses"><i class="bi bi-bug"></i> Pire</a>
               </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="javascript:void(0);"
-                  onclick="openContactModal()"
-                  >Bize Ulaşın</a
-                >
+              <li>
+                <a href="#bugses"><i class="bi bi-bug"></i> Tahtakurusu</a>
+              </li>
+              <li>
+                <a href="#bugses"><i class="bi bi-bug"></i> Fare ve Sıçan</a>
+              </li>
+              <li>
+                <a href="#bugses"><i class="bi bi-bug"></i> Ve Daha Fazlası...</a>
               </li>
             </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <section class="hero-section">
-      <video autoplay loop muted playsinline>
-        <source src="./images/ilaclama-hero.mp4" type="video/mp4" />
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h1 class="hero-green">ÇÖZÜM İLAÇLAMA OLARAK</h1>
-        <p class="hero-paragraph">Haşereleri ortadan kaldırıyoruz.</p>
-        <h2
-          id="animated-places"
-          class="animated-box"
-          style="transition: opacity 0.4s ease-in-out"
-        >
-          EVLER
-        </h2>
-        <a href="#aboutus" class="scroll-btn">
-          <i class="bi bi-arrow-down"></i>
-        </a>
-        <p class="hero-small-text">
-          Haşerelerle nasıl başa çıkacağınızı öğrenin.
-        </p>
-      </div>
-    </section>
-
-    <section id="aboutus" class="aboutUs">
-      <div class="chooseUs div-title">
-        <h3>
-          <i class="bi bi-chevron-double-left"></i>Neden Bizi Seçmelisiniz?<i
-            class="bi bi-chevron-double-right"
-          ></i>
-        </h3>
-        <p>
-          Son teknoloji ekıpmanlarımız ile doğaya ve evcil hayvanlarınıza zarar
-          vermeden <br />
-          hızlı haşere temizleme tekniklerimiz ile tek seferde sonuca
-          ulaşmaktayız.
-        </p>
-      </div>
-
-      <div
-        class="comparison-container"
-        id="comparison"
-        data-aos="fade-up"
-        style="margin: 0 auto; padding: 2rem 1rem 4rem 1rem"
-      >
-        <h2 class="comparison-title">
-          Merak Ediyorsanız - Neden
-          <span class="highlight">Uşak Çözüm İlaçlama?</span>
-        </h2>
-
-        <div class="comparison-tabs">
-          <button
-            class="tab-btn active"
-            id="tab-other"
-            onclick="switchTab('other')"
-          >
-            Diğer Firmalar
-          </button>
-          <button class="tab-btn" id="tab-us" onclick="switchTab('us')">
-            Uşak Çözüm İlaçlama
-          </button>
-        </div>
-
-        <!-- Diğer Firmalar İçeriği -->
-        <div class="comparison-grid" id="grid-other">
-          <div class="comp-box other-box">
-            <i class="bi bi-x-circle-fill"></i>
-            <p>Geri bildirim sunulmuyor mu?</p>
-          </div>
-          <div class="comp-box other-box">
-            <i class="bi bi-x-circle-fill"></i>
-            <p>Büyük sözler - sıfır sonuç?</p>
-          </div>
-          <div class="comp-box other-box">
-            <i class="bi bi-x-circle-fill"></i>
-            <p>Yapılan iş için garanti yok mu?</p>
-          </div>
-          <div class="comp-box other-box">
-            <i class="bi bi-x-circle-fill"></i>
-            <p>Zaman ve para tasarrufu sağlamıyor mu?</p>
-          </div>
-          <div class="comp-box other-box">
-            <i class="bi bi-x-circle-fill"></i>
-            <p>Kaliteli iş yapılmıyor mu?</p>
-          </div>
-          <div class="comp-box other-box">
-            <i class="bi bi-x-circle-fill"></i>
-            <p>Müşteri hizmeti iyi değil mi?</p>
-          </div>
-        </div>
-
-        <!-- Uşak Çözüm İlaçlama İçeriği -->
-        <div class="comparison-grid" id="grid-us" style="display: none">
-          <div class="comp-box us-box">
-            <i class="bi bi-check-circle-fill"></i>
-            <p>Etkili iletişim</p>
-          </div>
-          <div class="comp-box us-box">
-            <i class="bi bi-check-circle-fill"></i>
-            <p>Kaliteli işçilik</p>
-          </div>
-          <div class="comp-box us-box">
-            <i class="bi bi-check-circle-fill"></i>
-            <p>Garanti sonuçlar</p>
-          </div>
-          <div class="comp-box us-box">
-            <i class="bi bi-check-circle-fill"></i>
-            <p>Zaman ve para tasarrufu</p>
-          </div>
-          <div class="comp-box us-box">
-            <i class="bi bi-check-circle-fill"></i>
-            <p>Yüksek kaliteli ürünler</p>
-          </div>
-          <div class="comp-box us-box">
-            <i class="bi bi-check-circle-fill"></i>
-            <p>Olağanüstü hizmet</p>
-          </div>
-        </div>
-
-        <a
-          href="javascript:void(0);"
-          onclick="openContactModal()"
-          class="comp-contact-btn"
-          >Bize Ulaşın <i class="bi bi-chevron-right"></i
-        ></a>
-      </div>
-
-      <div class="aboutUs-content">
-        <div class="col-md-4 aboutUs-left" data-aos="fade-up">
-          <h1>Hakkımızda</h1>
-          <p class="about-lead">
-            Sağlığınızı, evinizi ve işletmenizi bilimsel ve güvenli yöntemlerle koruyoruz.
-          </p>
-          <p>
-            Çözüm İlaçlama olarak; insan sağlığını, çevre dengesini ve evcil hayvanlarımızın güvenliğini ön planda tutan profesyonel haşere kontrol çözümleri sunuyoruz.
-          </p>
-          <p>
-            Dünya Sağlık Örgütü (WHO) ve Sağlık Bakanlığı onaylı, hedef dışı canlılara zarar vermeyen yeni nesil biyosidal ürünlerimiz ile yaşam alanlarınızı istilalardan tamamen arındırıyoruz.
-          </p>
-          <p class="about-highlight">
-            <i class="bi bi-clock-history"></i> Uzman kadromuzla 7/24 kesintisiz, garantili ve güvenli ilaçlama desteği sağlıyoruz.
-          </p>
-        </div>
-        <div class="col-md-8 aboutUs-right" data-aos="fade-up">
-          <div class="row">
-            <div class="col-sm-6 col-md-4 card-box" data-aos="fade-down">
-              <div class="circle"><i class="fa-solid fa-bolt"></i></div>
-              <h2>Hızlı ve Garantili Çözüm</h2>
-              <p>
-                Son teknoloji ekipmanlarımız ve uzman kadromuzla, günlük yaşamınızı veya ticari faaliyetlerinizi aksatmadan en kısa sürede kalıcı hijyen sağlıyoruz.
-              </p>
-            </div>
-            <div class="col-sm-6 col-md-4 card-box" data-aos="fade-down">
-              <div class="circle"><i class="fa-solid fa-crosshairs"></i></div>
-              <h2>Tek Seferde Kesin Sonuç</h2>
-              <p>
-                Yüksek etkili yeni nesil formülasyonlarımız sayesinde, haşere ve kemirgen istilalarını kaynağında kurutarak tek uygulamada kesin çözüme ulaşıyoruz.
-              </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-6 col-md-4 card-box" data-aos="fade-up">
-              <div class="circle"><i class="fa-solid fa-award"></i></div>
-              <h2>Bakanlık ve DSÖ Onaylı</h2>
-              <p>
-                Kullandığımız tüm biyosidal ürünler Sağlık Bakanlığı ve Dünya Sağlık Örgütü (WHO) onaylı olup, uluslararası kalite ve güvenlik standartlarındadır.
-              </p>
-            </div>
-            <div class="col-sm-6 col-md-4 card-box" data-aos="fade-up">
-              <div class="circle"><i class="fa-solid fa-leaf"></i></div>
-              <h2>Çevre ve Evcil Dostu</h2>
-              <p>
-                Yaşam alanlarınızı temizlerken doğaya, bitkilere ve evcil dostlarımıza hiçbir zarar vermeyen, ekolojik dengeye saygılı biyosidal ürünler tercih ediyoruz.
-              </p>
-            </div>
-          </div>
+          </li>
+          <li class="has-dropdown">
+            <a href="#references">Referanslarımız <i class="bi bi-chevron-down"></i></a>
+            <ul class="dropdown-list">
+              <li><a href="#references">Uşak Belediyesi</a></li>
+              <li><a href="#references">Dabbagh Group</a></li>
+              <li><a href="#references">Sheraton Hotel</a></li>
+              <li><a href="#references">Anemon Hotels</a></li>
+              <li><a href="#references">ChocoLabs</a></li>
+              <li><a href="#references">Mutfak Kafe</a></li>
+              <li><a href="#references">Lumberjack Cafe</a></li>
+              <li><a href="#references">Soulmate Cafe</a></li>
+              <li><a href="#references">EspressoLab Cafe</a></li>
+              <li><a href="#references">Koala Cafe</a></li>
+              <li><a href="#references">TreeHouse Cafe</a></li>
+              <li><a href="#references">Kanyon Hayvancılık</a></li>
+            </ul>
+          </li>
+          <li><a href="#google-reviews">Google Yorumları</a></li>
+          <li>
+            <a href="javascript:void(0);" onclick="openContactModal()" class="nav-contact-btn">Bize Ulaşın</a>
+          </li>
+        </ul>
+        <div class="right-logo">
+          <img src="images/ilaclamaResimler/logo-2.png" alt="logo 2" />
         </div>
       </div>
+    </div>
 
-      <img class="bg1" src="/images/bgImages/ilaclama2.png" alt="" />
-    </section>
-
-    <script>
-      function switchTab(tab) {
-        const btnOther = document.getElementById("tab-other");
-        const btnUs = document.getElementById("tab-us");
-        const gridOther = document.getElementById("grid-other");
-        const gridUs = document.getElementById("grid-us");
-
-        if (tab === "other") {
-          btnOther.classList.add("active");
-          btnUs.classList.remove("active");
-          gridOther.style.display = "grid";
-          gridUs.style.display = "none";
-        } else {
-          btnUs.classList.add("active");
-          btnOther.classList.remove("active");
-          gridUs.style.display = "grid";
-          gridOther.style.display = "none";
-        }
-      }
-    </script>
-
-    <section class="services" id="services">
-      <div class="div-title">
-        <h3>
-          <i class="bi bi-chevron-double-left"></i>Hizmetlerimiz<i
-            class="bi bi-chevron-double-right"
-          ></i>
-        </h3>
-        <p>
-          Her türlü böcek ve haşerelere karşı son teknoloji ekipmanlarımız ile
-          sürecimizi tamamlamaktayız
-        </p>
-      </div>
-      <div class="services-places">
-        <div class="places-track">
-          <div class="places-list">
-            <span><i class="bi bi-house-door"></i> EV</span>
-            <span><i class="bi bi-briefcase"></i> İŞ YERLERİ</span>
-            <span><i class="bi bi-mortarboard"></i> OKUL</span>
-            <span><i class="bi bi-book"></i> EĞİTİM KURUMLARI</span>
-            <span><i class="bi bi-buildings"></i> SITE VE APARTMANLAR</span>
-            <span><i class="bi bi-cart3"></i> MARKET</span>
-            <span><i class="bi bi-building"></i> OTEL</span>
-            <span><i class="bi bi-bag"></i> AVM</span>
-            <span><i class="bi bi-shop"></i> FIRIN</span>
-            <span><i class="bi bi-cup-hot"></i> CAFE</span>
-          </div>
-          <!-- Duplicate for infinite seamless scroll -->
-          <div class="places-list">
-            <span><i class="bi bi-house-door"></i> EV</span>
-            <span><i class="bi bi-briefcase"></i> İŞ YERLERİ</span>
-            <span><i class="bi bi-mortarboard"></i> OKUL</span>
-            <span><i class="bi bi-book"></i> EĞİTİM KURUMLARI</span>
-            <span><i class="bi bi-buildings"></i> SITE VE APARTMANLAR</span>
-            <span><i class="bi bi-cart3"></i> MARKET</span>
-            <span><i class="bi bi-building"></i> OTEL</span>
-            <span><i class="bi bi-bag"></i> AVM</span>
-            <span><i class="bi bi-shop"></i> FIRIN</span>
-            <span><i class="bi bi-cup-hot"></i> CAFE</span>
-          </div>
-        </div>
-      </div>
-      <div class="services-content">
-        <div class="pest-info">
-          <h3>Neden Profesyonel İlaçlama?</h3>
-          <div class="pest-features">
-            <div class="feature-item">
-              <i class="bi bi-shield-check"></i>
-              <div>
-                <h4>Sağlık ve Hijyen Koruması</h4>
-                <p>Haşereler; dizanteri, tifo, kolera ve sıtma gibi birçok ciddi hastalığın taşıyıcısıdır. Profesyonel ilaçlama, ailenizin ve çalışanlarınızın sağlığını güvence altına alır.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <i class="bi bi-patch-check"></i>
-              <div>
-                <h4>Sağlık Bakanlığı Onaylı & Güvenli</h4>
-                <p>Bilinçsiz ve lisanssız yapılan ilaçlamalar ciddi zehirlenmelere yol açabilir. Çözüm İlaçlama olarak, Sağlık Bakanlığı onaylı ve insan sağlığına zararsız özel etken maddeler kullanıyoruz.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <i class="bi bi-house-gear"></i>
-              <div>
-                <h4>Maddi Hasarların Önlenmesi</h4>
-                <p>Kemirgenler ve böcekler elektrik kablolarını kemirerek yangın riski oluşturur, ahşap yapılara ve yalıtım malzemelerine zarar vererek büyük maddi hasarlara neden olur.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="services-gallery">
-          <!-- Rotating Carousel Gallery -->
-          <div class="carousel-container">
-            <div class="carousel-image-wrapper">
-              <img
-                id="carouselImage"
-                src="images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.39 (1).jpeg"
-                class="carousel-image"
-                title="uşak çözüm ilaçlama"
-                alt="uşak çözüm ilaçlama"
-              />
-              
-              <!-- Floating Counter Indicator -->
-              <span id="imageCounter" class="carousel-badge">1 / 6</span>
-              
-              <!-- Floating Navigation Controls Overlaid on Image -->
-              <button class="carousel-btn carousel-btn-left" id="prevBtn" aria-label="Önceki Resim">
-                <i class="bi bi-chevron-left"></i>
-              </button>
-              <button class="carousel-btn carousel-btn-right" id="nextBtn" aria-label="Sonraki Resim">
-                <i class="bi bi-chevron-right"></i>
-              </button>
-            </div>
-          </div>
-          <!-- Rotating Carousel Gallery -->
-        </div>
-      </div>
-    </section>
-
-    <section class="bugses" id="bugses">
-      <div class="div-title">
-        <h3>
-          <i class="bi bi-chevron-double-left"></i>Haşere ve Böcekler<i
-            class="bi bi-chevron-double-right"
-          ></i>
-        </h3>
-        <p>
-          Her türlü böcek ve haşerelere karşı son teknoloji ekipmanlarımız ile
-          sürecimizi tamamlamaktayız
-        </p>
-      </div>
-      <div class="bugses-content">
-        <div class="col-sm-6 col-md-4">
-          <a href="https://tr.wikipedia.org/wiki/Kene" target="_blank" class="card-box" data-aos="fade-up">
-            <div class="circle">
-              <img
-                src="images/bugs/kene-white-bg.jpg"
-                title="kene"
-                alt="kene"
-              />
-            </div>
-            <h2>Kene</h2>
-            <p>
-              Deriye yapışır, kan emerek hastalık taşıyabilir, Lyme hastalığı,
-              kene ensefaliti gibi ciddi sağlık sorunlarına yol açabilirler.
-            </p>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <a href="https://tr.wikipedia.org/wiki/Hamam_b%C3%B6ce%C4%9Fi" target="_blank" class="card-box" data-aos="fade-up">
-            <div class="circle">
-              <img
-                src="images/bugs/hamamböcüğü-white-bg.jpg"
-                title="hamam böceği"
-                alt="hamam böceği"
-              />
-            </div>
-            <h2>Hamam Böceği</h2>
-            <p>
-              Astım, alerjik reaksiyonlar, gıda kirliliği ve solunum yolu
-              enfeksiyonlarına neden olabilen böceklerdendir.
-            </p>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <a href="https://tr.wikipedia.org/wiki/Kara_sinek" target="_blank" class="card-box" data-aos="fade-up">
-            <div class="circle">
-              <img src="images/bugs/black-fly.jpeg" title="sinek" alt="sinek" />
-            </div>
-            <h2>Kara Sinek</h2>
-            <p>
-              Mikropları taşıyarak gıda kontaminasyonuna, enfeksiyonlara ve göz
-              hastalıklarına neden olabilirler.
-            </p>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <a href="https://tr.wikipedia.org/wiki/Pire" target="_blank" class="card-box" data-aos="fade-up">
-            <div class="circle">
-              <img
-                src="images/bugs/pire-white-bg.jpg"
-                title="pire"
-                alt="pire"
-                class="pire-img"
-              />
-            </div>
-            <h2>Pire</h2>
-            <p>
-              Kaşıntılı ısırıklar, deri enfeksiyonları, alerjik reaksiyonlar ve
-              pire ısırığı ateşi gibi sorunlara yol açabilen haşerelerdendir.
-            </p>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <a href="https://tr.wikipedia.org/wiki/Tahtakurusu" target="_blank" class="card-box" data-aos="fade-up">
-            <div class="circle">
-              <img
-                src="images/bugs/tahtakurusu-white-bg.png"
-                title="tahtakurusu"
-                alt="tahtakurusu"
-              />
-            </div>
-            <h2>Tahtakurusu</h2>
-            <p>
-              Tahtakuruları belirli bazı alerjik reaksiyonlara, döküntülere ve
-              hatta anafilaktik şoka neden olabilen ısırıklarıyla ünlü
-              haşerelerdendir.
-            </p>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <a href="https://tr.wikipedia.org/wiki/Fare" target="_blank" class="card-box" data-aos="fade-up">
-            <div class="circle">
-              <img
-                src="images/bugs/white-mouse.png"
-                title="fare ve sıçan"
-                alt="fare ve sıçan"
-              />
-            </div>
-            <h2>Fare ve Sıçan</h2>
-            <p>
-              Salgıladıkları idrar ve dışkıyla hastalıklara, gıda kirliliğine ve
-              elektrik kablolarını kemirerek yangınlara neden olabilirler.
-            </p>
-          </a>
-        </div>
-      </div>
-
-      <img
-        src="images/bgImages/ilaclama3.png"
-        alt="uşak-çözüm-ilaçlama"
-        class="bg2"
-      />
-    </section>
-
-    <section
-      id="references"
-      class="interactive-showcase-section"
-      style="--brand-color: #1d976c"
-    >
-      <div class="bg-base"></div>
-      <div class="bg-brand-glow" id="pfShowcaseGlow"></div>
-      <div class="bg-mask"></div>
-
-      <div class="showcase-header" data-aos="fade-up">
-        <h2 class="showcase-static-title">REFERANSLARIMIZ</h2>
-      </div>
-
-      <div class="carousel">
-        <!-- Left Column: Image Deck -->
-        <div class="showcase-left-col" data-aos="fade-up">
-          <div class="img-box" id="pfShowcaseImgBox">
-            <!-- Card 1 (Uşak Belediyesi) -->
-            <div
-              class="img-item active"
-              style="--item-brand-color: #1d976c"
-              data-index="0"
-            >
-              <div class="brand-logo-wrap">
-                <img
-                  src="images/brands/b1.jpeg"
-                  alt="Uşak Belediyesi"
-                  class="brand-logo-img"
-                />
-              </div>
-            </div>
-            <!-- Card 2 (Dabbagh Group) -->
-            <div
-              class="img-item next"
-              style="--item-brand-color: #18bc9c"
-              data-index="1"
-            >
-              <div class="brand-logo-wrap">
-                <img
-                  src="images/brands/b2.jpeg"
-                  alt="Dabbagh Group"
-                  class="brand-logo-img"
-                />
-              </div>
-            </div>
-            <!-- Card 3 (Anemon Oteller Grubu) -->
-            <div
-              class="img-item hidden-right"
-              style="--item-brand-color: #2c3e50"
-              data-index="2"
-            >
-              <div class="brand-logo-wrap">
-                <img
-                  src="images/brands/b7.jpeg"
-                  alt="Anemon Hotels"
-                  class="brand-logo-img"
-                />
-              </div>
-            </div>
-            <!-- Card 4 (ChocoLabs Kafe) -->
-            <div
-              class="img-item hidden-right"
-              style="--item-brand-color: #3498db"
-              data-index="3"
-            >
-              <div class="brand-logo-wrap">
-                <img
-                  src="images/brands/b11.jpg"
-                  alt="Chocolabs Coffe"
-                  class="brand-logo-img"
-                />
-              </div>
-            </div>
-            <!-- Card 5 (Mutfak Kafe) -->
-            <div
-              class="img-item hidden-right"
-              style="--item-brand-color: #e74c3c"
-              data-index="4"
-            >
-              <div class="brand-logo-wrap">
-                <img
-                  src="images/brands/b6.jpeg"
-                  alt="Mutfak Cafe"
-                  class="brand-logo-img"
-                />
-              </div>
-            </div>
-            <!-- Card 6 (Lumberjack Cafe) -->
-            <div
-              class="img-item hidden-right"
-              style="--item-brand-color: #9b59b6"
-              data-index="5"
-            >
-              <div class="brand-logo-wrap">
-                <img
-                  src="images/brands/b9.jpeg"
-                  alt="Lumberjack Cafe"
-                  class="brand-logo-img"
-                />
-              </div>
-            </div>
-            <!-- Card 7 (Sheraton Hotels) -->
-            <div
-              class="img-item hidden-right"
-              style="--item-brand-color: #f1c40f"
-              data-index="6"
-            >
-              <div class="brand-logo-wrap">
-                <img
-                  src="images/brands/b10.png"
-                  alt="Sheraton Hotel"
-                  class="brand-logo-img"
-                />
-              </div>
-            </div>
-            <!-- Card 8 (Soulmate Coffee) -->
-            <div
-              class="img-item hidden-right"
-              style="--item-brand-color: #e67e22"
-              data-index="7"
-            >
-              <div class="brand-logo-wrap">
-                <img
-                  src="images/brands/b12.png"
-                  alt="Soulmate Cafe"
-                  class="brand-logo-img"
-                />
-              </div>
-            </div>
-            <!-- Card 9 (Espressolab Türkiye) -->
-            <div
-              class="img-item hidden-right"
-              style="--item-brand-color: #1abc9c"
-              data-index="8"
-            >
-              <div class="brand-logo-wrap">
-                <img
-                  src="images/brands/b14.jpg"
-                  alt="EspressoLab Cafe"
-                  class="brand-logo-img"
-                />
-              </div>
-            </div>
-            <!-- Card 10 (Koala Coffee) -->
-            <div
-              class="img-item hidden-right"
-              style="--item-brand-color: #d35400"
-              data-index="9"
-            >
-              <div class="brand-logo-wrap">
-                <img
-                  src="images/brands/b15.png"
-                  alt="Koala Cafe"
-                  class="brand-logo-img"
-                />
-              </div>
-            </div>
-            <!-- Card 11 (TreeHouse Coffee) -->
-            <div
-              class="img-item hidden-right"
-              style="--item-brand-color: #27ae60"
-              data-index="10"
-            >
-              <div class="brand-logo-wrap">
-                <img
-                  src="images/brands/b13.jpg"
-                  alt="TreeHouse Cafe"
-                  class="brand-logo-img"
-                />
-              </div>
-            </div>
-            <!-- Card 12 (Kanyon Hayvancılık) -->
-            <div
-              class="img-item prev"
-              style="--item-brand-color: #2980b9"
-              data-index="11"
-            >
-              <div class="brand-logo-wrap">
-                <img
-                  src="images/brands/b4.jpeg"
-                  alt="Kanyon Çiftlik"
-                  class="brand-logo-img"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Navigation Arrows below deck -->
-          <div class="navigation static-nav">
-            <span class="nav-btn prev-btn" id="pfShowcasePrev">
-              <i class="bi bi-chevron-left"></i>
-            </span>
-            <span class="nav-btn next-btn" id="pfShowcaseNext">
-              <i class="bi bi-chevron-right"></i>
-            </span>
-          </div>
-        </div>
-
-        <!-- Details Info Box -->
-        <div class="info-box" id="pfShowcaseInfoBox" data-aos="fade-up">
-          <!-- Info 1 -->
-          <div class="info-item active" data-index="0">
-            <div class="brand-badge-wrapper">
-              <span class="brand-badge">KAMU SAĞLIĞI VE DESTEK</span>
-            </div>
-            <h2 class="brand-name">Uşak Belediyesi</h2>
-            <p class="brand-desc">
-              Uşak halkının sağlığını korumak adına belediye bünyesindeki tüm
-              kamu alanlarında, çocuk parklarında ve sosyal tesislerde
-              kesintisiz, güvenilir ve %100 çevre dostu haşere kontrolü
-              sağlıyoruz.
-            </p>
-            <a
-              href="javascript:void(0);"
-              onclick="openContactModal()"
-              class="btn brand-btn"
-              >Bize Ulaşın</a
-            >
-          </div>
-          <!-- Info 2 -->
-          <div class="info-item inactive" data-index="1">
-            <div class="brand-badge-wrapper">
-              <span class="brand-badge">ENDÜSTRİYEL GÜVENLİK STANDARDI</span>
-            </div>
-            <h2 class="brand-name">Dabbagh Group</h2>
-            <p class="brand-desc">
-              Uluslararası gıda ve tekstil ihracatı yapan sanayi tesislerinde
-              sıfır hata ve sıfır haşere ilkesiyle, üretim hatlarında tam koruma
-              ve üst düzey sanitasyon güvencesi sağlıyoruz.
-            </p>
-            <a
-              href="javascript:void(0);"
-              onclick="openContactModal()"
-              class="btn brand-btn"
-              >Bize Ulaşın</a
-            >
-          </div>
-          <!-- Info 3 -->
-          <div class="info-item inactive" data-index="2">
-            <div class="brand-badge-wrapper">
-              <span class="brand-badge">PREMIUM KONAKLAMA HİJYENİ</span>
-            </div>
-            <h2 class="brand-name">Anemon Oteller Grubu</h2>
-            <p class="brand-desc">
-              Otelcilik sektörünün katı hijyen standartlarına uygun olarak, oda
-              ve genel kullanım alanlarında misafirlere yüksek konfor sunan,
-              kokusuz, hızlı ve etkili koruma kalkanı sağlıyoruz.
-            </p>
-            <a
-              href="javascript:void(0);"
-              onclick="openContactModal()"
-              class="btn brand-btn"
-              >Bize Ulaşın</a
-            >
-          </div>
-          <!-- Info 4 -->
-          <div class="info-item inactive" data-index="3">
-            <div class="brand-badge-wrapper">
-              <span class="brand-badge">HACCP & GIDA GÜVENLİĞİ</span>
-            </div>
-            <h2 class="brand-name">ChocoLabs Kafe</h2>
-            <p class="brand-desc">
-              Popüler franchise zincirinin mutfak ve servis alanlarında, gıda
-              güvenliği kurallarına (HACCP) tam uyumlu, periyodik ilaçlama ve
-              koruyucu haşere engelleme programı yürütüyoruz.
-            </p>
-            <a
-              href="javascript:void(0);"
-              onclick="openContactModal()"
-              class="btn brand-btn"
-              >Bize Ulaşın</a
-            >
-          </div>
-          <!-- Info 5 -->
-          <div class="info-item inactive" data-index="4">
-            <div class="brand-badge-wrapper">
-              <span class="brand-badge">SOSYAL ALAN HİJYENİ</span>
-            </div>
-            <h2 class="brand-name">Mutfak Kafe</h2>
-            <p class="brand-desc">
-              Lezzetli anların paylaşıldığı sosyal alanlarda, misafirlerin
-              konforunu ve sağlığını en ön planda tutan, günlük rutini
-              aksatmayan kokusuz jel ve sıvı pest kontrol desteği veriyoruz.
-            </p>
-            <a
-              href="javascript:void(0);"
-              onclick="openContactModal()"
-              class="btn brand-btn"
-              >Bize Ulaşın</a
-            >
-          </div>
-          <!-- Info 6 -->
-          <div class="info-item inactive" data-index="5">
-            <div class="brand-badge-wrapper">
-              <span class="brand-badge">DOĞAL YAŞAM DOSTU KORUMA</span>
-            </div>
-            <h2 class="brand-name">Lumberjack Cafe</h2>
-            <p class="brand-desc">
-              Ahşap ve rustik dekorasyona sahip mekanlarda, ahşabın doğal
-              yapısına ve mobilyalara asla zarar vermeden, tahtakurusu ve diğer
-              zararlılara karşı özel koruma uyguluyoruz.
-            </p>
-            <a
-              href="javascript:void(0);"
-              onclick="openContactModal()"
-              class="btn brand-btn"
-              >Bize Ulaşın</a
-            >
-          </div>
-          <!-- Info 7 -->
-          <div class="info-item inactive" data-index="6">
-            <div class="brand-badge-wrapper">
-              <span class="brand-badge">5 YILDIZLI ULUSLARARASI KORUMA</span>
-            </div>
-            <h2 class="brand-name">Sheraton Hotels</h2>
-            <p class="brand-desc">
-              Uluslararası turizm ve konaklama devlerinin gerektirdiği en yüksek
-              düzey biyogüvenlik önlemlerini ve periyodik dezenfeksiyon
-              standartlarını titizlikle Sheraton otellerinde yönetiyoruz.
-            </p>
-            <a
-              href="javascript:void(0);"
-              onclick="openContactModal()"
-              class="btn brand-btn"
-              >Bize Ulaşın</a
-            >
-          </div>
-          <!-- Info 8 -->
-          <div class="info-item inactive" data-index="7">
-            <div class="brand-badge-wrapper">
-              <span class="brand-badge">KAHVE KÜLTÜRÜ VE SANİTASYON</span>
-            </div>
-            <h2 class="brand-name">Soulmate Coffee</h2>
-            <p class="brand-desc">
-              Yoğun insan sirkülasyonunun olduğu lezzet duraklarında, kahve
-              aromalarını etkilemeyen, tamamen kokusuz ve hedef dışı canlılara
-              zararsız modern ilaçlama teknikleri kullanıyoruz.
-            </p>
-            <a
-              href="javascript:void(0);"
-              onclick="openContactModal()"
-              class="btn brand-btn"
-              >Bize Ulaşın</a
-            >
-          </div>
-          <!-- Info 9 -->
-          <div class="info-item inactive" data-index="8">
-            <div class="brand-badge-wrapper">
-              <span class="brand-badge">PREMIUM SANİTASYON DÜZEYİ</span>
-            </div>
-            <h2 class="brand-name">Espressolab Türkiye</h2>
-            <p class="brand-desc">
-              Dünya çapında hizmet sunan kahve devinin yüksek hijyen
-              prosedürlerini başarıyla uygulayarak, depolama ve sunum
-              alanlarında tam kapsamlı haşere engelleme kalkanı sağlıyoruz.
-            </p>
-            <a
-              href="javascript:void(0);"
-              onclick="openContactModal()"
-              class="btn brand-btn"
-              >Bize Ulaşın</a
-            >
-          </div>
-          <!-- Info 10 -->
-          <div class="info-item inactive" data-index="9">
-            <div class="brand-badge-wrapper">
-              <span class="brand-badge">GÜVENLİ SOSYALLEŞME ALANLARI</span>
-            </div>
-            <h2 class="brand-name">Koala Coffee</h2>
-            <p class="brand-desc">
-              Sıcak buluşma noktalarında misafirlerin sağlığını koruma odağıyla,
-              mikrop taşıyıcı sinek ve haşerelere karşı anında etki gösteren ve
-              uzun süre koruyan bariyer ilaçlama yapıyoruz.
-            </p>
-            <a
-              href="javascript:void(0);"
-              onclick="openContactModal()"
-              class="btn brand-btn"
-              >Bize Ulaşın</a
-            >
-          </div>
-          <!-- Info 11 -->
-          <div class="info-item inactive" data-index="10">
-            <div class="brand-badge-wrapper">
-              <span class="brand-badge">DIŞ ORTAM BİYOLOJİK MÜCADELE</span>
-            </div>
-            <h2 class="brand-name">TreeHouse Coffee</h2>
-            <p class="brand-desc">
-              Açık hava, bahçe ve veranda gibi doğayla içiçe alanlarda; kene,
-              sivrisinek, pire ve arı gibi dış ortam zararlılarına karşı hedef
-              odaklı biyolojik kontrol yürütüyoruz.
-            </p>
-            <a
-              href="javascript:void(0);"
-              onclick="openContactModal()"
-              class="btn brand-btn"
-              >Bize Ulaşın</a
-            >
-          </div>
-          <!-- Info 12 -->
-          <div class="info-item inactive" data-index="11">
-            <div class="brand-badge-wrapper">
-              <span class="brand-badge">ÇİFTLİK VE BİYOGÜVENLİK YÖNETİMİ</span>
-            </div>
-            <h2 class="brand-name">Kanyon Hayvancılık</h2>
-            <p class="brand-desc">
-              Hayvansal gıda üretimi ve çiftlik tesislerinde verimliliği
-              doğrudan etkileyen sinek, kemirgen ve parazit istilalarını önleyen
-              entegre tesis pest kontrol yönetimini sağlıyoruz.
-            </p>
-            <a
-              href="javascript:void(0);"
-              onclick="openContactModal()"
-              class="btn brand-btn"
-              >Bize Ulaşın</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Google Yorumlarımız Section -->
-    <section id="google-reviews" class="google-reviews-section" data-aos="fade-up">
-      <!-- Decorative Background Glows -->
-      <div class="gr-bg-glow gr-bg-glow-1"></div>
-      <div class="gr-bg-glow gr-bg-glow-2"></div>
-
-      <div class="container">
-        <!-- Header -->
-        <div class="gr-header">
-          <div class="gr-badge">
-            <span class="gr-badge-dot"></span>
-            <i class="bi bi-patch-check-fill"></i>
-            <span>%100 DOĞRULANMIŞ MÜŞTERİ DENEYİMİ</span>
-          </div>
-
-          <div class="gr-logo-title">
-            <span class="google-brand">
-              <span class="g1">G</span><span class="o1">o</span><span class="o2">o</span><span class="g2">g</span><span class="l">l</span><span class="e">e</span>
-            </span>
-            <span class="title-text">YORUMLARIMIZ</span>
-          </div>
-
-          <div class="gr-title-accent">
-            <span class="accent-line"></span>
-            <span class="accent-icon"><i class="bi bi-star-fill"></i></span>
-            <span class="accent-line"></span>
-          </div>
-
-          <p class="gr-subtitle">Müşterilerimizin Gerçek Deneyimleri ve Geri Bildirimleri</p>
-          <p class="gr-sub-desc">Uşak ve çevresinde yüzlerce haneye ve işletmeye sunduğumuz garantili ilaçlama hizmetimizin müşteri geri bildirimleri</p>
-        </div>
-
-        <!-- Highlights & Rating Bar -->
-        <div class="gr-stats-bar">
-          <div class="gr-stat-card">
-            <div class="gr-stat-icon google-icon-wrap">
-              <i class="bi bi-google"></i>
-            </div>
-            <div class="gr-stat-info">
-              <div class="gr-stat-value">
-                <span class="num">5.0</span>
-                <span class="stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                </span>
-              </div>
-              <span class="gr-stat-label">Google Haritalar Puanı</span>
-            </div>
-          </div>
-
-          <div class="gr-stat-card">
-            <div class="gr-stat-icon verified-icon-wrap">
-              <i class="bi bi-shield-check"></i>
-            </div>
-            <div class="gr-stat-info">
-              <div class="gr-stat-value">
-                <span class="num">%100</span>
-                <span class="badge-tag">Garantili</span>
-              </div>
-              <span class="gr-stat-label">Müşteri Memnuniyeti</span>
-            </div>
-          </div>
-
-          <div class="gr-stat-card gr-cta-card">
-            <div class="gr-stat-icon review-icon-wrap">
-              <i class="bi bi-chat-square-quote-fill"></i>
-            </div>
-            <div class="gr-stat-info">
-              <span class="gr-cta-text">Deneyiminizi Paylaşın</span>
-              <a href="https://www.google.com/search?sca_esv=7c75a321a3ce71fb&amp;sxsrf=APpeQnuA5MDqIXbokuXNRPCVGDyNJM2_QQ:1788532118485&amp;q=u%C5%9Fak+%C3%A7%C3%B6z%C3%BCm+ila%C3%A7lama+ve+dezenfeksiyon+merkez+yorumlar%C4%B1&amp;uds=AJ5uw1_a2D0D09lxm8gpKKOTUn4r0HwgYwnPH4Vi1d3BIkVK6vUJgzVJ1cSZE16Q_KLkhbDx2dEYHJZ_-tAWGRx9G8p5VIIRQiy6ZT3zKWWLS5dl-knIWkpJ5kMHumyouhK7vbvI68bDtVXfKcpeNhQwDHBD6_JFp6Eej3SoxUWK57_tIkpEMFLnHMYRJ9LrUU8JxD6sRNOx6lyWJlW_JSy8Ja6MN9UgXw&amp;si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-__ouCPxPfxpcIgRw3VOHQZpKKsL98zt3ySsl5m0YrETdMSMs1j65XH3DxIuX44L_Hq00lTqwP32nfD4QwiGjm64gBPPvFhHMWws5OZBdRBag3tC3GiCdLWtPnqwRgiHAq4md349tE86qQmNl6akaefxU852R&amp;sa=X&amp;ved=2ahUKEwjwpt2skdWWAxULxwIHHU0WBvAQxKsJKAB6BAgPEAE&amp;ictx=1&amp;biw=1536&amp;bih=730&amp;dpr=1.25#sv=CAESzQEKuQEStgEKd0FKaVQ0dExfOEhEOVBiTFZGUFhLa01WSF83VmlVZFk5bExzNU95cDVLWWRkSVhnY1dNZmhpMWZCdmJuNVRMeEx2SWtsV3VlYnRvSDNKeERXdnh2Y0lhQTVBRHNGQmlUaFUta080d0pDajQ4T0dvSWE3VzNlRU00Ehd3ZFdhYW9MbkFzYVBpLWdQeGFyY2tRVRoiQURzcjlmUUVhRTU5OTB1TVJzX3pRRFEtWmxMVl9ublUwdxIEODA1MRoBMyoAMAA4AUAAGAAg0KLh5AVKAhAB" target="_blank" rel="noopener noreferrer" class="gr-cta-btn">
-                <i class="bi bi-pencil-square"></i> Yorum Yaz
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- TrustIndex Google Reviews Widget Container Card -->
-        <div class="gr-widget-wrapper-card">
-          <div class="gr-card-header-bar">
-            <div class="gr-card-left">
-              <span class="gr-verified-pill">
-                <i class="bi bi-shield-fill-check"></i> Canlı Google İncelemeleri
-              </span>
-            </div>
-            <div class="gr-card-stars">
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <span>Mükemmel Değerlendirme</span>
-            </div>
-          </div>
-
-          <div class="trustindex-widget-wrapper">
-            <script defer async src="https://cdn.trustindex.io/loader.js?0690bb2801e43943ba46a0e7897"></script>
-          </div>
-        </div>
-
-        <!-- Guarantees Trust Features Bar -->
-        <div class="gr-trust-features">
-          <div class="gr-trust-item">
-            <div class="gr-trust-icon"><i class="bi bi-award-fill"></i></div>
-            <div class="gr-trust-text">
-              <strong>Sağlık Bakanlığı Onaylı</strong>
-              <span>Ruhsatlı ve kokusuz/güvenilir ilaçlar</span>
-            </div>
-          </div>
-          <div class="gr-trust-item">
-            <div class="gr-trust-icon"><i class="bi bi-clock-history"></i></div>
-            <div class="gr-trust-text">
-              <strong>7/24 Hızlı Hizmet</strong>
-              <span>Acil durumlarda profesyonel anında müdahale</span>
-            </div>
-          </div>
-          <div class="gr-trust-item">
-            <div class="gr-trust-icon"><i class="bi bi-check-circle-fill"></i></div>
-            <div class="gr-trust-text">
-              <strong>Kesin Sonuç Garantisi</strong>
-              <span>Tek uygulamada kalıcı ve garantili çözüm</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer-container">
-        <!-- Brand / About Column -->
-        <div class="footer-col brand-col">
-          <h3 class="footer-brand">ÇÖZÜM İLAÇLAMA</h3>
-          <p class="footer-slogan">
-            Uşak ve çevresinde profesyonel, güvenilir ve garantili ilaçlama hizmetleri sunuyoruz. Sağlığınız ve huzurunuz bizim önceliğimizdir.
-          </p>
-          <div class="footer-socials">
-            <a href="https://wa.me/905337356443" target="_blank" title="WhatsApp">
-              <i class="bi bi-whatsapp"></i>
-            </a>
-            <a href="mailto:usakcozumilaclama@yandex.com" title="E-posta">
-              <i class="bi bi-envelope"></i>
-            </a>
-            <a href="tel:05337356443" title="Telefon">
-              <i class="bi bi-telephone"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Quick Links Column -->
-        <div class="footer-col links-col">
-          <h4>Hızlı Bağlantılar</h4>
-          <ul>
-            <li>
-              <a href="#aboutus"><i class="bi bi-chevron-right"></i> Hakkımızda</a>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="images/ilaclamaResimler/logo-1.png" alt="logo" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#aboutus">Hakkımızda</a>
             </li>
-            <li>
-              <a href="#services"><i class="bi bi-chevron-right"></i> Hizmetlerimiz</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Hizmetlerimiz</a>
             </li>
-            <li>
-              <a href="#bugses"><i class="bi bi-chevron-right"></i> Haşereler ve Böcekler</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#bugses">Haşereler ve Böcekler</a>
             </li>
-            <li>
-              <a href="#references"><i class="bi bi-chevron-right"></i> Referanslar</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#references">Referanslar</a>
             </li>
-            <li>
-              <a href="#google-reviews"><i class="bi bi-chevron-right"></i> Google Yorumları</a>
-            </li>
-            <li>
-              <a href="javascript:void(0);" onclick="openContactModal()"><i class="bi bi-chevron-right"></i> Bize Ulaşın</a>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0);" onclick="openContactModal()">Bize Ulaşın</a>
             </li>
           </ul>
         </div>
+      </div>
+    </nav>
+  </header>
 
-        <!-- Contact Info Column -->
-        <div class="footer-col contact-col">
-          <h4>İletişim Bilgileri</h4>
-          <div class="contact-items">
-            <div class="contact-item">
-              <i class="bi bi-geo-alt-fill"></i>
-              <a
-                href="https://www.google.com/maps/search/Cumhuriyet+Mh,+Atatürk+Blv.+Yanyolu+No:41,+64200+Uşak+Merkez/Uşak"
-                target="_blank"
-                >Cumhuriyet Mh, Atatürk Blv. Yanyolu No:41, 64200 Uşak Merkez/Uşak</a
-              >
+  <section class="hero-section">
+    <video autoplay loop muted playsinline>
+      <source src="./images/ilaclama-hero.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-green">ÇÖZÜM İLAÇLAMA OLARAK</h1>
+      <p class="hero-paragraph">Haşereleri ortadan kaldırıyoruz.</p>
+      <h2 id="animated-places" class="animated-box" style="transition: opacity 0.4s ease-in-out">
+        EVLER
+      </h2>
+      <a href="#aboutus" class="scroll-btn">
+        <i class="bi bi-arrow-down"></i>
+      </a>
+      <p class="hero-small-text">
+        Haşerelerle nasıl başa çıkacağınızı öğrenin.
+      </p>
+    </div>
+  </section>
+
+  <section id="aboutus" class="aboutUs">
+    <div class="chooseUs div-title">
+      <h3>
+        <i class="bi bi-chevron-double-left"></i>Neden Bizi Seçmelisiniz?<i class="bi bi-chevron-double-right"></i>
+      </h3>
+      <p>
+        Son teknoloji ekıpmanlarımız ile doğaya ve evcil hayvanlarınıza zarar
+        vermeden <br />
+        hızlı haşere temizleme tekniklerimiz ile tek seferde sonuca
+        ulaşmaktayız.
+      </p>
+    </div>
+
+    <div class="comparison-container" id="comparison" data-aos="fade-up"
+      style="margin: 0 auto; padding: 2rem 1rem 4rem 1rem">
+      <h2 class="comparison-title">
+        Merak Ediyorsanız - Neden
+        <span class="highlight">Uşak Çözüm İlaçlama?</span>
+      </h2>
+
+      <div class="comparison-tabs">
+        <button class="tab-btn active" id="tab-other" onclick="switchTab('other')">
+          Diğer Firmalar
+        </button>
+        <button class="tab-btn" id="tab-us" onclick="switchTab('us')">
+          Uşak Çözüm İlaçlama
+        </button>
+      </div>
+
+      <!-- Diğer Firmalar İçeriği -->
+      <div class="comparison-grid" id="grid-other">
+        <div class="comp-box other-box">
+          <i class="bi bi-x-circle-fill"></i>
+          <p>Geri bildirim sunulmuyor mu?</p>
+        </div>
+        <div class="comp-box other-box">
+          <i class="bi bi-x-circle-fill"></i>
+          <p>Büyük sözler - sıfır sonuç?</p>
+        </div>
+        <div class="comp-box other-box">
+          <i class="bi bi-x-circle-fill"></i>
+          <p>Yapılan iş için garanti yok mu?</p>
+        </div>
+        <div class="comp-box other-box">
+          <i class="bi bi-x-circle-fill"></i>
+          <p>Zaman ve para tasarrufu sağlamıyor mu?</p>
+        </div>
+        <div class="comp-box other-box">
+          <i class="bi bi-x-circle-fill"></i>
+          <p>Kaliteli iş yapılmıyor mu?</p>
+        </div>
+        <div class="comp-box other-box">
+          <i class="bi bi-x-circle-fill"></i>
+          <p>Müşteri hizmeti iyi değil mi?</p>
+        </div>
+      </div>
+
+      <!-- Uşak Çözüm İlaçlama İçeriği -->
+      <div class="comparison-grid" id="grid-us" style="display: none">
+        <div class="comp-box us-box">
+          <i class="bi bi-check-circle-fill"></i>
+          <p>Etkili iletişim</p>
+        </div>
+        <div class="comp-box us-box">
+          <i class="bi bi-check-circle-fill"></i>
+          <p>Kaliteli işçilik</p>
+        </div>
+        <div class="comp-box us-box">
+          <i class="bi bi-check-circle-fill"></i>
+          <p>Garanti sonuçlar</p>
+        </div>
+        <div class="comp-box us-box">
+          <i class="bi bi-check-circle-fill"></i>
+          <p>Zaman ve para tasarrufu</p>
+        </div>
+        <div class="comp-box us-box">
+          <i class="bi bi-check-circle-fill"></i>
+          <p>Yüksek kaliteli ürünler</p>
+        </div>
+        <div class="comp-box us-box">
+          <i class="bi bi-check-circle-fill"></i>
+          <p>Olağanüstü hizmet</p>
+        </div>
+      </div>
+
+      <a href="javascript:void(0);" onclick="openContactModal()" class="comp-contact-btn">Bize Ulaşın <i
+          class="bi bi-chevron-right"></i></a>
+    </div>
+
+    <div class="aboutUs-content">
+      <div class="col-md-4 aboutUs-left" data-aos="fade-up">
+        <h1>Hakkımızda</h1>
+        <p class="about-lead">
+          Sağlığınızı, evinizi ve işletmenizi bilimsel ve güvenli yöntemlerle koruyoruz.
+        </p>
+        <p>
+          Çözüm İlaçlama olarak; insan sağlığını, çevre dengesini ve evcil hayvanlarımızın güvenliğini ön planda tutan
+          profesyonel haşere kontrol çözümleri sunuyoruz.
+        </p>
+        <p>
+          Dünya Sağlık Örgütü (WHO) ve Sağlık Bakanlığı onaylı, hedef dışı canlılara zarar vermeyen yeni nesil biyosidal
+          ürünlerimiz ile yaşam alanlarınızı istilalardan tamamen arındırıyoruz.
+        </p>
+        <p class="about-highlight">
+          <i class="bi bi-clock-history"></i> Uzman kadromuzla 7/24 kesintisiz, garantili ve güvenli ilaçlama desteği
+          sağlıyoruz.
+        </p>
+      </div>
+      <div class="col-md-8 aboutUs-right" data-aos="fade-up">
+        <div class="row">
+          <div class="col-sm-6 col-md-4 card-box" data-aos="fade-down">
+            <div class="circle"><i class="fa-solid fa-bolt"></i></div>
+            <h2>Hızlı ve Garantili Çözüm</h2>
+            <p>
+              Son teknoloji ekipmanlarımız ve uzman kadromuzla, günlük yaşamınızı veya ticari faaliyetlerinizi
+              aksatmadan en kısa sürede kalıcı hijyen sağlıyoruz.
+            </p>
+          </div>
+          <div class="col-sm-6 col-md-4 card-box" data-aos="fade-down">
+            <div class="circle"><i class="fa-solid fa-crosshairs"></i></div>
+            <h2>Tek Seferde Kesin Sonuç</h2>
+            <p>
+              Yüksek etkili yeni nesil formülasyonlarımız sayesinde, haşere ve kemirgen istilalarını kaynağında
+              kurutarak tek uygulamada kesin çözüme ulaşıyoruz.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4 card-box" data-aos="fade-up">
+            <div class="circle"><i class="fa-solid fa-award"></i></div>
+            <h2>Bakanlık ve DSÖ Onaylı</h2>
+            <p>
+              Kullandığımız tüm biyosidal ürünler Sağlık Bakanlığı ve Dünya Sağlık Örgütü (WHO) onaylı olup,
+              uluslararası kalite ve güvenlik standartlarındadır.
+            </p>
+          </div>
+          <div class="col-sm-6 col-md-4 card-box" data-aos="fade-up">
+            <div class="circle"><i class="fa-solid fa-leaf"></i></div>
+            <h2>Çevre ve Evcil Dostu</h2>
+            <p>
+              Yaşam alanlarınızı temizlerken doğaya, bitkilere ve evcil dostlarımıza hiçbir zarar vermeyen, ekolojik
+              dengeye saygılı biyosidal ürünler tercih ediyoruz.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img class="bg1" src="/images/bgImages/ilaclama2.png" alt="" />
+  </section>
+
+  <script>
+    function switchTab(tab) {
+      const btnOther = document.getElementById("tab-other");
+      const btnUs = document.getElementById("tab-us");
+      const gridOther = document.getElementById("grid-other");
+      const gridUs = document.getElementById("grid-us");
+
+      if (tab === "other") {
+        btnOther.classList.add("active");
+        btnUs.classList.remove("active");
+        gridOther.style.display = "grid";
+        gridUs.style.display = "none";
+      } else {
+        btnUs.classList.add("active");
+        btnOther.classList.remove("active");
+        gridUs.style.display = "grid";
+        gridOther.style.display = "none";
+      }
+    }
+  </script>
+
+  <section class="services" id="services">
+    <div class="div-title">
+      <h3>
+        <i class="bi bi-chevron-double-left"></i>Hizmetlerimiz<i class="bi bi-chevron-double-right"></i>
+      </h3>
+      <p>
+        Her türlü böcek ve haşerelere karşı son teknoloji ekipmanlarımız ile
+        sürecimizi tamamlamaktayız
+      </p>
+    </div>
+    <div class="services-places">
+      <div class="places-track">
+        <div class="places-list">
+          <span><i class="bi bi-house-door"></i> EV</span>
+          <span><i class="bi bi-briefcase"></i> İŞ YERLERİ</span>
+          <span><i class="bi bi-mortarboard"></i> OKUL</span>
+          <span><i class="bi bi-book"></i> EĞİTİM KURUMLARI</span>
+          <span><i class="bi bi-buildings"></i> SITE VE APARTMANLAR</span>
+          <span><i class="bi bi-cart3"></i> MARKET</span>
+          <span><i class="bi bi-building"></i> OTEL</span>
+          <span><i class="bi bi-bag"></i> AVM</span>
+          <span><i class="bi bi-shop"></i> FIRIN</span>
+          <span><i class="bi bi-cup-hot"></i> CAFE</span>
+        </div>
+        <!-- Duplicate for infinite seamless scroll -->
+        <div class="places-list">
+          <span><i class="bi bi-house-door"></i> EV</span>
+          <span><i class="bi bi-briefcase"></i> İŞ YERLERİ</span>
+          <span><i class="bi bi-mortarboard"></i> OKUL</span>
+          <span><i class="bi bi-book"></i> EĞİTİM KURUMLARI</span>
+          <span><i class="bi bi-buildings"></i> SITE VE APARTMANLAR</span>
+          <span><i class="bi bi-cart3"></i> MARKET</span>
+          <span><i class="bi bi-building"></i> OTEL</span>
+          <span><i class="bi bi-bag"></i> AVM</span>
+          <span><i class="bi bi-shop"></i> FIRIN</span>
+          <span><i class="bi bi-cup-hot"></i> CAFE</span>
+        </div>
+      </div>
+    </div>
+    <div class="services-content">
+      <div class="pest-info">
+        <h3>Neden Profesyonel İlaçlama?</h3>
+        <div class="pest-features">
+          <div class="feature-item">
+            <i class="bi bi-shield-check"></i>
+            <div>
+              <h4>Sağlık ve Hijyen Koruması</h4>
+              <p>Haşereler; dizanteri, tifo, kolera ve sıtma gibi birçok ciddi hastalığın taşıyıcısıdır. Profesyonel
+                ilaçlama, ailenizin ve çalışanlarınızın sağlığını güvence altına alır.</p>
             </div>
-            <div class="contact-item">
-              <i class="bi bi-envelope-fill"></i>
-              <a href="mailto:usakcozumilaclama@yandex.com"
-                >usakcozumilaclama@yandex.com</a
-              >
+          </div>
+          <div class="feature-item">
+            <i class="bi bi-patch-check"></i>
+            <div>
+              <h4>Sağlık Bakanlığı Onaylı & Güvenli</h4>
+              <p>Bilinçsiz ve lisanssız yapılan ilaçlamalar ciddi zehirlenmelere yol açabilir. Çözüm İlaçlama olarak,
+                Sağlık Bakanlığı onaylı ve insan sağlığına zararsız özel etken maddeler kullanıyoruz.</p>
             </div>
-            <div class="contact-item">
-              <i class="bi bi-telephone-fill"></i>
-              <a href="tel:05337356443">Tel : 05337356443</a>
+          </div>
+          <div class="feature-item">
+            <i class="bi bi-house-gear"></i>
+            <div>
+              <h4>Maddi Hasarların Önlenmesi</h4>
+              <p>Kemirgenler ve böcekler elektrik kablolarını kemirerek yangın riski oluşturur, ahşap yapılara ve
+                yalıtım malzemelerine zarar vererek büyük maddi hasarlara neden olur.</p>
             </div>
           </div>
         </div>
       </div>
+      <div class="services-gallery">
+        <!-- Rotating Carousel Gallery -->
+        <div class="carousel-container">
+          <div class="carousel-image-wrapper">
+            <img id="carouselImage" src="images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.39 (1).jpeg"
+              class="carousel-image" title="uşak çözüm ilaçlama" alt="uşak çözüm ilaçlama" />
 
-      <!-- Contact Modal -->
-      <div class="contact-modal" id="contactModal">
-        <div class="modal-content">
-          <button class="close-btn" onclick="closeContactModal()">
-            <i class="bi bi-x"></i>
-          </button>
-          <h2>Bize Ulaşın</h2>
-          <p>Lütfen iletişim yönteminizi seçin:</p>
+            <!-- Floating Counter Indicator -->
+            <span id="imageCounter" class="carousel-badge">1 / 6</span>
 
-          <div class="contact-options">
-            <a href="tel:05337356443" class="contact-option phone-option">
-              <i class="bi bi-telephone-fill"></i>
-              <span>Telefonla Ara</span>
-              <p>05337356443</p>
-            </a>
+            <!-- Floating Navigation Controls Overlaid on Image -->
+            <button class="carousel-btn carousel-btn-left" id="prevBtn" aria-label="Önceki Resim">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="carousel-btn carousel-btn-right" id="nextBtn" aria-label="Sonraki Resim">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Rotating Carousel Gallery -->
+      </div>
+    </div>
+  </section>
 
-            <a
-              href="https://wa.me/905337356443"
-              target="_blank"
-              class="contact-option whatsapp-option"
-            >
-              <i class="bi bi-whatsapp"></i>
-              <span>WhatsApp</span>
-              <p>Hemen mesaj gönder</p>
+  <section class="bugses" id="bugses">
+    <div class="div-title">
+      <h3>
+        <i class="bi bi-chevron-double-left"></i>Haşere ve Böcekler<i class="bi bi-chevron-double-right"></i>
+      </h3>
+      <p>
+        Her türlü böcek ve haşerelere karşı son teknoloji ekipmanlarımız ile
+        sürecimizi tamamlamaktayız
+      </p>
+    </div>
+    <div class="bugses-content">
+      <div class="col-sm-6 col-md-4">
+        <a href="https://tr.wikipedia.org/wiki/Kene" target="_blank" class="card-box" data-aos="fade-up">
+          <div class="circle">
+            <img src="images/bugs/kene-white-bg.jpg" title="kene" alt="kene" />
+          </div>
+          <h2>Kene</h2>
+          <p>
+            Deriye yapışır, kan emerek hastalık taşıyabilir, Lyme hastalığı,
+            kene ensefaliti gibi ciddi sağlık sorunlarına yol açabilirler.
+          </p>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="https://tr.wikipedia.org/wiki/Hamam_b%C3%B6ce%C4%9Fi" target="_blank" class="card-box"
+          data-aos="fade-up">
+          <div class="circle">
+            <img src="images/bugs/hamamböcüğü-white-bg.jpg" title="hamam böceği" alt="hamam böceği" />
+          </div>
+          <h2>Hamam Böceği</h2>
+          <p>
+            Astım, alerjik reaksiyonlar, gıda kirliliği ve solunum yolu
+            enfeksiyonlarına neden olabilen böceklerdendir.
+          </p>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="https://tr.wikipedia.org/wiki/Kara_sinek" target="_blank" class="card-box" data-aos="fade-up">
+          <div class="circle">
+            <img src="images/bugs/black-fly.jpeg" title="sinek" alt="sinek" />
+          </div>
+          <h2>Kara Sinek</h2>
+          <p>
+            Mikropları taşıyarak gıda kontaminasyonuna, enfeksiyonlara ve göz
+            hastalıklarına neden olabilirler.
+          </p>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="https://tr.wikipedia.org/wiki/Pire" target="_blank" class="card-box" data-aos="fade-up">
+          <div class="circle">
+            <img src="images/bugs/pire-white-bg.jpg" title="pire" alt="pire" class="pire-img" />
+          </div>
+          <h2>Pire</h2>
+          <p>
+            Kaşıntılı ısırıklar, deri enfeksiyonları, alerjik reaksiyonlar ve
+            pire ısırığı ateşi gibi sorunlara yol açabilen haşerelerdendir.
+          </p>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="https://tr.wikipedia.org/wiki/Tahtakurusu" target="_blank" class="card-box" data-aos="fade-up">
+          <div class="circle">
+            <img src="images/bugs/tahtakurusu-white-bg.png" title="tahtakurusu" alt="tahtakurusu" />
+          </div>
+          <h2>Tahtakurusu</h2>
+          <p>
+            Tahtakuruları belirli bazı alerjik reaksiyonlara, döküntülere ve
+            hatta anafilaktik şoka neden olabilen ısırıklarıyla ünlü
+            haşerelerdendir.
+          </p>
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <a href="https://tr.wikipedia.org/wiki/Fare" target="_blank" class="card-box" data-aos="fade-up">
+          <div class="circle">
+            <img src="images/bugs/white-mouse.png" title="fare ve sıçan" alt="fare ve sıçan" />
+          </div>
+          <h2>Fare ve Sıçan</h2>
+          <p>
+            Salgıladıkları idrar ve dışkıyla hastalıklara, gıda kirliliğine ve
+            elektrik kablolarını kemirerek yangınlara neden olabilirler.
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <img src="images/bgImages/ilaclama3.png" alt="uşak-çözüm-ilaçlama" class="bg2" />
+  </section>
+
+  <section id="references" class="interactive-showcase-section" style="--brand-color: #1d976c">
+    <div class="bg-base"></div>
+    <div class="bg-brand-glow" id="pfShowcaseGlow"></div>
+    <div class="bg-mask"></div>
+
+    <div class="showcase-header" data-aos="fade-up">
+      <h2 class="showcase-static-title">REFERANSLARIMIZ</h2>
+    </div>
+
+    <div class="carousel">
+      <!-- Left Column: Image Deck -->
+      <div class="showcase-left-col" data-aos="fade-up">
+        <div class="img-box" id="pfShowcaseImgBox">
+          <!-- Card 1 (Uşak Belediyesi) -->
+          <div class="img-item active" style="--item-brand-color: #1d976c" data-index="0">
+            <div class="brand-logo-wrap">
+              <img src="images/brands/b1.jpeg" alt="Uşak Belediyesi" class="brand-logo-img" />
+            </div>
+          </div>
+          <!-- Card 2 (Dabbagh Group) -->
+          <div class="img-item next" style="--item-brand-color: #18bc9c" data-index="1">
+            <div class="brand-logo-wrap">
+              <img src="images/brands/b2.jpeg" alt="Dabbagh Group" class="brand-logo-img" />
+            </div>
+          </div>
+          <!-- Card 3 (Anemon Oteller Grubu) -->
+          <div class="img-item hidden-right" style="--item-brand-color: #2c3e50" data-index="2">
+            <div class="brand-logo-wrap">
+              <img src="images/brands/b7.jpeg" alt="Anemon Hotels" class="brand-logo-img" />
+            </div>
+          </div>
+          <!-- Card 4 (ChocoLabs Kafe) -->
+          <div class="img-item hidden-right" style="--item-brand-color: #3498db" data-index="3">
+            <div class="brand-logo-wrap">
+              <img src="images/brands/b11.jpg" alt="Chocolabs Coffe" class="brand-logo-img" />
+            </div>
+          </div>
+          <!-- Card 5 (Mutfak Kafe) -->
+          <div class="img-item hidden-right" style="--item-brand-color: #e74c3c" data-index="4">
+            <div class="brand-logo-wrap">
+              <img src="images/brands/b6.jpeg" alt="Mutfak Cafe" class="brand-logo-img" />
+            </div>
+          </div>
+          <!-- Card 6 (Lumberjack Cafe) -->
+          <div class="img-item hidden-right" style="--item-brand-color: #9b59b6" data-index="5">
+            <div class="brand-logo-wrap">
+              <img src="images/brands/b9.jpeg" alt="Lumberjack Cafe" class="brand-logo-img" />
+            </div>
+          </div>
+          <!-- Card 7 (Sheraton Hotels) -->
+          <div class="img-item hidden-right" style="--item-brand-color: #f1c40f" data-index="6">
+            <div class="brand-logo-wrap">
+              <img src="images/brands/b10.png" alt="Sheraton Hotel" class="brand-logo-img" />
+            </div>
+          </div>
+          <!-- Card 8 (Soulmate Coffee) -->
+          <div class="img-item hidden-right" style="--item-brand-color: #e67e22" data-index="7">
+            <div class="brand-logo-wrap">
+              <img src="images/brands/b12.png" alt="Soulmate Cafe" class="brand-logo-img" />
+            </div>
+          </div>
+          <!-- Card 9 (Espressolab Türkiye) -->
+          <div class="img-item hidden-right" style="--item-brand-color: #1abc9c" data-index="8">
+            <div class="brand-logo-wrap">
+              <img src="images/brands/b14.jpg" alt="EspressoLab Cafe" class="brand-logo-img" />
+            </div>
+          </div>
+          <!-- Card 10 (Koala Coffee) -->
+          <div class="img-item hidden-right" style="--item-brand-color: #d35400" data-index="9">
+            <div class="brand-logo-wrap">
+              <img src="images/brands/b15.png" alt="Koala Cafe" class="brand-logo-img" />
+            </div>
+          </div>
+          <!-- Card 11 (TreeHouse Coffee) -->
+          <div class="img-item hidden-right" style="--item-brand-color: #27ae60" data-index="10">
+            <div class="brand-logo-wrap">
+              <img src="images/brands/b13.jpg" alt="TreeHouse Cafe" class="brand-logo-img" />
+            </div>
+          </div>
+          <!-- Card 12 (Kanyon Hayvancılık) -->
+          <div class="img-item prev" style="--item-brand-color: #2980b9" data-index="11">
+            <div class="brand-logo-wrap">
+              <img src="images/brands/b4.jpeg" alt="Kanyon Çiftlik" class="brand-logo-img" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Arrows below deck -->
+        <div class="navigation static-nav">
+          <span class="nav-btn prev-btn" id="pfShowcasePrev">
+            <i class="bi bi-chevron-left"></i>
+          </span>
+          <span class="nav-btn next-btn" id="pfShowcaseNext">
+            <i class="bi bi-chevron-right"></i>
+          </span>
+        </div>
+      </div>
+
+      <!-- Details Info Box -->
+      <div class="info-box" id="pfShowcaseInfoBox" data-aos="fade-up">
+        <!-- Info 1 -->
+        <div class="info-item active" data-index="0">
+          <div class="brand-badge-wrapper">
+            <span class="brand-badge">KAMU SAĞLIĞI VE DESTEK</span>
+          </div>
+          <h2 class="brand-name">Uşak Belediyesi</h2>
+          <p class="brand-desc">
+            Uşak halkının sağlığını korumak adına belediye bünyesindeki tüm
+            kamu alanlarında, çocuk parklarında ve sosyal tesislerde
+            kesintisiz, güvenilir ve %100 çevre dostu haşere kontrolü
+            sağlıyoruz.
+          </p>
+          <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+        </div>
+        <!-- Info 2 -->
+        <div class="info-item inactive" data-index="1">
+          <div class="brand-badge-wrapper">
+            <span class="brand-badge">ENDÜSTRİYEL GÜVENLİK STANDARDI</span>
+          </div>
+          <h2 class="brand-name">Dabbagh Group</h2>
+          <p class="brand-desc">
+            Uluslararası gıda ve tekstil ihracatı yapan sanayi tesislerinde
+            sıfır hata ve sıfır haşere ilkesiyle, üretim hatlarında tam koruma
+            ve üst düzey sanitasyon güvencesi sağlıyoruz.
+          </p>
+          <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+        </div>
+        <!-- Info 3 -->
+        <div class="info-item inactive" data-index="2">
+          <div class="brand-badge-wrapper">
+            <span class="brand-badge">PREMIUM KONAKLAMA HİJYENİ</span>
+          </div>
+          <h2 class="brand-name">Anemon Oteller Grubu</h2>
+          <p class="brand-desc">
+            Otelcilik sektörünün katı hijyen standartlarına uygun olarak, oda
+            ve genel kullanım alanlarında misafirlere yüksek konfor sunan,
+            kokusuz, hızlı ve etkili koruma kalkanı sağlıyoruz.
+          </p>
+          <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+        </div>
+        <!-- Info 4 -->
+        <div class="info-item inactive" data-index="3">
+          <div class="brand-badge-wrapper">
+            <span class="brand-badge">HACCP & GIDA GÜVENLİĞİ</span>
+          </div>
+          <h2 class="brand-name">ChocoLabs Kafe</h2>
+          <p class="brand-desc">
+            Popüler franchise zincirinin mutfak ve servis alanlarında, gıda
+            güvenliği kurallarına (HACCP) tam uyumlu, periyodik ilaçlama ve
+            koruyucu haşere engelleme programı yürütüyoruz.
+          </p>
+          <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+        </div>
+        <!-- Info 5 -->
+        <div class="info-item inactive" data-index="4">
+          <div class="brand-badge-wrapper">
+            <span class="brand-badge">SOSYAL ALAN HİJYENİ</span>
+          </div>
+          <h2 class="brand-name">Mutfak Kafe</h2>
+          <p class="brand-desc">
+            Lezzetli anların paylaşıldığı sosyal alanlarda, misafirlerin
+            konforunu ve sağlığını en ön planda tutan, günlük rutini
+            aksatmayan kokusuz jel ve sıvı pest kontrol desteği veriyoruz.
+          </p>
+          <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+        </div>
+        <!-- Info 6 -->
+        <div class="info-item inactive" data-index="5">
+          <div class="brand-badge-wrapper">
+            <span class="brand-badge">DOĞAL YAŞAM DOSTU KORUMA</span>
+          </div>
+          <h2 class="brand-name">Lumberjack Cafe</h2>
+          <p class="brand-desc">
+            Ahşap ve rustik dekorasyona sahip mekanlarda, ahşabın doğal
+            yapısına ve mobilyalara asla zarar vermeden, tahtakurusu ve diğer
+            zararlılara karşı özel koruma uyguluyoruz.
+          </p>
+          <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+        </div>
+        <!-- Info 7 -->
+        <div class="info-item inactive" data-index="6">
+          <div class="brand-badge-wrapper">
+            <span class="brand-badge">5 YILDIZLI ULUSLARARASI KORUMA</span>
+          </div>
+          <h2 class="brand-name">Sheraton Hotels</h2>
+          <p class="brand-desc">
+            Uluslararası turizm ve konaklama devlerinin gerektirdiği en yüksek
+            düzey biyogüvenlik önlemlerini ve periyodik dezenfeksiyon
+            standartlarını titizlikle Sheraton otellerinde yönetiyoruz.
+          </p>
+          <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+        </div>
+        <!-- Info 8 -->
+        <div class="info-item inactive" data-index="7">
+          <div class="brand-badge-wrapper">
+            <span class="brand-badge">KAHVE KÜLTÜRÜ VE SANİTASYON</span>
+          </div>
+          <h2 class="brand-name">Soulmate Coffee</h2>
+          <p class="brand-desc">
+            Yoğun insan sirkülasyonunun olduğu lezzet duraklarında, kahve
+            aromalarını etkilemeyen, tamamen kokusuz ve hedef dışı canlılara
+            zararsız modern ilaçlama teknikleri kullanıyoruz.
+          </p>
+          <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+        </div>
+        <!-- Info 9 -->
+        <div class="info-item inactive" data-index="8">
+          <div class="brand-badge-wrapper">
+            <span class="brand-badge">PREMIUM SANİTASYON DÜZEYİ</span>
+          </div>
+          <h2 class="brand-name">Espressolab Türkiye</h2>
+          <p class="brand-desc">
+            Dünya çapında hizmet sunan kahve devinin yüksek hijyen
+            prosedürlerini başarıyla uygulayarak, depolama ve sunum
+            alanlarında tam kapsamlı haşere engelleme kalkanı sağlıyoruz.
+          </p>
+          <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+        </div>
+        <!-- Info 10 -->
+        <div class="info-item inactive" data-index="9">
+          <div class="brand-badge-wrapper">
+            <span class="brand-badge">GÜVENLİ SOSYALLEŞME ALANLARI</span>
+          </div>
+          <h2 class="brand-name">Koala Coffee</h2>
+          <p class="brand-desc">
+            Sıcak buluşma noktalarında misafirlerin sağlığını koruma odağıyla,
+            mikrop taşıyıcı sinek ve haşerelere karşı anında etki gösteren ve
+            uzun süre koruyan bariyer ilaçlama yapıyoruz.
+          </p>
+          <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+        </div>
+        <!-- Info 11 -->
+        <div class="info-item inactive" data-index="10">
+          <div class="brand-badge-wrapper">
+            <span class="brand-badge">DIŞ ORTAM BİYOLOJİK MÜCADELE</span>
+          </div>
+          <h2 class="brand-name">TreeHouse Coffee</h2>
+          <p class="brand-desc">
+            Açık hava, bahçe ve veranda gibi doğayla içiçe alanlarda; kene,
+            sivrisinek, pire ve arı gibi dış ortam zararlılarına karşı hedef
+            odaklı biyolojik kontrol yürütüyoruz.
+          </p>
+          <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+        </div>
+        <!-- Info 12 -->
+        <div class="info-item inactive" data-index="11">
+          <div class="brand-badge-wrapper">
+            <span class="brand-badge">ÇİFTLİK VE BİYOGÜVENLİK YÖNETİMİ</span>
+          </div>
+          <h2 class="brand-name">Kanyon Hayvancılık</h2>
+          <p class="brand-desc">
+            Hayvansal gıda üretimi ve çiftlik tesislerinde verimliliği
+            doğrudan etkileyen sinek, kemirgen ve parazit istilalarını önleyen
+            entegre tesis pest kontrol yönetimini sağlıyoruz.
+          </p>
+          <a href="javascript:void(0);" onclick="openContactModal()" class="btn brand-btn">Bize Ulaşın</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Yorumlarımız Section -->
+  <section id="google-reviews" class="google-reviews-section" data-aos="fade-up">
+    <!-- Decorative Background Glows -->
+    <div class="gr-bg-glow gr-bg-glow-1"></div>
+    <div class="gr-bg-glow gr-bg-glow-2"></div>
+
+    <div class="container">
+      <!-- Header -->
+      <div class="gr-header">
+        <div class="gr-badge">
+          <span class="gr-badge-dot"></span>
+          <i class="bi bi-patch-check-fill"></i>
+          <span>%100 DOĞRULANMIŞ MÜŞTERİ DENEYİMİ</span>
+        </div>
+
+        <div class="gr-logo-title">
+          <span class="google-brand">
+            <span class="g1">G</span><span class="o1">o</span><span class="o2">o</span><span class="g2">g</span><span
+              class="l">l</span><span class="e">e</span>
+          </span>
+          <span class="title-text">YORUMLARIMIZ</span>
+        </div>
+
+        <div class="gr-title-accent">
+          <span class="accent-line"></span>
+          <span class="accent-icon"><i class="bi bi-star-fill"></i></span>
+          <span class="accent-line"></span>
+        </div>
+
+        <p class="gr-subtitle">Müşterilerimizin Gerçek Deneyimleri ve Geri Bildirimleri</p>
+        <p class="gr-sub-desc">Uşak ve çevresinde yüzlerce haneye ve işletmeye sunduğumuz garantili ilaçlama
+          hizmetimizin müşteri geri bildirimleri</p>
+      </div>
+
+      <!-- Highlights & Rating Bar -->
+      <div class="gr-stats-bar">
+        <div class="gr-stat-card">
+          <div class="gr-stat-icon google-icon-wrap">
+            <i class="bi bi-google"></i>
+          </div>
+          <div class="gr-stat-info">
+            <div class="gr-stat-value">
+              <span class="num">5.0</span>
+              <span class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </span>
+            </div>
+            <span class="gr-stat-label">Google Haritalar Puanı</span>
+          </div>
+        </div>
+
+        <div class="gr-stat-card">
+          <div class="gr-stat-icon verified-icon-wrap">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <div class="gr-stat-info">
+            <div class="gr-stat-value">
+              <span class="num">%100</span>
+              <span class="badge-tag">Garantili</span>
+            </div>
+            <span class="gr-stat-label">Müşteri Memnuniyeti</span>
+          </div>
+        </div>
+
+        <div class="gr-stat-card gr-cta-card">
+          <div class="gr-stat-icon review-icon-wrap">
+            <i class="bi bi-chat-square-quote-fill"></i>
+          </div>
+          <div class="gr-stat-info">
+            <span class="gr-cta-text">Deneyiminizi Paylaşın</span>
+            <a href="https://g.page/r/CYb6f-wmE4T5EBM/review" target="_blank" rel="noopener noreferrer"
+              class="gr-cta-btn">
+              <i class="bi bi-pencil-square"></i> Yorum Yaz
             </a>
           </div>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 Çözüm İlaçlama. Tüm Hakları Saklıdır.</p>
+      <!-- TrustIndex Google Reviews Widget Container Card -->
+      <div class="gr-widget-wrapper-card">
+        <div class="gr-card-header-bar">
+          <div class="gr-card-left">
+            <span class="gr-verified-pill">
+              <i class="bi bi-shield-fill-check"></i> Canlı Google İncelemeleri
+            </span>
+          </div>
+          <div class="gr-card-stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <span>Mükemmel Değerlendirme</span>
+          </div>
+        </div>
+
+        <div class="trustindex-widget-wrapper">
+          <script defer async src="https://cdn.trustindex.io/loader.js?0690bb2801e43943ba46a0e7897"></script>
+        </div>
       </div>
-    </footer>
 
-    <a
-      class="whatsappIconLink"
-      href="https://wa.me/905337356443"
-      target="_blank"
-    >
-      <i class="bi bi-whatsapp"></i>
-      <span>Canlı Destek</span>
-    </a>
+      <!-- Guarantees Trust Features Bar -->
+      <div class="gr-trust-features">
+        <div class="gr-trust-item">
+          <div class="gr-trust-icon"><i class="bi bi-award-fill"></i></div>
+          <div class="gr-trust-text">
+            <strong>Sağlık Bakanlığı Onaylı</strong>
+            <span>Ruhsatlı ve kokusuz/güvenilir ilaçlar</span>
+          </div>
+        </div>
+        <div class="gr-trust-item">
+          <div class="gr-trust-icon"><i class="bi bi-clock-history"></i></div>
+          <div class="gr-trust-text">
+            <strong>7/24 Hızlı Hizmet</strong>
+            <span>Acil durumlarda profesyonel anında müdahale</span>
+          </div>
+        </div>
+        <div class="gr-trust-item">
+          <div class="gr-trust-icon"><i class="bi bi-check-circle-fill"></i></div>
+          <div class="gr-trust-text">
+            <strong>Kesin Sonuç Garantisi</strong>
+            <span>Tek uygulamada kalıcı ve garantili çözüm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <button id="scrollButton">
-      <i class="bi bi-chevron-double-up"></i>
-    </button>
+  <footer>
+    <div class="footer-container">
+      <!-- Brand / About Column -->
+      <div class="footer-col brand-col">
+        <h3 class="footer-brand">ÇÖZÜM İLAÇLAMA</h3>
+        <p class="footer-slogan">
+          Uşak ve çevresinde profesyonel, güvenilir ve garantili ilaçlama hizmetleri sunuyoruz. Sağlığınız ve huzurunuz
+          bizim önceliğimizdir.
+        </p>
+        <div class="footer-socials">
+          <a href="https://wa.me/905337356443" target="_blank" title="WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <a href="mailto:usakcozumilaclama@yandex.com" title="E-posta">
+            <i class="bi bi-envelope"></i>
+          </a>
+          <a href="tel:05337356443" title="Telefon">
+            <i class="bi bi-telephone"></i>
+          </a>
+        </div>
+      </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
+      <!-- Quick Links Column -->
+      <div class="footer-col links-col">
+        <h4>Hızlı Bağlantılar</h4>
+        <ul>
+          <li>
+            <a href="#aboutus"><i class="bi bi-chevron-right"></i> Hakkımızda</a>
+          </li>
+          <li>
+            <a href="#services"><i class="bi bi-chevron-right"></i> Hizmetlerimiz</a>
+          </li>
+          <li>
+            <a href="#bugses"><i class="bi bi-chevron-right"></i> Haşereler ve Böcekler</a>
+          </li>
+          <li>
+            <a href="#references"><i class="bi bi-chevron-right"></i> Referanslar</a>
+          </li>
+          <li>
+            <a href="#google-reviews"><i class="bi bi-chevron-right"></i> Google Yorumları</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" onclick="openContactModal()"><i class="bi bi-chevron-right"></i> Bize
+              Ulaşın</a>
+          </li>
+        </ul>
+      </div>
 
-    <script src="app.js"></script>
-  </body>
+      <!-- Contact Info Column -->
+      <div class="footer-col contact-col">
+        <h4>İletişim Bilgileri</h4>
+        <div class="contact-items">
+          <div class="contact-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <a href="https://www.google.com/maps/search/Cumhuriyet+Mh,+Atatürk+Blv.+Yanyolu+No:41,+64200+Uşak+Merkez/Uşak"
+              target="_blank">Cumhuriyet Mh, Atatürk Blv. Yanyolu No:41, 64200 Uşak Merkez/Uşak</a>
+          </div>
+          <div class="contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:usakcozumilaclama@yandex.com">usakcozumilaclama@yandex.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:05337356443">Tel : 05337356443</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeContactModal()">
+          <i class="bi bi-x"></i>
+        </button>
+        <h2>Bize Ulaşın</h2>
+        <p>Lütfen iletişim yönteminizi seçin:</p>
+
+        <div class="contact-options">
+          <a href="tel:05337356443" class="contact-option phone-option">
+            <i class="bi bi-telephone-fill"></i>
+            <span>Telefonla Ara</span>
+            <p>05337356443</p>
+          </a>
+
+          <a href="https://wa.me/905337356443" target="_blank" class="contact-option whatsapp-option">
+            <i class="bi bi-whatsapp"></i>
+            <span>WhatsApp</span>
+            <p>Hemen mesaj gönder</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Çözüm İlaçlama. Tüm Hakları Saklıdır.</p>
+    </div>
+  </footer>
+
+  <a class="whatsappIconLink" href="https://wa.me/905337356443" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+    <span>Canlı Destek</span>
+  </a>
+
+  <button id="scrollButton">
+    <i class="bi bi-chevron-double-up"></i>
+  </button>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+  <script src="app.js"></script>
+</body>
+
 </html>
