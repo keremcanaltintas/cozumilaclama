@@ -1427,7 +1427,7 @@
         </div>
       </div>
 
-      <!-- TrustIndex Google Reviews Widget Container Card -->
+      <!-- Custom Google Reviews Container Card -->
       <div class="gr-widget-wrapper-card">
         <div class="gr-card-header-bar">
           <div class="gr-card-left">
@@ -1445,8 +1445,472 @@
           </div>
         </div>
 
-        <div class="trustindex-widget-wrapper">
-          <script defer async src="https://cdn.trustindex.io/loader.js?0690bb2801e43943ba46a0e7897"></script>
+        <!-- Custom Native Google Reviews Slider -->
+        <div class="gr-reviews-slider-container">
+          <button class="gr-slider-btn gr-slider-prev" id="grPrevBtn" aria-label="Önceki Yorumlar">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          
+          <div class="gr-reviews-track-wrapper">
+            <div class="gr-reviews-track" id="grReviewsTrack">
+              
+              <!-- Review 1 -->
+              <div class="gr-review-card">
+                <div class="gr-rc-top">
+                  <div class="gr-rc-user">
+                    <div class="gr-avatar" style="background: linear-gradient(135deg, #e53935, #c62828);">
+                      B
+                    </div>
+                    <div class="gr-user-details">
+                      <h4 class="gr-user-name">Burcu Oğur</h4>
+                      <span class="gr-review-date"><i class="bi bi-clock"></i> 2 ay önce</span>
+                    </div>
+                  </div>
+                  <div class="gr-google-badge">
+                    <svg class="gr-g-icon" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="gr-rc-rating">
+                  <div class="gr-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <span class="gr-verified-tag"><i class="bi bi-patch-check-fill"></i> Doğrulanmış</span>
+                </div>
+                <div class="gr-rc-body">
+                  <p class="gr-comment">"İşlerinde gerçekten çok titizler ve disiplinliler her yeri köşe bucak ilaçladılar ve beni bu böcek derdinden kurtardılar gerçekten ellerine emeklerine sağlık rahatlıkla ulaşabilirsiniz çok memnun kaldım :)))"</p>
+                </div>
+              </div>
+
+              <!-- Review 2 -->
+              <div class="gr-review-card">
+                <div class="gr-rc-top">
+                  <div class="gr-rc-user">
+                    <div class="gr-avatar" style="background: linear-gradient(135deg, #8e24aa, #6a1b9a);">
+                      Ö
+                    </div>
+                    <div class="gr-user-details">
+                      <h4 class="gr-user-name">Özgür Mat</h4>
+                      <span class="gr-review-date"><i class="bi bi-clock"></i> 2 ay önce</span>
+                    </div>
+                  </div>
+                  <div class="gr-google-badge">
+                    <svg class="gr-g-icon" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="gr-rc-rating">
+                  <div class="gr-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <span class="gr-verified-tag"><i class="bi bi-patch-check-fill"></i> Doğrulanmış</span>
+                </div>
+                <div class="gr-rc-body">
+                  <p class="gr-comment">"Merhaba, iletişim kurduktan çok kısa bir süre sonra, profesyonel bir ekip evime geldi. Detaylıca bilgilendirme yapıldı. Güleryüzlü hizmet aldım. Daha ötesi evden beraber çıktık ve beni gideceğim yere kadar araçlarıyla bıraktılar. Kadir bey ve ekibine çok teşekkür ederim"</p>
+                </div>
+              </div>
+
+              <!-- Review 3 -->
+              <div class="gr-review-card">
+                <div class="gr-rc-top">
+                  <div class="gr-rc-user">
+                    <div class="gr-avatar" style="background: linear-gradient(135deg, #1e88e5, #1565c0);">
+                      A
+                    </div>
+                    <div class="gr-user-details">
+                      <h4 class="gr-user-name">Ayşe Alpan</h4>
+                      <span class="gr-review-date"><i class="bi bi-clock"></i> 6 ay önce</span>
+                    </div>
+                  </div>
+                  <div class="gr-google-badge">
+                    <svg class="gr-g-icon" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="gr-rc-rating">
+                  <div class="gr-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <span class="gr-verified-tag"><i class="bi bi-patch-check-fill"></i> Doğrulanmış</span>
+                </div>
+                <div class="gr-rc-body">
+                  <p class="gr-comment">"Hizmetten son derece memnun kaldım. Ekip son derece profesyonel, dakik ve işini titizlikle yapan bir firma. Tüm süreci detaylı şekilde anlattılar ve uygulama sırasında da oldukça özenli davrandılar. Kullandıkları ürünler kaliteli ve güven vericiydi. Gönül rahatlığıyla tavsiye ederim."</p>
+                </div>
+              </div>
+
+              <!-- Review 4 -->
+              <div class="gr-review-card">
+                <div class="gr-rc-top">
+                  <div class="gr-rc-user">
+                    <div class="gr-avatar" style="background: linear-gradient(135deg, #43a047, #2e7d32);">
+                      H
+                    </div>
+                    <div class="gr-user-details">
+                      <h4 class="gr-user-name">Halil Işık</h4>
+                      <span class="gr-review-date"><i class="bi bi-clock"></i> 6 ay önce</span>
+                    </div>
+                  </div>
+                  <div class="gr-google-badge">
+                    <svg class="gr-g-icon" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="gr-rc-rating">
+                  <div class="gr-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <span class="gr-verified-tag"><i class="bi bi-patch-check-fill"></i> Doğrulanmış</span>
+                </div>
+                <div class="gr-rc-body">
+                  <p class="gr-comment">"Verilen hizmetten çok memnun kaldık. Evimizde tahta kurusu ve haşere sorunu vardı tek ilaçlamada çözüldü. Kadir beye işini layıkıyla yaptığı için çok teşekkür ederim şiddetle tavsiye ederim ÇÖZÜM İLAÇLAMA."</p>
+                </div>
+              </div>
+
+              <!-- Review 5 -->
+              <div class="gr-review-card">
+                <div class="gr-rc-top">
+                  <div class="gr-rc-user">
+                    <div class="gr-avatar" style="background: linear-gradient(135deg, #00897b, #00695c);">
+                      K
+                    </div>
+                    <div class="gr-user-details">
+                      <h4 class="gr-user-name">Karakaya</h4>
+                      <span class="gr-review-date"><i class="bi bi-clock"></i> 1 ay önce</span>
+                    </div>
+                  </div>
+                  <div class="gr-google-badge">
+                    <svg class="gr-g-icon" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="gr-rc-rating">
+                  <div class="gr-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <span class="gr-verified-tag"><i class="bi bi-patch-check-fill"></i> Doğrulanmış</span>
+                </div>
+                <div class="gr-rc-body">
+                  <p class="gr-comment">"Çözüm İlaçlama'dan çok memnun kaldık asla inanmıyordum tahta kurusunun biteceğine ama kendilerinden o kadar emin konuştular ki dediklerini de yaptılar gerçekten çok teşekkür ederiz sayenizde kurtulduk."</p>
+                </div>
+              </div>
+
+              <!-- Review 6 -->
+              <div class="gr-review-card">
+                <div class="gr-rc-top">
+                  <div class="gr-rc-user">
+                    <div class="gr-avatar" style="background: linear-gradient(135deg, #fb8c00, #e65100);">
+                      H
+                    </div>
+                    <div class="gr-user-details">
+                      <h4 class="gr-user-name">Hatice İnce</h4>
+                      <span class="gr-review-date"><i class="bi bi-clock"></i> 1 ay önce</span>
+                    </div>
+                  </div>
+                  <div class="gr-google-badge">
+                    <svg class="gr-g-icon" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="gr-rc-rating">
+                  <div class="gr-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <span class="gr-verified-tag"><i class="bi bi-patch-check-fill"></i> Doğrulanmış</span>
+                </div>
+                <div class="gr-rc-body">
+                  <p class="gr-comment">"İşlerini en mükemmel şekilde yaptılar. Çok memnun kaldık. Evimizde 1 tane böcek bile kalmadı. Tereddüt etmeden arayın."</p>
+                </div>
+              </div>
+
+              <!-- Review 7 -->
+              <div class="gr-review-card">
+                <div class="gr-rc-top">
+                  <div class="gr-rc-user">
+                    <div class="gr-avatar" style="background: linear-gradient(135deg, #3949ab, #283593);">
+                      A
+                    </div>
+                    <div class="gr-user-details">
+                      <h4 class="gr-user-name">Alperen Günnar</h4>
+                      <span class="gr-review-date"><i class="bi bi-clock"></i> 8 ay önce</span>
+                    </div>
+                  </div>
+                  <div class="gr-google-badge">
+                    <svg class="gr-g-icon" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="gr-rc-rating">
+                  <div class="gr-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <span class="gr-verified-tag"><i class="bi bi-patch-check-fill"></i> Doğrulanmış</span>
+                </div>
+                <div class="gr-rc-body">
+                  <p class="gr-comment">"Ev ilaçlama hizmetinden son derece memnun kaldım. Randevu saatine tam zamanında geldiler, işlemi detaylıca anlattılar ve çok titiz çalıştılar. Kullanılan ilaçlar kokusuz ve güven vericiydi. Kesinlikle tavsiye ederim."</p>
+                </div>
+              </div>
+
+              <!-- Review 8 -->
+              <div class="gr-review-card">
+                <div class="gr-rc-top">
+                  <div class="gr-rc-user">
+                    <div class="gr-avatar" style="background: linear-gradient(135deg, #00acc1, #00838f);">
+                      Ş
+                    </div>
+                    <div class="gr-user-details">
+                      <h4 class="gr-user-name">Şeref Kaymak</h4>
+                      <span class="gr-review-date"><i class="bi bi-clock"></i> 1 yıl önce</span>
+                    </div>
+                  </div>
+                  <div class="gr-google-badge">
+                    <svg class="gr-g-icon" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="gr-rc-rating">
+                  <div class="gr-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <span class="gr-verified-tag"><i class="bi bi-patch-check-fill"></i> Doğrulanmış</span>
+                </div>
+                <div class="gr-rc-body">
+                  <p class="gr-comment">"Uşağın en iyi ilaçlama yeri işlerinde çok iyiler bütün tahtakuruları temizlendi, güleryüzlü sempatik çalışanlarıyla gerekli işlemleri yerine getirdikleri için çok teşekkürler."</p>
+                </div>
+              </div>
+
+              <!-- Review 9 -->
+              <div class="gr-review-card">
+                <div class="gr-rc-top">
+                  <div class="gr-rc-user">
+                    <div class="gr-avatar" style="background: linear-gradient(135deg, #5e35b1, #4527a0);">
+                      M
+                    </div>
+                    <div class="gr-user-details">
+                      <h4 class="gr-user-name">Musa Paksoy</h4>
+                      <span class="gr-review-date"><i class="bi bi-clock"></i> 5 ay önce</span>
+                    </div>
+                  </div>
+                  <div class="gr-google-badge">
+                    <svg class="gr-g-icon" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="gr-rc-rating">
+                  <div class="gr-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <span class="gr-verified-tag"><i class="bi bi-patch-check-fill"></i> Doğrulanmış</span>
+                </div>
+                <div class="gr-rc-body">
+                  <p class="gr-comment">"İşini hakkıyla yapan nadir firmalardan. Zamanında geldiler, detaylıca ilaçlama yapıp bilgilendirdiler. Teşekkürler Çözüm İlaçlama."</p>
+                </div>
+              </div>
+
+              <!-- Review 10 -->
+              <div class="gr-review-card">
+                <div class="gr-rc-top">
+                  <div class="gr-rc-user">
+                    <div class="gr-avatar" style="background: linear-gradient(135deg, #d81b60, #ad1457);">
+                      Y
+                    </div>
+                    <div class="gr-user-details">
+                      <h4 class="gr-user-name">Yücel Erkal</h4>
+                      <span class="gr-review-date"><i class="bi bi-clock"></i> 1 yıl önce</span>
+                    </div>
+                  </div>
+                  <div class="gr-google-badge">
+                    <svg class="gr-g-icon" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="gr-rc-rating">
+                  <div class="gr-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <span class="gr-verified-tag"><i class="bi bi-patch-check-fill"></i> Doğrulanmış</span>
+                </div>
+                <div class="gr-rc-body">
+                  <p class="gr-comment">"Garantili ve güvenilir hizmet. İlaçlama sonrası hiçbir problem yaşamadık. Kadir Bey ve ekibine ilgilerinden dolayı teşekkür ederim."</p>
+                </div>
+              </div>
+
+              <!-- Review 11 -->
+              <div class="gr-review-card">
+                <div class="gr-rc-top">
+                  <div class="gr-rc-user">
+                    <div class="gr-avatar" style="background: linear-gradient(135deg, #00897b, #004d40);">
+                      Ç
+                    </div>
+                    <div class="gr-user-details">
+                      <h4 class="gr-user-name">Çağlar Genç</h4>
+                      <span class="gr-review-date"><i class="bi bi-clock"></i> 2 yıl önce</span>
+                    </div>
+                  </div>
+                  <div class="gr-google-badge">
+                    <svg class="gr-g-icon" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="gr-rc-rating">
+                  <div class="gr-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <span class="gr-verified-tag"><i class="bi bi-patch-check-fill"></i> Doğrulanmış</span>
+                </div>
+                <div class="gr-rc-body">
+                  <p class="gr-comment">"Uşak'ta güvenebileceğiniz tek adres. Tahta kurusu ve böcek sorunumuzu kökten çözdüler. Elinize emeğinize sağlık."</p>
+                </div>
+              </div>
+
+              <!-- Review 12 -->
+              <div class="gr-review-card">
+                <div class="gr-rc-top">
+                  <div class="gr-rc-user">
+                    <div class="gr-avatar" style="background: linear-gradient(135deg, #f57c00, #e65100);">
+                      A
+                    </div>
+                    <div class="gr-user-details">
+                      <h4 class="gr-user-name">Azmi Aktay</h4>
+                      <span class="gr-review-date"><i class="bi bi-clock"></i> 2 yıl önce</span>
+                    </div>
+                  </div>
+                  <div class="gr-google-badge">
+                    <svg class="gr-g-icon" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="gr-rc-rating">
+                  <div class="gr-stars">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <span class="gr-verified-tag"><i class="bi bi-patch-check-fill"></i> Doğrulanmış</span>
+                </div>
+                <div class="gr-rc-body">
+                  <p class="gr-comment">"Hızlı, temiz ve etkili ilaçlama. Fiyat performansı ve güler yüzlü hizmeti için Kadir Bey'e ve ekibine teşekkürler."</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <button class="gr-slider-btn gr-slider-next" id="grNextBtn" aria-label="Sonraki Yorumlar">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Carousel Pagination Dots & Google Link Bar -->
+        <div class="gr-slider-footer">
+          <div class="gr-slider-dots" id="grSliderDots"></div>
+          <div class="gr-footer-google-meta">
+            <div class="gr-g-meta-left">
+              <svg viewBox="0 0 24 24" width="16" height="16">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              </svg>
+              <span>Google Haritalar doğrulanmış gerçek müşteri değerlendirmeleri</span>
+            </div>
+            <a href="https://www.google.com/maps/place/U%C5%9Fak+%C3%87%C3%B6z%C3%BCm+%C4%B0la%C3%A7lama+ve+dezenfeksiyon/@38.6768362,29.3843126,17z/data=!4m8!3m7!1s0x14c87f814f3660e5:0xf9841326ec7ffa86!8m2!3d38.6768362!4d29.3843126!9m1!1b1!16s%2Fg%2F11vwk0sr1s" target="_blank" rel="noopener noreferrer" class="gr-maps-link">
+              Tüm Yorumları Google'da Gör <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+          </div>
         </div>
       </div>
 

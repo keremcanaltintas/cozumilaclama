@@ -586,6 +586,171 @@ document.addEventListener('DOMContentLoaded', () => {
     startProgress();
 });
 
+// Google Reviews Interactive Native Slider
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('grReviewsTrack');
+    const prevBtn = document.getElementById('grPrevBtn');
+    const nextBtn = document.getElementById('grNextBtn');
+    const dotsContainer = document.getElementById('grSliderDots');
+    const sliderContainer = document.querySelector('.gr-reviews-slider-container');
+
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const cards = Array.from(track.querySelectorAll('.gr-review-card'));
+    if (!cards.length) return;
+
+    let currentIndex = 0;
+    let autoplayTimer = null;
+
+    function getVisibleCardsCount() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 992) return 2;
+        return 3;
+    }
+
+    function getMaxIndex() {
+        const visible = getVisibleCardsCount();
+        return Math.max(0, cards.length - visible);
+    }
+
+    function updateDots() {
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+        const maxIdx = getMaxIndex();
+        const totalDots = maxIdx + 1;
+
+        for (let i = 0; i < totalDots; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'gr-dot' + (i === currentIndex ? ' active' : '');
+            dot.setAttribute('aria-label', `Yorum Sayfası ${i + 1}`);
+            dot.addEventListener('click', () => {
+                goToIndex(i);
+                resetAutoplay();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function updateSlider() {
+        const maxIdx = getMaxIndex();
+        if (currentIndex > maxIdx) {
+            currentIndex = maxIdx;
+        }
+
+        const cardWidth = cards[0].getBoundingClientRect().width;
+        const gap = window.innerWidth <= 768 ? 8 : (window.innerWidth <= 992 ? 20 : 20);
+        const offset = currentIndex * (cardWidth + gap);
+
+        track.style.transform = `translateX(-${offset}px)`;
+
+        // Update active dot
+        if (dotsContainer) {
+            const dots = dotsContainer.querySelectorAll('.gr-dot');
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentIndex);
+            });
+        }
+    }
+
+    function goToIndex(index) {
+        const maxIdx = getMaxIndex();
+        currentIndex = Math.max(0, Math.min(index, maxIdx));
+        updateSlider();
+    }
+
+    function nextSlide() {
+        const maxIdx = getMaxIndex();
+        if (currentIndex >= maxIdx) {
+            currentIndex = 0;
+        } else {
+            currentIndex++;
+        }
+        updateSlider();
+    }
+
+    function prevSlide() {
+        const maxIdx = getMaxIndex();
+        if (currentIndex <= 0) {
+            currentIndex = maxIdx;
+        } else {
+            currentIndex--;
+        }
+        updateSlider();
+    }
+
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoplay();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoplay();
+    });
+
+    // Autoplay
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoplay() {
+        if (autoplayTimer) {
+            clearInterval(autoplayTimer);
+            autoplayTimer = null;
+        }
+    }
+
+    function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+    }
+
+    if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', stopAutoplay);
+        sliderContainer.addEventListener('mouseleave', startAutoplay);
+    }
+
+    // Touch Swipe for Mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoplay();
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoplay();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const threshold = 40;
+        if (touchEndX < touchStartX - threshold) {
+            nextSlide();
+        } else if (touchEndX > touchStartX + threshold) {
+            prevSlide();
+        }
+    }
+
+    // Handle Resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            updateDots();
+            updateSlider();
+        }, 150);
+    });
+
+    // Initial call
+    updateDots();
+    updateSlider();
+    startAutoplay();
+});
+
 // Developer Tools & Source Protection (F12, Ctrl+Shift+I, Right-Click Blockers)
 document.addEventListener('contextmenu', e => e.preventDefault());
 
