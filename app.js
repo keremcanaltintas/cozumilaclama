@@ -78,15 +78,31 @@ const carouselImages = [
 ];
 
 let carouselIndex = 0;
+let galPaused = false;
 
 const carouselImage = document.getElementById('carouselImage');
 const imageCounter = document.getElementById('imageCounter');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
+const galThumbs = document.getElementById('galThumbs');
+const galMain = document.getElementById('galMain');
 
 function updateCarouselImage() {
-  carouselImage.src = carouselImages[carouselIndex];
+  carouselImage.style.opacity = 0;
+  setTimeout(() => {
+    carouselImage.src = carouselImages[carouselIndex];
+    carouselImage.style.opacity = 1;
+  }, 150);
   imageCounter.textContent = `${carouselIndex + 1} / ${carouselImages.length}`;
+  if (galThumbs) {
+    [...galThumbs.children].forEach((b, i) => {
+      b.classList.toggle('on', i === carouselIndex);
+      b.setAttribute('aria-selected', i === carouselIndex);
+      if (i === carouselIndex) {
+        galThumbs.scrollTo({ left: b.offsetLeft - galThumbs.clientWidth / 2 + b.clientWidth / 2, behavior: 'smooth' });
+      }
+    });
+  }
 }
 
 function nextImage() {
@@ -99,11 +115,38 @@ function prevImage() {
   updateCarouselImage();
 }
 
+// Küçük resimler
+if (galThumbs) {
+  carouselImages.forEach((src, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-label', `Fotoğraf ${i + 1}`);
+    b.innerHTML = `<img src="${src}" alt="" loading="lazy">`;
+    b.addEventListener('click', () => { carouselIndex = i; updateCarouselImage(); });
+    galThumbs.appendChild(b);
+  });
+}
+
 nextBtn.addEventListener('click', nextImage);
 prevBtn.addEventListener('click', prevImage);
+updateCarouselImage();
 
-// Auto-rotate every 5 seconds
-setInterval(nextImage, 5000);
+// Mobilde kaydırarak (swipe) geçiş
+if (galMain) {
+  let sx = 0;
+  galMain.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; galPaused = true; }, { passive: true });
+  galMain.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 40) { dx < 0 ? nextImage() : prevImage(); }
+    setTimeout(() => { galPaused = false; }, 4000);
+  }, { passive: true });
+  galMain.addEventListener('mouseenter', () => { galPaused = true; });
+  galMain.addEventListener('mouseleave', () => { galPaused = false; });
+}
+
+// Her 5 saniyede bir otomatik geçiş (kullanıcı etkileşiminde durur)
+setInterval(() => { if (!galPaused) nextImage(); }, 5000);
 
 
 // Contact Modal Functions

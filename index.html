@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="tr">
 
 <head>
   <meta charset="UTF-8" />
@@ -22,6 +22,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/style.css?v=6.0" />
+  <link rel="stylesheet" href="css/redesign.css?v=1.0" />
   <style>
     /* ===== HAŞERE VE BÖCEKLER ===== */
     section.bugses {
@@ -109,35 +110,45 @@
     }
 
     section.bugses .bugses-content .card-box .circle {
-      width: 100px;
-      height: 100px;
-      border: 3px solid rgba(29, 151, 108, .2);
-      background-color: #f0faf5;
+      width: 104px;
+      height: 104px;
+      border: 3px solid rgba(29, 151, 108, .22);
+      background-color: #fff;
       border-radius: 50%;
       position: absolute;
       right: 50%;
-      top: -50px;
+      top: -52px;
       transform: translateX(50%);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
       transition: all .4s cubic-bezier(.25, .46, .45, .94);
-      box-shadow: 0 5px 15px rgba(29, 151, 108, .1)
+      box-shadow: 0 5px 15px rgba(29, 151, 108, .12)
     }
 
     section.bugses .bugses-content .card-box .circle img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 50%;
+      display: block
+    }
+
+    section.bugses .bugses-content .card-box .circle img.bug-contain {
+      width: 88%;
+      height: 88%;
+      object-fit: contain;
       border-radius: 50%
     }
 
     section.bugses .bugses-content .card-box .circle img.pire-img {
-      width: 75%;
-      height: 75%;
-      object-fit: contain;
-      border-radius: 0
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      transform: scale(1.08)
     }
 
     section.bugses .bugses-content .card-box h2 {
@@ -605,303 +616,107 @@
 </head>
 
 <body>
-  <header>
-    <div class="nav-top">
-      <div class="nav-top-left">
-        <img src="images/ilaclamaResimler/logo-1.png" alt="Logo" />
-      </div>
-      <div class="nav-top-right">
-        <ul>
-          <li><a href="#aboutus">Hakkımızda</a></li>
-          <li class="has-dropdown">
-            <a href="#services">Hizmetlerimiz <i class="bi bi-chevron-down"></i></a>
-            <ul class="dropdown-list">
-              <li><a href="#services">Ev ve İş Yerleri</a></li>
-              <li><a href="#services">Okul ve Eğitim Kurumları</a></li>
-              <li><a href="#services">Site ve Apartmanlar</a></li>
-              <li><a href="#services">Marketler</a></li>
-              <li><a href="#services">AVM ve Cafeler</a></li>
-              <li><a href="#services">Fırınlar</a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <a href="#bugses">Haşereler ve Böcekler <i class="bi bi-chevron-down"></i></a>
-            <ul class="dropdown-list">
-              <li>
-                <a href="#bugses"><i class="bi bi-bug"></i> Kene</a>
-              </li>
-              <li>
-                <a href="#bugses"><i class="bi bi-bug"></i> Hamam Böceği</a>
-              </li>
-              <li>
-                <a href="#bugses"><i class="bi bi-bug"></i> Kara Sinek</a>
-              </li>
-              <li>
-                <a href="#bugses"><i class="bi bi-bug"></i> Pire</a>
-              </li>
-              <li>
-                <a href="#bugses"><i class="bi bi-bug"></i> Tahtakurusu</a>
-              </li>
-              <li>
-                <a href="#bugses"><i class="bi bi-bug"></i> Fare ve Sıçan</a>
-              </li>
-              <li>
-                <a href="#bugses"><i class="bi bi-bug"></i> Ve Daha Fazlası...</a>
-              </li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <a href="#references">Referanslarımız <i class="bi bi-chevron-down"></i></a>
-            <ul class="dropdown-list">
-              <li><a href="#references">Uşak Belediyesi</a></li>
-              <li><a href="#references">Dabbagh Group</a></li>
-              <li><a href="#references">Sheraton Hotel</a></li>
-              <li><a href="#references">Anemon Hotels</a></li>
-              <li><a href="#references">ChocoLabs</a></li>
-              <li><a href="#references">Mutfak Kafe</a></li>
-              <li><a href="#references">Lumberjack Cafe</a></li>
-              <li><a href="#references">Soulmate Cafe</a></li>
-              <li><a href="#references">EspressoLab Cafe</a></li>
-              <li><a href="#references">Koala Cafe</a></li>
-              <li><a href="#references">TreeHouse Cafe</a></li>
-              <li><a href="#references">Kanyon Hayvancılık</a></li>
-            </ul>
-          </li>
-          <li><a href="#google-reviews">Google Yorumları</a></li>
-          <li>
-            <a href="javascript:void(0);" onclick="openContactModal()" class="nav-contact-btn">Bize Ulaşın</a>
-          </li>
-        </ul>
-        <div class="right-logo">
-          <img src="images/ilaclamaResimler/logo-2.png" alt="logo 2" />
-        </div>
-      </div>
+  <header class="sh" id="siteHeader">
+    <div class="sh-in">
+      <a class="sh-logo" href="#"><img src="images/ilaclamaResimler/logo-1.png" alt="Çözüm İlaçlama" /></a>
+      <nav class="sh-nav" id="shNav" aria-label="Ana menü">
+        <a href="#aboutus">Hakkımızda</a>
+        <a href="#services">Hizmetlerimiz</a>
+        <a href="#bugses">Haşereler ve Böcekler</a>
+        <a href="#references">Referanslarımız</a>
+        <a href="#google-reviews">Google Yorumları</a>
+        <a href="#faq">SSS</a>
+        <a href="javascript:void(0);" onclick="openContactModal()" class="sh-m"><i class="bi bi-telephone"></i>&nbsp;Bize Ulaşın</a>
+      </nav>
+      <a class="sh-cta" href="javascript:void(0);" onclick="openContactModal()"><i class="bi bi-telephone"></i><span>Bize Ulaşın</span></a>
+      <button class="sh-burger" id="shBurger" type="button" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="shNav"><span></span><span></span><span></span></button>
     </div>
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="images/ilaclamaResimler/logo-1.png" alt="logo" /></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#aboutus">Hakkımızda</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services">Hizmetlerimiz</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#bugses">Haşereler ve Böcekler</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#references">Referanslar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="javascript:void(0);" onclick="openContactModal()">Bize Ulaşın</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div class="sh-bar" id="shBar"></div>
   </header>
 
-  <section class="hero-section">
-    <video autoplay loop muted playsinline>
-      <source src="./images/ilaclama-hero.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 class="hero-green">ÇÖZÜM İLAÇLAMA OLARAK</h1>
-      <p class="hero-paragraph">Haşereleri ortadan kaldırıyoruz.</p>
-      <h2 id="animated-places" class="animated-box" style="transition: opacity 0.4s ease-in-out">
-        EVLER
-      </h2>
-      <a href="#aboutus" class="scroll-btn">
-        <i class="bi bi-arrow-down"></i>
-      </a>
-      <p class="hero-small-text">
-        Haşerelerle nasıl başa çıkacağınızı öğrenin.
-      </p>
+  <section class="hx sx" id="hx">
+    <canvas id="hx-cv" aria-hidden="true"></canvas>
+    <div class="hx-in" id="hx-in">
+      <h1>ÇÖZÜM İLAÇLAMA <span>OLARAK</span></h1>
+      <p class="hx-p">Haşereleri ortadan kaldırıyoruz.</p>
+      <h2 id="animated-places" class="animated-box" style="transition: opacity 0.4s ease-in-out">EVLER</h2>
+      <div class="hx-btns">
+        <a class="hx-btn hx-b1" href="tel:05337356443"><i class="bi bi-telephone"></i> Hemen Ara</a>
+        <a class="hx-btn hx-b2" href="https://wa.me/905337356443" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+      </div>
+      <div class="hx-chips">
+        <span><i class="bi bi-patch-check-fill"></i> Sağlık Bakanlığı onaylı</span>
+        <span><i class="bi bi-shield-check"></i> Kokusuz ve güvenli</span>
+        <span><i class="bi bi-clock-history"></i> 7/24 hızlı hizmet</span>
+      </div>
+      <a href="#aboutus" class="hx-dn" aria-label="Aşağı kaydır"><i class="bi bi-arrow-down"></i></a>
     </div>
   </section>
 
-  <section id="aboutus" class="aboutUs">
-    <div class="chooseUs div-title">
-      <h3>
-        <i class="bi bi-chevron-double-left"></i>Neden Bizi Seçmelisiniz?<i class="bi bi-chevron-double-right"></i>
-      </h3>
-      <p>
-        Son teknoloji ekıpmanlarımız ile doğaya ve evcil hayvanlarınıza zarar
-        vermeden <br />
-        hızlı haşere temizleme tekniklerimiz ile tek seferde sonuca
-        ulaşmaktayız.
-      </p>
-    </div>
-
-    <div class="comparison-container" id="comparison" data-aos="fade-up"
-      style="margin: 0 auto; padding: 2rem 1rem 4rem 1rem">
-      <h2 class="comparison-title">
-        Merak Ediyorsanız - Neden
-        <span class="highlight">Uşak Çözüm İlaçlama?</span>
-      </h2>
-
-      <div class="comparison-tabs">
-        <button class="tab-btn active" id="tab-other" onclick="switchTab('other')">
-          Diğer Firmalar
-        </button>
-        <button class="tab-btn" id="tab-us" onclick="switchTab('us')">
-          Uşak Çözüm İlaçlama
-        </button>
+  <section id="aboutus" class="ab sx">
+    <div class="wrap">
+      <div class="sec-head" data-aos="fade-up">
+        <h2>Neden Bizi Seçmelisiniz?</h2>
+        <p>Son teknoloji ekipmanlarımızla doğaya ve evcil hayvanlarınıza zarar vermeden, hızlı haşere temizleme tekniklerimizle tek seferde sonuca ulaşıyoruz.</p>
       </div>
 
-      <!-- Diğer Firmalar İçeriği -->
-      <div class="comparison-grid" id="grid-other">
-        <div class="comp-box other-box">
-          <i class="bi bi-x-circle-fill"></i>
-          <p>Geri bildirim sunulmuyor mu?</p>
+      <div class="cmp" data-aos="fade-up">
+        <div class="cmp-col cmp-no">
+          <h3><i class="bi bi-x-circle"></i> Diğer Firmalar</h3>
+          <ul>
+            <li><i class="bi bi-x-circle-fill"></i> Geri bildirim sunulmuyor</li>
+            <li><i class="bi bi-x-circle-fill"></i> Büyük sözler, sıfır sonuç</li>
+            <li><i class="bi bi-x-circle-fill"></i> Yapılan iş için garanti yok</li>
+            <li><i class="bi bi-x-circle-fill"></i> Zaman ve para tasarrufu sağlamıyor</li>
+            <li><i class="bi bi-x-circle-fill"></i> Kaliteli iş yapılmıyor</li>
+            <li><i class="bi bi-x-circle-fill"></i> Müşteri hizmeti iyi değil</li>
+          </ul>
         </div>
-        <div class="comp-box other-box">
-          <i class="bi bi-x-circle-fill"></i>
-          <p>Büyük sözler - sıfır sonuç?</p>
+        <div class="cmp-col cmp-yes">
+          <h3><i class="bi bi-check-circle"></i> Uşak Çözüm İlaçlama</h3>
+          <ul>
+            <li><i class="bi bi-check-circle-fill"></i> Etkili iletişim</li>
+            <li><i class="bi bi-check-circle-fill"></i> Kaliteli işçilik</li>
+            <li><i class="bi bi-check-circle-fill"></i> Garanti sonuçlar</li>
+            <li><i class="bi bi-check-circle-fill"></i> Zaman ve para tasarrufu</li>
+            <li><i class="bi bi-check-circle-fill"></i> Yüksek kaliteli ürünler</li>
+            <li><i class="bi bi-check-circle-fill"></i> Olağanüstü hizmet</li>
+          </ul>
         </div>
-        <div class="comp-box other-box">
-          <i class="bi bi-x-circle-fill"></i>
-          <p>Yapılan iş için garanti yok mu?</p>
+        <div class="cmp-cta"><a href="javascript:void(0);" onclick="openContactModal()">Bize Ulaşın <i class="bi bi-chevron-right"></i></a></div>
+      </div>
+
+      <div class="ab-grid">
+        <div class="ab-txt" data-aos="fade-up">
+          <h2>Hakkımızda</h2>
+          <p class="ab-lead">Sağlığınızı, evinizi ve işletmenizi bilimsel ve güvenli yöntemlerle koruyoruz.</p>
+          <p>Çözüm İlaçlama olarak; insan sağlığını, çevre dengesini ve evcil hayvanlarımızın güvenliğini ön planda tutan profesyonel haşere kontrol çözümleri sunuyoruz.</p>
+          <p>Dünya Sağlık Örgütü (WHO) ve Sağlık Bakanlığı onaylı, hedef dışı canlılara zarar vermeyen yeni nesil biyosidal ürünlerimizle yaşam alanlarınızı istilalardan tamamen arındırıyoruz.</p>
+          <p class="ab-hl"><i class="bi bi-clock-history"></i><span>Uzman kadromuzla 7/24 kesintisiz, garantili ve güvenli ilaçlama desteği sağlıyoruz.</span></p>
         </div>
-        <div class="comp-box other-box">
-          <i class="bi bi-x-circle-fill"></i>
-          <p>Zaman ve para tasarrufu sağlamıyor mu?</p>
-        </div>
-        <div class="comp-box other-box">
-          <i class="bi bi-x-circle-fill"></i>
-          <p>Kaliteli iş yapılmıyor mu?</p>
-        </div>
-        <div class="comp-box other-box">
-          <i class="bi bi-x-circle-fill"></i>
-          <p>Müşteri hizmeti iyi değil mi?</p>
+        <div data-aos="fade-up">
+          <div class="ab-stats">
+            <div><b>5.0</b><span>Google puanı</span></div>
+            <div><b>7/24</b><span>Hızlı destek</span></div>
+            <div><b>%100</b><span>Garantili hizmet</span></div>
+          </div>
+          <div class="vm">
+            <div class="vm-card"><div class="vm-ic"><i class="bi bi-eye"></i></div><div><h3>Vizyonumuz</h3><p>Uşak ve çevresinde güvenli, çevre dostu ve ölçülebilir haşere kontrolünde ilk akla gelen marka olmak.</p></div></div>
+            <div class="vm-card"><div class="vm-ic"><i class="bi bi-bullseye"></i></div><div><h3>Misyonumuz</h3><p>Ev ve işletmeleri uzman ekip ve onaylı ürünlerle tek uygulamada kalıcı çözüme kavuşturmak; her işi şeffaf bilgilendirme ve garantiyle teslim etmek.</p></div></div>
+          </div>
         </div>
       </div>
 
-      <!-- Uşak Çözüm İlaçlama İçeriği -->
-      <div class="comparison-grid" id="grid-us" style="display: none">
-        <div class="comp-box us-box">
-          <i class="bi bi-check-circle-fill"></i>
-          <p>Etkili iletişim</p>
-        </div>
-        <div class="comp-box us-box">
-          <i class="bi bi-check-circle-fill"></i>
-          <p>Kaliteli işçilik</p>
-        </div>
-        <div class="comp-box us-box">
-          <i class="bi bi-check-circle-fill"></i>
-          <p>Garanti sonuçlar</p>
-        </div>
-        <div class="comp-box us-box">
-          <i class="bi bi-check-circle-fill"></i>
-          <p>Zaman ve para tasarrufu</p>
-        </div>
-        <div class="comp-box us-box">
-          <i class="bi bi-check-circle-fill"></i>
-          <p>Yüksek kaliteli ürünler</p>
-        </div>
-        <div class="comp-box us-box">
-          <i class="bi bi-check-circle-fill"></i>
-          <p>Olağanüstü hizmet</p>
-        </div>
-      </div>
-
-      <a href="javascript:void(0);" onclick="openContactModal()" class="comp-contact-btn">Bize Ulaşın <i
-          class="bi bi-chevron-right"></i></a>
-    </div>
-
-    <div class="aboutUs-content">
-      <div class="col-md-4 aboutUs-left" data-aos="fade-up">
-        <h1>Hakkımızda</h1>
-        <p class="about-lead">
-          Sağlığınızı, evinizi ve işletmenizi bilimsel ve güvenli yöntemlerle koruyoruz.
-        </p>
-        <p>
-          Çözüm İlaçlama olarak; insan sağlığını, çevre dengesini ve evcil hayvanlarımızın güvenliğini ön planda tutan
-          profesyonel haşere kontrol çözümleri sunuyoruz.
-        </p>
-        <p>
-          Dünya Sağlık Örgütü (WHO) ve Sağlık Bakanlığı onaylı, hedef dışı canlılara zarar vermeyen yeni nesil biyosidal
-          ürünlerimiz ile yaşam alanlarınızı istilalardan tamamen arındırıyoruz.
-        </p>
-        <p class="about-highlight">
-          <i class="bi bi-clock-history"></i> Uzman kadromuzla 7/24 kesintisiz, garantili ve güvenli ilaçlama desteği
-          sağlıyoruz.
-        </p>
-      </div>
-      <div class="col-md-8 aboutUs-right" data-aos="fade-up">
-        <div class="row">
-          <div class="col-sm-6 col-md-4 card-box" data-aos="fade-down">
-            <div class="circle"><i class="fa-solid fa-bolt"></i></div>
-            <h2>Hızlı ve Garantili Çözüm</h2>
-            <p>
-              Son teknoloji ekipmanlarımız ve uzman kadromuzla, günlük yaşamınızı veya ticari faaliyetlerinizi
-              aksatmadan en kısa sürede kalıcı hijyen sağlıyoruz.
-            </p>
-          </div>
-          <div class="col-sm-6 col-md-4 card-box" data-aos="fade-down">
-            <div class="circle"><i class="fa-solid fa-crosshairs"></i></div>
-            <h2>Tek Seferde Kesin Sonuç</h2>
-            <p>
-              Yüksek etkili yeni nesil formülasyonlarımız sayesinde, haşere ve kemirgen istilalarını kaynağında
-              kurutarak tek uygulamada kesin çözüme ulaşıyoruz.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6 col-md-4 card-box" data-aos="fade-up">
-            <div class="circle"><i class="fa-solid fa-award"></i></div>
-            <h2>Bakanlık ve DSÖ Onaylı</h2>
-            <p>
-              Kullandığımız tüm biyosidal ürünler Sağlık Bakanlığı ve Dünya Sağlık Örgütü (WHO) onaylı olup,
-              uluslararası kalite ve güvenlik standartlarındadır.
-            </p>
-          </div>
-          <div class="col-sm-6 col-md-4 card-box" data-aos="fade-up">
-            <div class="circle"><i class="fa-solid fa-leaf"></i></div>
-            <h2>Çevre ve Evcil Dostu</h2>
-            <p>
-              Yaşam alanlarınızı temizlerken doğaya, bitkilere ve evcil dostlarımıza hiçbir zarar vermeyen, ekolojik
-              dengeye saygılı biyosidal ürünler tercih ediyoruz.
-            </p>
-          </div>
-        </div>
+      <div class="ab-feat" data-aos="fade-up">
+        <div><i class="bi bi-lightning-charge"></i><h3>Hızlı ve Garantili Çözüm</h3><p>Günlük yaşamınızı veya ticari faaliyetlerinizi aksatmadan en kısa sürede kalıcı hijyen sağlıyoruz.</p></div>
+        <div><i class="bi bi-bullseye"></i><h3>Tek Seferde Kesin Sonuç</h3><p>Yeni nesil formülasyonlarla haşere ve kemirgen istilalarını kaynağında bitiriyoruz.</p></div>
+        <div><i class="bi bi-award"></i><h3>Bakanlık ve DSÖ Onaylı</h3><p>Tüm biyosidal ürünlerimiz Sağlık Bakanlığı ve WHO onaylı, uluslararası standartlardadır.</p></div>
+        <div><i class="bi bi-tree"></i><h3>Çevre ve Evcil Dostu</h3><p>Doğaya, bitkilere ve evcil dostlarımıza zarar vermeyen ürünler tercih ediyoruz.</p></div>
       </div>
     </div>
-
-    <img class="bg1" src="/images/bgImages/ilaclama2.png" alt="" />
   </section>
 
-  <script>
-    function switchTab(tab) {
-      const btnOther = document.getElementById("tab-other");
-      const btnUs = document.getElementById("tab-us");
-      const gridOther = document.getElementById("grid-other");
-      const gridUs = document.getElementById("grid-us");
-
-      if (tab === "other") {
-        btnOther.classList.add("active");
-        btnUs.classList.remove("active");
-        gridOther.style.display = "grid";
-        gridUs.style.display = "none";
-      } else {
-        btnUs.classList.add("active");
-        btnOther.classList.remove("active");
-        gridUs.style.display = "grid";
-        gridOther.style.display = "none";
-      }
-    }
-  </script>
-
-  <section class="services" id="services">
+  <section class="services sx" id="services">
     <div class="div-title">
       <h3>
         <i class="bi bi-chevron-double-left"></i>Hizmetlerimiz<i class="bi bi-chevron-double-right"></i>
@@ -940,61 +755,27 @@
         </div>
       </div>
     </div>
-    <div class="services-content">
-      <div class="pest-info">
-        <h3>Neden Profesyonel İlaçlama?</h3>
-        <div class="pest-features">
-          <div class="feature-item">
-            <i class="bi bi-shield-check"></i>
-            <div>
-              <h4>Sağlık ve Hijyen Koruması</h4>
-              <p>Haşereler; dizanteri, tifo, kolera ve sıtma gibi birçok ciddi hastalığın taşıyıcısıdır. Profesyonel
-                ilaçlama, ailenizin ve çalışanlarınızın sağlığını güvence altına alır.</p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <i class="bi bi-patch-check"></i>
-            <div>
-              <h4>Sağlık Bakanlığı Onaylı & Güvenli</h4>
-              <p>Bilinçsiz ve lisanssız yapılan ilaçlamalar ciddi zehirlenmelere yol açabilir. Çözüm İlaçlama olarak,
-                Sağlık Bakanlığı onaylı ve insan sağlığına zararsız özel etken maddeler kullanıyoruz.</p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <i class="bi bi-house-gear"></i>
-            <div>
-              <h4>Maddi Hasarların Önlenmesi</h4>
-              <p>Kemirgenler ve böcekler elektrik kablolarını kemirerek yangın riski oluşturur, ahşap yapılara ve
-                yalıtım malzemelerine zarar vererek büyük maddi hasarlara neden olur.</p>
-            </div>
-          </div>
-        </div>
+    <div class="pro" data-aos="fade-up">
+      <div class="sec-head"><h2>Neden Profesyonel İlaçlama?</h2></div>
+      <div class="pro-grid">
+        <div class="pro-card"><i class="bi bi-shield-check"></i><h4>Sağlık ve Hijyen Koruması</h4><p>Haşereler; dizanteri, tifo, kolera ve sıtma gibi birçok ciddi hastalığın taşıyıcısıdır. Profesyonel ilaçlama, ailenizin ve çalışanlarınızın sağlığını güvence altına alır.</p></div>
+        <div class="pro-card"><i class="bi bi-patch-check"></i><h4>Sağlık Bakanlığı Onaylı &amp; Güvenli</h4><p>Bilinçsiz ve lisanssız yapılan ilaçlamalar ciddi zehirlenmelere yol açabilir. Biz, Sağlık Bakanlığı onaylı ve insan sağlığına zararsız özel etken maddeler kullanıyoruz.</p></div>
+        <div class="pro-card"><i class="bi bi-house-gear"></i><h4>Maddi Hasarların Önlenmesi</h4><p>Kemirgenler ve böcekler elektrik kablolarını kemirerek yangın riski oluşturur, ahşap yapılara ve yalıtım malzemelerine zarar vererek büyük maddi hasarlara neden olur.</p></div>
       </div>
-      <div class="services-gallery">
-        <!-- Rotating Carousel Gallery -->
-        <div class="carousel-container">
-          <div class="carousel-image-wrapper">
-            <img id="carouselImage" src="images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.39 (1).jpeg"
-              class="carousel-image" title="uşak çözüm ilaçlama" alt="uşak çözüm ilaçlama" />
+    </div>
 
-            <!-- Floating Counter Indicator -->
-            <span id="imageCounter" class="carousel-badge">1 / 6</span>
-
-            <!-- Floating Navigation Controls Overlaid on Image -->
-            <button class="carousel-btn carousel-btn-left" id="prevBtn" aria-label="Önceki Resim">
-              <i class="bi bi-chevron-left"></i>
-            </button>
-            <button class="carousel-btn carousel-btn-right" id="nextBtn" aria-label="Sonraki Resim">
-              <i class="bi bi-chevron-right"></i>
-            </button>
-          </div>
-        </div>
-        <!-- Rotating Carousel Gallery -->
+    <div class="gal" data-aos="fade-up">
+      <div class="gal-main" id="galMain">
+        <img id="carouselImage" src="images/ilaclamaResimler/WhatsApp Image 2023-06-13 at 23.22.39 (1).jpeg" title="uşak çözüm ilaçlama" alt="uşak çözüm ilaçlama" />
+        <span id="imageCounter" class="gal-badge">1 / 6</span>
+        <button class="gal-btn gal-l" id="prevBtn" type="button" aria-label="Önceki resim"><i class="bi bi-chevron-left"></i></button>
+        <button class="gal-btn gal-r" id="nextBtn" type="button" aria-label="Sonraki resim"><i class="bi bi-chevron-right"></i></button>
       </div>
+      <div class="gal-thumbs" id="galThumbs" role="tablist" aria-label="Fotoğraf küçük resimleri"></div>
     </div>
   </section>
 
-  <section class="bugses" id="bugses">
+  <section class="bugses sx" id="bugses">
     <div class="div-title">
       <h3>
         <i class="bi bi-chevron-double-left"></i>Haşere ve Böcekler<i class="bi bi-chevron-double-right"></i>
@@ -1021,7 +802,7 @@
         <a href="https://tr.wikipedia.org/wiki/Hamam_b%C3%B6ce%C4%9Fi" target="_blank" class="card-box"
           data-aos="fade-up">
           <div class="circle">
-            <img src="images/bugs/hamamböcüğü-white-bg.jpg" title="hamam böceği" alt="hamam böceği" />
+            <img src="images/bugs/hamambocegi.jpg" title="hamam böceği" alt="hamam böceği" class="bug-contain" />
           </div>
           <h2>Hamam Böceği</h2>
           <p>
@@ -1045,7 +826,7 @@
       <div class="col-sm-6 col-md-4">
         <a href="https://tr.wikipedia.org/wiki/Pire" target="_blank" class="card-box" data-aos="fade-up">
           <div class="circle">
-            <img src="images/bugs/pire-white-bg.jpg" title="pire" alt="pire" class="pire-img" />
+            <img src="images/bugs/pire-yeni.png" title="pire" alt="pire" class="pire-img" />
           </div>
           <h2>Pire</h2>
           <p>
@@ -1084,13 +865,28 @@
     <img src="images/bgImages/ilaclama3.png" alt="uşak-çözüm-ilaçlama" class="bg2" />
   </section>
 
-  <section id="references" class="interactive-showcase-section" style="--brand-color: #1d976c">
+  <section class="process sx" id="process">
+    <div class="wrap">
+      <div class="sec-head" data-aos="fade-up">
+        <h2>Nasıl Çalışıyoruz?</h2>
+        <p>Keşiften garantiye kadar her adım şeffaf ve planlı ilerler.</p>
+      </div>
+      <ol class="steps" data-aos="fade-up">
+        <li><span class="st-n">1</span><i class="bi bi-search"></i><h3>Keşif ve Analiz</h3><p>Uzman ekibimiz mekânı inceler, haşere türünü ve istila kaynağını belirler.</p></li>
+        <li><span class="st-n">2</span><i class="bi bi-clipboard2-check"></i><h3>Planlama</h3><p>Mekâna ve türe uygun, Bakanlık onaylı ürün ve yöntem seçilir.</p></li>
+        <li><span class="st-n">3</span><i class="bi bi-droplet-half"></i><h3>Uygulama</h3><p>Kokusuz, insan ve evcil hayvan dostu ürünlerle günlük yaşamınızı aksatmadan uygulama yapılır.</p></li>
+        <li><span class="st-n">4</span><i class="bi bi-patch-check"></i><h3>Takip ve Garanti</h3><p>Sonuç kontrol edilir, garantili hizmetle desteğimiz devam eder.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="references" class="interactive-showcase-section sx" style="--brand-color: #1d976c">
     <div class="bg-base"></div>
     <div class="bg-brand-glow" id="pfShowcaseGlow"></div>
     <div class="bg-mask"></div>
 
     <div class="showcase-header" data-aos="fade-up">
-      <h2 class="showcase-static-title">REFERANSLARIMIZ</h2>
+      <h2 class="showcase-static-title">Referanslarımız</h2>
     </div>
 
     <div class="carousel">
@@ -1346,7 +1142,7 @@
   </section>
 
   <!-- Google Yorumlarımız Section -->
-  <section id="google-reviews" class="google-reviews-section" data-aos="fade-up">
+  <section id="google-reviews" class="google-reviews-section sx" data-aos="fade-up">
     <!-- Decorative Background Glows -->
     <div class="gr-bg-glow gr-bg-glow-1"></div>
     <div class="gr-bg-glow gr-bg-glow-2"></div>
@@ -1941,6 +1737,76 @@
     </div>
   </section>
 
+    <section class="faq sx" id="faq">
+    <div class="wrap">
+      <div class="sec-head" data-aos="fade-up">
+        <h2>Sıkça Sorulan Sorular</h2>
+        <p>Aklınıza takılan bir şey varsa bize yazmaktan çekinmeyin.</p>
+      </div>
+      <div class="faq-list" data-aos="fade-up">
+        <details open><summary>İlaçlama evcil hayvanlarıma ve çocuklarıma zarar verir mi?</summary><p>Hayır. Sağlık Bakanlığı ve Dünya Sağlık Örgütü onaylı, hedef dışı canlılara zarar vermeyen ürünler kullanıyoruz. Uygulama öncesinde ve sonrasında ekibimiz size gerekli bilgilendirmeyi yapar.</p></details>
+        <details><summary>Tek uygulama yeterli oluyor mu?</summary><p>Yeni nesil formülasyonlarımızla istilaları kaynağında bitirerek tek uygulamada kesin sonuç hedefliyoruz. Garantili hizmetimiz kapsamında takip desteği de sunuyoruz.</p></details>
+        <details><summary>Kullandığınız ilaçlar kokulu mu?</summary><p>Ürünlerimiz kokusuz ve güven vericidir. Günlük yaşamınız ya da işletmenizin faaliyeti aksamaz.</p></details>
+        <details><summary>Hangi haşerelere karşı hizmet veriyorsunuz?</summary><p>Kene, hamam böceği, kara sinek, pire, tahtakurusu, fare ve sıçan başta olmak üzere her türlü böcek ve kemirgen için çözüm sunuyoruz.</p></details>
+        <details><summary>Hangi mekânlara hizmet veriyorsunuz?</summary><p>Ev, iş yeri, okul ve eğitim kurumu, site ve apartman, market, otel, AVM, fırın ve cafe gibi tüm yaşam ve çalışma alanlarına hizmet veriyoruz.</p></details>
+        <details><summary>Acil durumda size nasıl ulaşabilirim?</summary><p>7/24 telefon ve WhatsApp üzerinden bize ulaşabilirsiniz. Acil durumlarda profesyonel ekibimiz hızlıca müdahale eder.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band sx">
+    <div class="wrap">
+      <div class="cta-box" data-aos="fade-up">
+        <div class="cta-glow-orb cta-glow-1" aria-hidden="true"></div>
+        <div class="cta-glow-orb cta-glow-2" aria-hidden="true"></div>
+        <div class="cta-shield-bg" aria-hidden="true"><i class="bi bi-shield-check"></i></div>
+
+        <div class="cta-pill">
+          <span class="cta-live-dot"></span>
+          <span>7/24 Acil Müdahale &amp; Ücretsiz Ön Bilgi</span>
+        </div>
+
+        <h2>Haşere sorununuzu bugün çözelim.</h2>
+        <p>Bir telefon ya da mesaj yeterli. Uşak ve çevresindeki uzman ekibimiz en kısa sürede adresinize ulaşarak garantili ve kokusuz çözüm sunar.</p>
+
+        <div class="cta-perks">
+          <div class="cta-perk">
+            <i class="bi bi-lightning-charge-fill"></i>
+            <span>Aynı Gün Servis</span>
+          </div>
+          <div class="cta-perk">
+            <i class="bi bi-patch-check-fill"></i>
+            <span>Bakanlık Onaylı &amp; Kokusuz</span>
+          </div>
+          <div class="cta-perk">
+            <i class="bi bi-shield-fill-check"></i>
+            <span>%100 Memnuniyet Garantisi</span>
+          </div>
+        </div>
+
+        <div class="cta-btns">
+          <a class="hx-btn cta-w" href="tel:05337356443">
+            <i class="bi bi-telephone-fill"></i>
+            <span>Hemen Ara: 0533 735 64 43</span>
+          </a>
+          <a class="hx-btn cta-o" href="https://wa.me/905337356443" target="_blank" rel="noopener">
+            <i class="bi bi-whatsapp"></i>
+            <span>WhatsApp'tan Yaz</span>
+          </a>
+          <button type="button" class="hx-btn cta-ghost" onclick="openContactModal()">
+            <i class="bi bi-chat-dots-fill"></i>
+            <span>İletişim Seçenekleri</span>
+          </button>
+        </div>
+
+        <div class="cta-foot-note">
+          <i class="bi bi-clock-history"></i>
+          <span>Ortalama geri dönüş süresi: <strong>15 dakika içinde</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="footer-container">
       <!-- Brand / About Column -->
@@ -2013,7 +1879,7 @@
     <!-- Contact Modal -->
     <div class="contact-modal" id="contactModal">
       <div class="modal-content">
-        <button class="close-btn" onclick="closeContactModal()">
+        <button class="close-btn" type="button" aria-label="Kapat" onclick="closeContactModal()">
           <i class="bi bi-x"></i>
         </button>
         <h2>Bize Ulaşın</h2>
@@ -2057,6 +1923,7 @@
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
 
+  <script src="js/redesign.js"></script>
   <script src="app.js"></script>
 </body>
 
