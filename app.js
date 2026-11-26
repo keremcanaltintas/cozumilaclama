@@ -680,9 +680,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentIndex = maxIdx;
         }
 
-        const cardWidth = cards[0].getBoundingClientRect().width;
-        const gap = window.innerWidth <= 768 ? 8 : (window.innerWidth <= 992 ? 20 : 20);
-        const offset = currentIndex * (cardWidth + gap);
+        const offset = cards[currentIndex].offsetLeft;
 
         track.style.transform = `translateX(-${offset}px)`;
 
